@@ -1,0 +1,9 @@
+D:\GitHubProjects\3sem\OOPT\Tweets\Tweets\Tweets\bin\Debug\Tweets.exe.config
+D:\GitHubProjects\3sem\OOPT\Tweets\Tweets\Tweets\bin\Debug\Tweets.exe
+D:\GitHubProjects\3sem\OOPT\Tweets\Tweets\Tweets\bin\Debug\Tweets.pdb
+D:\GitHubProjects\3sem\OOPT\Tweets\Tweets\Tweets\obj\Debug\Tweets.csprojResolveAssemblyReference.cache
+D:\GitHubProjects\3sem\OOPT\Tweets\Tweets\Tweets\obj\Debug\Tweets.Form1.resources
+D:\GitHubProjects\3sem\OOPT\Tweets\Tweets\Tweets\obj\Debug\Tweets.Properties.Resources.resources
+D:\GitHubProjects\3sem\OOPT\Tweets\Tweets\Tweets\obj\Debug\Tweets.csproj.GenerateResource.Cache
+D:\GitHubProjects\3sem\OOPT\Tweets\Tweets\Tweets\obj\Debug\Tweets.exe
+D:\GitHubProjects\3sem\OOPT\Tweets\Tweets\Tweets\obj\Debug\Tweets.pdb
