@@ -8,16 +8,25 @@ namespace Tweets
 {
     class Tweet
     {
-        String line;
+        public String locationStr;
         public Location location;
-        public int unknownNumber;
+        public String unknownNumber;
         public String date;
-        public String time;
         public String textTweet;
 
         public Tweet(String line)
         {
-            this.line = line;
+            parseLine(line);
+            
+        }
+
+        void parseLine(String line)
+        {
+            String[] split = line.Split(new Char[] { '\t' });
+            location = new Location(split[0]);
+            unknownNumber = split[1];
+            date = split[2];
+            textTweet = split[3];
         }
 
     }

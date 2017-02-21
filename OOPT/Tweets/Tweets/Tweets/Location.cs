@@ -8,22 +8,14 @@ namespace Tweets
 {
     class Location
     {
+        public String x;
+        public String y;
 
-        public double x;
-        public double y;
-        String nameLocation;
-
-        Location(double x, double y)
+        public Location(String location)
         {
-            this.x = x;
-            this.y = y;
-
-        }
-
-        String getLocation()
-        {
-            nameLocation = ""; // set
-            return nameLocation;
+            String[] split = location.Split(new Char[] { '[', ']', ' ', ',' });
+            x = split[1];
+            y = split[3];
         }
     }
 }

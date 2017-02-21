@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">AlgoritmsArray</string>
+    <string name="number_of_elements">Number of elements:</string>
+    <string name="array">Array:</string>
+    <string name="generate">GENERATE</string>
+    <string name="search">SEARCH</string>
+    <string name="recursive_linear_search">RECURSIVE-LINEAR-SEARCH</string>
+    <string name="sentinel_linear_search">SENTINEL-LINEAR-SEARCH</string>
+    <string name="better_linear_search">BETTER-LINEAR-SEARCH</string>
+    <string name="linear_search">LINEAR-SEARCH</string>
+    <string name="answer">answer</string>
+    <string name="input_x">Input X:</string>
+</resources>

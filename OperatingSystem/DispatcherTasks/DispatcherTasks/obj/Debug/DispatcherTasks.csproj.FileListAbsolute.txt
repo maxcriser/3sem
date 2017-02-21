@@ -1,0 +1,9 @@
+D:\GitHubProjects\3sem\OperatingSystem\DispatcherTasks\DispatcherTasks\bin\Debug\DispatcherTasks.exe.config
+D:\GitHubProjects\3sem\OperatingSystem\DispatcherTasks\DispatcherTasks\bin\Debug\DispatcherTasks.exe
+D:\GitHubProjects\3sem\OperatingSystem\DispatcherTasks\DispatcherTasks\bin\Debug\DispatcherTasks.pdb
+D:\GitHubProjects\3sem\OperatingSystem\DispatcherTasks\DispatcherTasks\obj\Debug\DispatcherTasks.csprojResolveAssemblyReference.cache
+D:\GitHubProjects\3sem\OperatingSystem\DispatcherTasks\DispatcherTasks\obj\Debug\DispatcherTasks.Form1.resources
+D:\GitHubProjects\3sem\OperatingSystem\DispatcherTasks\DispatcherTasks\obj\Debug\DispatcherTasks.Properties.Resources.resources
+D:\GitHubProjects\3sem\OperatingSystem\DispatcherTasks\DispatcherTasks\obj\Debug\DispatcherTasks.csproj.GenerateResource.Cache
+D:\GitHubProjects\3sem\OperatingSystem\DispatcherTasks\DispatcherTasks\obj\Debug\DispatcherTasks.exe
+D:\GitHubProjects\3sem\OperatingSystem\DispatcherTasks\DispatcherTasks\obj\Debug\DispatcherTasks.pdb
