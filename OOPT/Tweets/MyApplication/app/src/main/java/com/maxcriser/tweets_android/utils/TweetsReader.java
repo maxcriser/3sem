@@ -21,21 +21,17 @@ public final class TweetsReader {
     public static List<Tweet> getListTweet(final Context pContext, final String path) {
         final List<String> tweetStrings = new ArrayList<>(Arrays.asList(getArrayStrings(path)));
         final List<Tweet> tweets = new ArrayList<>();
+        String[] split;
+        String[] coordinatesSplit;
+        Tweet tweet;
+        String coordinates;
 
         for (int i = 0; i < tweetStrings.size(); i++) {
-            final String[] split = tweetStrings.get(i).split("\t");
-            String coordinates = split[0];
-            coordinates = coordinates.replace("[", "");
-            coordinates = coordinates.replace("]", "");
-            coordinates = coordinates.replace(" ", "");
-            final String[] coordinatesSplit = coordinates.split(",");
-            final String latitude = coordinatesSplit[0];
-            final String longitude = coordinatesSplit[1];
-            final String number = split[1];
-            final String date = split[2];
-            final String textTweet = split[3];
-            final Tweet tweet = new Tweet(pContext, latitude, longitude, number, date, textTweet);
-            Log.d("xXx", i + " tweet added");
+            split = tweetStrings.get(i).split("\t");
+            coordinates = split[0].replaceAll("[\\[\\] ]", "");
+            coordinatesSplit = coordinates.split(",");
+            tweet = new Tweet(pContext, coordinatesSplit[0], coordinatesSplit[1], split[1], split[2], split[3]);
+            Log.d("INFO", i + " tweet added");
             tweets.add(tweet);
         }
         return tweets;

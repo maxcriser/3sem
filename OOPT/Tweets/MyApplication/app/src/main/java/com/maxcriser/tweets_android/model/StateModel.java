@@ -2,17 +2,22 @@ package com.maxcriser.tweets_android.model;
 
 public class StateModel {
 
-    private String code;
-    private String stateName;
+    private final String code;
+    private final String stateName;
+    private final double latitude;
+    private final double longitude;
     private double value;
 
-    public StateModel(final String code, final String stateName, final double value) {
+    public StateModel(final String code, final String stateName, final double value,
+                      final double latitude, final double longitude) {
+        this.latitude = latitude;
+        this.longitude = longitude;
         this.code = code;
         this.value = value;
         this.stateName = stateName;
     }
 
-    public void addValue(double pValue) {
+    public void addPoints(final double pValue) {
         value += pValue;
     }
 
@@ -24,7 +29,15 @@ public class StateModel {
         return stateName;
     }
 
-    public double getValue() {
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public double getPoints() {
         return value;
     }
 }

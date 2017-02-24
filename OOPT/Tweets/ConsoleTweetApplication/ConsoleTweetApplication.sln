@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTweetApplication", "ConsoleTweetApplication\ConsoleTweetApplication.csproj", "{757B49DD-ED5F-42FC-BBD4-A3E86A6B9639}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{757B49DD-ED5F-42FC-BBD4-A3E86A6B9639}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{757B49DD-ED5F-42FC-BBD4-A3E86A6B9639}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{757B49DD-ED5F-42FC-BBD4-A3E86A6B9639}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{757B49DD-ED5F-42FC-BBD4-A3E86A6B9639}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -2,15 +2,15 @@ package com.maxcriser.tweets_android.model;
 
 public class PointModel {
 
-    private String word;
-    private double points;
+    private final String word;
+    private final double points;
 
-    public PointModel(String word, double points) {
+    public PointModel(final String word, final double points) {
         this.word = word;
         this.points = points;
     }
 
-    public String getWord() {
+    String getWord() {
         return word;
     }
 

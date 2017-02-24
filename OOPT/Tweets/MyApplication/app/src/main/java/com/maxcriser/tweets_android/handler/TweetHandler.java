@@ -9,9 +9,10 @@ public final class TweetHandler {
 
     public static List<WordModel> getListWordsFromText(final String text) {
         final List<WordModel> wordModels = new ArrayList<>();
+        WordModel newWordModel;
         final String[] wordsStrings = text.split("[() \"/,;{}:.!?+_#@$%^&*='><\\s]+");
         for (int i = 0; i < wordsStrings.length; i++) {
-            final WordModel newWordModel = new WordModel(wordsStrings[i].toLowerCase());
+            newWordModel = new WordModel(wordsStrings[i].toLowerCase());
             wordModels.add(newWordModel);
         }
         return wordModels;

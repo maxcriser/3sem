@@ -26,14 +26,15 @@ public class TweetLocationModel {
         final Geocoder geocoder = new Geocoder(pContext, Locale.getDefault());
         try {
             final Address address = geocoder.getFromLocation(latitude, longitude, 1).get(0);
-            return getStateCode(address.toString()).replace(", ", "").replace(" ", "");
+            return getStateCode(address.toString()).replace(", ", "");
+//            return address.getAdminArea();
         } catch (final IOException pE) {
             return LOCATION_IS_NOT_FOUND;
         }
     }
 
     private String getStateCode(final CharSequence text) {
-        return getRegexString(text, ", [A-Z]{2} ");
+        return getRegexString(text, ", [A-Z]{2}");
     }
 
     private String getRegexString(final CharSequence text, final String regex) {

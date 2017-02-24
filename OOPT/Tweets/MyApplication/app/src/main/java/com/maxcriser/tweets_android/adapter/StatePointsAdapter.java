@@ -34,7 +34,7 @@ public class StatePointsAdapter extends RecyclerView.Adapter<StatePointsHolder> 
     public void onBindViewHolder(final StatePointsHolder holder, final int position) {
         final StateModel state = mStateModelList.get(position);
 
-        holder.pointsState.setText(String.valueOf(state.getValue()));
+        holder.pointsState.setText(String.valueOf(state.getPoints()));
         holder.codeState.setText(state.getCode());
         holder.nameState.setText(state.getStateName());
     }

@@ -8,10 +8,10 @@
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
 
+
     <include
         android:id="@+id/content_main"
         layout="@layout/content_home"/>
-
     <include
         android:id="@+id/content_location"
         layout="@layout/content_location"/>

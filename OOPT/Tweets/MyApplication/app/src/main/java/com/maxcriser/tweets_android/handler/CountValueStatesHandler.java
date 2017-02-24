@@ -23,7 +23,7 @@ public class CountValueStatesHandler {
                 final Tweet checkTweet = mTweetList.get(i);
                 final StateModel checkStateModel = pStateModels.get(j);
                 if (checkTweet.getLocation().state.equals(checkStateModel.getCode())) {
-                    checkStateModel.addValue(checkTweet.getPoints());
+                    checkStateModel.addPoints(checkTweet.getPoints());
                 }
             }
         }
