@@ -1,36 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merge xmlns:android="http://schemas.android.com/apk/res/android"
-       xmlns:card_view="http://schemas.android.com/apk/res-auto"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content">
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:card_view="http://schemas.android.com/apk/res-auto"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content">
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        card_view:cardBackgroundColor="@color/white_shadow"
+        android:layout_height="wrap_content"
         card_view:cardElevation="4dp">
 
-        <TextView
-            android:layout_marginStart="56dp"
-            android:id="@+id/title_toolbar"
-            android:layout_width="wrap_content"
-            android:layout_height="56dp"
-            android:layout_gravity="bottom"
-            android:gravity="center"
-            android:text="@string/app_name"
-            android:textColor="@color/text_toolbar"
-            android:textSize="18sp"
-            android:textStyle="bold"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-        <ImageButton
-            android:onClick="onMenuClicked"
-            android:id="@+id/imageButton"
-            android:layout_width="56dp"
-            android:layout_height="56dp"
-            android:layout_gravity="bottom"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/ic_menu_black_24dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="56dp">
+
+                <ImageButton
+                    android:id="@+id/imageButton"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:layout_gravity="bottom"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:onClick="onMenuClicked"
+                    android:src="@drawable/ic_menu_black_24dp"/>
+
+                <TextView
+                    android:id="@+id/title_toolbar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="56dp"
+                    android:layout_gravity="bottom"
+                    android:gravity="center"
+                    android:text="@string/home"
+                    android:textColor="@color/text_toolbar"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:onClick="onHomeClicked"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:src="@drawable/home"/>
+
+                <ImageButton
+                    android:onClick="onLocationClicked"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:src="@drawable/map_marker"/>
+
+                <ImageButton
+                    android:onClick="onMapClicked"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:src="@drawable/google_maps"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
 
     </android.support.v7.widget.CardView>
 
-</merge>
+</FrameLayout>

@@ -14,6 +14,7 @@ import java.util.List;
 
 public class TweetAdapter extends RecyclerView.Adapter<TweetHolder> {
 
+    private static final String ERROR = "Error";
     private final List<Tweet> tweetsList;
     private final Context mContext;
 
@@ -33,11 +34,11 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetHolder> {
     @Override
     public void onBindViewHolder(final TweetHolder holder, final int position) {
         final Tweet tweet = tweetsList.get(position);
-        holder.mState.setText(tweet.getLocation().getState(mContext));
+
+        holder.mState.setText(tweet.getLocation().state);
         holder.mTextView.setText(tweet.getTextTweet());
-        holder.mLongitude.setText(tweet.getLocation().getLongitude());
-        holder.mLatitude.setText(tweet.getLocation().getLatitude());
         holder.mDate.setText(tweet.getDate());
+        holder.points.setText(tweet.getPoints() + "");
     }
 
     @Override

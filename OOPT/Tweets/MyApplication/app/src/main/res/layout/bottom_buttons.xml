@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="28dp"
+        android:background="#FFFFFFFF"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_width="28dp"
+            android:src="@drawable/ic_action_reply_pressed"
+            android:layout_height="28dp"/>
+
+
+        <ImageView
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_width="28dp"
+            android:src="@drawable/ic_action_rt_off_default"
+            android:layout_height="28dp"/>
+
+        <ImageView
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_width="28dp"
+            android:src="@drawable/ic_action_dm_pressed"
+            android:layout_height="28dp"/>
+
+        <ImageView
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_width="28dp"
+            android:src="@drawable/ic_action_heart_off_pressed"
+            android:layout_height="28dp"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/points"
+        android:layout_marginEnd="16dp"
+        android:textSize="10sp"
+        android:layout_width="match_parent"
+        android:layout_gravity="center|end"
+        android:gravity="end|center"
+        android:layout_height="28dp"/>
+
+</FrameLayout>

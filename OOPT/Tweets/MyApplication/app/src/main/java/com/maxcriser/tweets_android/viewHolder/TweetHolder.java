@@ -10,16 +10,14 @@ public class TweetHolder extends RecyclerView.ViewHolder {
 
     public TextView mTextView;
     public TextView mDate;
-    public TextView mLatitude;
-    public TextView mLongitude;
     public TextView mState;
+    public TextView points;
 
     public TweetHolder(final View itemView) {
         super(itemView);
+        points = (TextView) itemView.findViewById(R.id.points);
         mTextView = (TextView) itemView.findViewById(R.id.text);
         mDate = (TextView) itemView.findViewById(R.id.date);
-        mLatitude = (TextView) itemView.findViewById(R.id.latitude);
-        mLongitude = (TextView) itemView.findViewById(R.id.longitude);
         mState = (TextView) itemView.findViewById(R.id.state);
     }
 }
