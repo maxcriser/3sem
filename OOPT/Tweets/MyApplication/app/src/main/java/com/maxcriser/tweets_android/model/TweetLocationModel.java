@@ -3,6 +3,7 @@ package com.maxcriser.tweets_android.model;
 import android.content.Context;
 import android.location.Address;
 import android.location.Geocoder;
+import android.util.Log;
 
 import java.io.IOException;
 import java.util.Locale;
@@ -25,6 +26,7 @@ public class TweetLocationModel {
     String getState(final Context pContext) {
         final Geocoder geocoder = new Geocoder(pContext, Locale.getDefault());
         try {
+
             final Address address = geocoder.getFromLocation(latitude, longitude, 1).get(0);
             return getStateCode(address.toString()).replace(", ", "");
 //            return address.getAdminArea();

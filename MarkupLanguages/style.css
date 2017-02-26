@@ -93,24 +93,47 @@ li.dropdown {
 
 .hi-text {
 	font-size: 18px;
-	color: gray;
+	color: #555;
 	line-height: 2;
     margin-left: 6%;
 }
 
 .hire-text {
 	font-size: 18px;
-	color: gray;
+	color: #555;
+}
+
+.title-text {
+	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-size: 50px;
+	color: #555;
+	text-align: center;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+}
+
+.title-text-stars{
+	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-size: 30px;
+	margin-top: -30px;
+	text-align: center;
+	color: #555;
+	font-style: bold;
+	font-variant: normal;
+	font-weight: 300;
+	line-height: 26.4px;
 }
 
 .h1-hi-text {
 	font-size: 24px;
-	color: gray;
+	color: #555;
     margin-left: 6%;
 }
 
 body {
-	background-color: #fcfcfc;
+	background-color: #fff;
 }
 
 h1 {
@@ -121,6 +144,12 @@ h1 {
 	font-weight: 500;
 	line-height: 26.4px;
 }
+
+.margin-hr {
+	margin-left: 8%;
+	margin-right: 8%;
+}
+
 h3 {
 	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
 	font-size: 14px;
@@ -129,6 +158,19 @@ h3 {
 	font-weight: 500;
 	line-height: 15.4px;
 }
+
+.column {
+    -webkit-column-width: 50%;
+    -moz-column-width: 50%;
+    column-width: 50%;
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+    -webkit-column-gap: 30%;
+    -moz-column-gap: 30%;
+    column-gap: 30%;
+}
+   
 p {
 	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
 	font-size: 14px;
