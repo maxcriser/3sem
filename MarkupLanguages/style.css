@@ -1,3 +1,96 @@
+.container {
+	width: auto;
+}
+
+.shadow {
+    background: #333333;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    padding: 1px;
+}
+
+.container-hover {
+    position: relative;
+    width: 90%;
+}
+
+.image-hover {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle-hover {
+  transition: .5s ease;
+  opacity: 0;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+
+.container-hover:hover .image-hover {
+  opacity: 0.3;
+}
+
+.container-hover:hover .middle-hover {
+  opacity: 1;
+}
+
+.text-hover {
+	font-family: "Montserrat", Helvetica, Arial, sans-serif;
+	background-color: #333333;
+	color: white;
+	font-size: 20px;
+	padding: 16px 16px;
+}
+
+.social-slide {
+	height: 48px;
+	width: 48px;
+	margin: 10px;
+	float: left;
+	-webkit-transition: all ease 0.3s;
+	-moz-transition: all ease 0.3s;
+	-o-transition: all ease 0.3s;
+	-ms-transition: all ease 0.3s;
+	transition: all ease 0.3s;
+}
+
+.centerLayer {
+    margin-left: 36%;
+	width: 40%;
+   }
+
+.vk {
+	background-image: url('img/vk-hover.png');
+}
+
+.google-plus {
+	background-image: url('img/google-hover.png');
+}
+
+.twitter {
+	background-image: url('img/twitter-hover.png');
+}
+
+.instagram {
+	background-image: url('img/instagram-hover.png');
+}
+
+.youtube {
+	background-image: url('img/youtube-hover.png');
+}
+
+.social-slide:hover {
+	background-position: 0px -48px;
+	box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.8);
+}
+
 .button {
   display: inline-block;
   border-radius: 4px;
@@ -40,7 +133,7 @@
 }
 
 ul {
-	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -92,10 +185,38 @@ li.dropdown {
 }
 
 .hi-text {
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
 	font-size: 18px;
 	color: #555;
 	line-height: 2;
     margin-left: 6%;
+}
+
+.button-contact {
+    background-color: #333333; /* Green */
+    border: none;
+	width: auto;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button-contact-me {
+    background-color: white;
+    color: black;
+    border: 2px solid #333333;
+}
+
+.button-contact-me:hover {
+    background-color: #333333;
+    color: white;
 }
 
 .hire-text {
@@ -103,8 +224,19 @@ li.dropdown {
 	color: #555;
 }
 
+.title-text-description {
+	font-family: "Montserrat", Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	color: #555;
+	padding-left: 12%;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+}
+
 .title-text {
-	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-family: "Montserrat", Helvetica, Arial, sans-serif;
 	font-size: 50px;
 	color: #555;
 	text-align: center;
@@ -115,7 +247,7 @@ li.dropdown {
 }
 
 .title-text-stars{
-	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-family: "Montserrat", Helvetica, Arial, sans-serif;
 	font-size: 30px;
 	margin-top: -30px;
 	text-align: center;
@@ -126,6 +258,11 @@ li.dropdown {
 	line-height: 26.4px;
 }
 
+.first-row-diagrans-text {
+	font-size: 22px;
+	font-family: "Montserrat", Helvetica, Arial, sans-serif;
+}
+
 .h1-hi-text {
 	font-size: 24px;
 	color: #555;
@@ -133,11 +270,15 @@ li.dropdown {
 }
 
 body {
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
 	background-color: #fff;
 }
 
 h1 {
-	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-family: "Montserrat", Helvetica, Arial, sans-serif;
 	font-size: 24px;
 	font-style: normal;
 	font-variant: normal;
@@ -151,7 +292,7 @@ h1 {
 }
 
 h3 {
-	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
 	font-size: 14px;
 	font-style: normal;
 	font-variant: normal;
@@ -170,9 +311,57 @@ h3 {
     -moz-column-gap: 30%;
     column-gap: 30%;
 }
+
+.column-5 {
+    -webkit-column-width: 50%;
+    -moz-column-width: 50%;
+    column-width: 50%;
+    -webkit-column-count: 5;
+    -moz-column-count: 5;
+    column-count: 5;
+    -webkit-column-gap: 30%;
+    -moz-column-gap: 30%;
+    column-gap: 30%;
+}
+
+.column-6 {
+    -webkit-column-width: 50%;
+    -moz-column-width: 50%;
+    column-width: 50%;
+    -webkit-column-count: 6;
+    -moz-column-count: 6;
+    column-count: 6;
+    -webkit-column-gap: 30%;
+    -moz-column-gap: 30%;
+    column-gap: 30%;
+}
+
+.column-4 {
+    -webkit-column-width: 50%;
+    -moz-column-width: 50%;
+    column-width: 50%;
+    -webkit-column-count: 4;
+    -moz-column-count: 4;
+    column-count: 4;
+    -webkit-column-gap: 30%;
+    -moz-column-gap: 30%;
+    column-gap: 30%;
+}
+
+.column-2 {
+    -webkit-column-width: 50%;
+    -moz-column-width: 50%;
+    column-width: 50%;
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+    -webkit-column-gap: 30%;
+    -moz-column-gap: 30%;
+    column-gap: 30%;
+}
    
 p {
-	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
 	font-size: 14px;
 	font-style: normal;
 	font-variant: normal;
@@ -180,7 +369,7 @@ p {
 	line-height: 20px;
 }
 blockquote {
-	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
 	font-size: 21px;
 	font-style: normal;
 	font-variant: normal;
@@ -188,7 +377,7 @@ blockquote {
 	line-height: 30px;
 }
 pre {
-	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
 	font-size: 13px;
 	font-style: normal;
 	font-variant: normal;
