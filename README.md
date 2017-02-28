@@ -1,4 +1,6 @@
 # 3sem
+1. abstract!
+1. patterns!!!!!!!!!!!!!!!!!!!!!!!
 1. DTD
 1. XML
 1. MVC

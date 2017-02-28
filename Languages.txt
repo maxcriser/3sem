@@ -1,0 +1,15 @@
+#Languages
+1. SQL
+2. Java
+3. JavaScript
+4. C#
+5. Python
+6. C++
+7. PHP
+8. Swift
+9. Ruby on Rails
+10. C
+11. CSS
+12. GO
+13. Haskell
+14. Shell
