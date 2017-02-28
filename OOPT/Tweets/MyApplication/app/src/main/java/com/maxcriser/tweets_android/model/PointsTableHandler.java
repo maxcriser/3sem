@@ -9,7 +9,7 @@ import com.maxcriser.tweets_android.manager.TweetFileManager;
 import java.io.File;
 import java.util.List;
 
-final class PointsTableModel {
+final class PointsTableHandler {
 
     private static List<PointModel> sPointModelList;
     public static String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/tweets_folder";
@@ -27,16 +27,19 @@ final class PointsTableModel {
 
     static double getPoints(final List<WordModel> pWordModels) {
         final List<PointModel> list = getPointList();
+        int countMatches = 0;
         double result = 0.0;
-
+        // you binary-search or hashtable
         for (int i = 0; i < pWordModels.size(); i++) {
             for (int j = 0; j < list.size(); j++) {
                 if (pWordModels.get(i).getWord().equals(list.get(j).getWord())) {
                     result += list.get(j).getPoints();
+                    countMatches++;
+                    Log.d("INFO", "result+= " + result + " : countMatches= " + countMatches);
                     break;
                 }
             }
         }
-        return result;
+        return (countMatches == 0) ? result : result/countMatches;
     }
 }

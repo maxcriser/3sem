@@ -1,6 +1,8 @@
 package com.maxcriser.tweets_android.model;
 
 import android.content.Context;
+import android.util.Log;
+import android.widget.Toast;
 
 import com.maxcriser.tweets_android.handler.TweetHandler;
 
@@ -18,7 +20,11 @@ public class Tweet {
     public Tweet(final Context pContext, final String latitude, final String longitude, final String unknownNumber,
                  final String date, final String textTweet) {
         this.mWordModels = TweetHandler.getListWordsFromText(textTweet);
-        this.points = PointsTableModel.getPoints(mWordModels);
+        this.points = PointsTableHandler.getPoints(mWordModels);
+        if(points<-1 || points >1){
+            Toast.makeText(pContext, "ERRORR!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!", Toast.LENGTH_SHORT).show();
+        }
+        Log.d("INFO", "result/countMatches= " + points);
         this.location = new TweetLocationModel(latitude, longitude);
         location.state = location.getState(pContext);
         this.unknownNumber = unknownNumber;

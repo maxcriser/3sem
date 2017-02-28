@@ -2,6 +2,7 @@ package com.maxcriser.tweets_android.viewHolder;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.maxcriser.tweets_android.R;

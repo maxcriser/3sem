@@ -1,6 +1,7 @@
 package com.maxcriser.tweets_android.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,9 +35,10 @@ public class StatePointsAdapter extends RecyclerView.Adapter<StatePointsHolder> 
     public void onBindViewHolder(final StatePointsHolder holder, final int position) {
         final StateModel state = mStateModelList.get(position);
 
-        holder.pointsState.setText(String.valueOf(state.getPoints()));
+        holder.pointsState.setText(String.format("%.3f", state.getPoints()));
         holder.codeState.setText(state.getCode());
         holder.nameState.setText(state.getStateName());
+        holder.linearTable.setBackgroundColor(Color.rgb(state.getColor().getR(), state.getColor().getG(), state.getColor().getB()));
     }
 
     @Override

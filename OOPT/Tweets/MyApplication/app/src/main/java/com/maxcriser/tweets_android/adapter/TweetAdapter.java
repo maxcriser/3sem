@@ -38,7 +38,7 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetHolder> {
         holder.mState.setText(tweet.getLocation().state);
         holder.mTextView.setText(tweet.getTextTweet());
         holder.mDate.setText(tweet.getDate());
-        holder.points.setText(tweet.getPoints() + "");
+        holder.points.setText(tweet.getPoints() + "");;
     }
 
     @Override
