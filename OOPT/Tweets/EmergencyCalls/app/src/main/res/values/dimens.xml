@@ -6,4 +6,18 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="height_em">92dp</dimen>
+    <dimen name="minus_height_em">-92dp</dimen>
+    <dimen name="circle_size">64dp</dimen>
+    <dimen name="minus_circle_size">-64dp</dimen>
+    <dimen name="circle_size_del_two_minus_one">31dp</dimen>
+    <dimen name="circle_size_del_two">32dp</dimen>
+    <dimen name="textsize_title">16sp</dimen>
+    <dimen name="textsize_description">12sp</dimen>
+    <dimen name="ld_side_margin">22dp</dimen>
+    <dimen name="ld_side_cb_margin">16dp</dimen>
+    <dimen name="top_toolbar_height">48dp</dimen>
+    <dimen name="all_toolbar_height">112dp</dimen>
+    <dimen name="all_toolbar_height_minus_4">108dp</dimen>
+
 </resources>

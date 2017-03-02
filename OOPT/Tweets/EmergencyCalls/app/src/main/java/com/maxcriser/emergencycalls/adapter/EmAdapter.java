@@ -42,6 +42,16 @@ public class EmAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         final Em item = items.get(position);
         final EmViewHolder vh = (EmViewHolder) holder;
         vh.titleView.setText(item.getTitle());
+        vh.descriptionView.setText(item.getDescription());
+        if(item.getTitle().equals("Fire Department")){
+            vh.image.setBackgroundResource(R.drawable.fire);
+        } else if(item.getTitle().equals("Ambulance")){
+            vh.image.setBackgroundResource(R.drawable.ambulance);
+        } else if(item.getTitle().equals("Police")){
+            vh.image.setBackgroundResource(R.drawable.police);
+        } else {
+            vh.image.setBackgroundResource(R.drawable.sos);
+        }
         vh.data = item;
 
     }

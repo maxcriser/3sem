@@ -1,36 +1,41 @@
-<?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <group android:checkableBehavior="single">
+    <group android:checkableBehavior="none">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import"/>
+            android:id="@+id/nav_pin"
+            android:icon="@drawable/ic_menu_pin"
+            android:title="Setup PING"/>
+
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery"/>
+            android:id="@+id/send_feedback"
+            android:icon="@drawable/send_feedback"
+            android:title="Send feedback"/>
+
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow"/>
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools"/>
+            android:id="@+id/help"
+            android:icon="@drawable/help"
+            android:title="Help"/>
+        <!--<item-->
+        <!--android:id="@+id/mi_drawer_item_live_traffic"-->
+        <!--android:icon="@drawable/ic_nav_night_mode"-->
+        <!--android:title="@string/use_fingerprint"-->
+        <!--app:actionLayout="@layout/fragment_nav_switch"/>-->
     </group>
 
-    <item android:title="Communicate">
-        <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share"/>
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send"/>
-        </menu>
-    </item>
+    <group>
+        <item android:title="Communication">
+            <menu>
+                <item
+                    android:id="@+id/nav_share"
+                    android:icon="@drawable/ic_menu_share"
+                    android:title="Share"/>
+                <item
+                    android:id="@+id/nav_about"
+                    android:icon="@drawable/information_variant"
+                    android:title="About"/>
+            </menu>
+        </item>
+    </group>
 
 </menu>
