@@ -10,6 +10,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
         <include layout="@layout/content_main"/>
+        <include layout="@layout/content_map"/>
 
         <include layout="@layout/fragment_toolbar_main"/>
 

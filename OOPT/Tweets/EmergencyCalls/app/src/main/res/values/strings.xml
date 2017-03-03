@@ -9,7 +9,10 @@
     <string name="ex_msg_dialog_choice_confirm">Confirm button is only for multi choice lists. You must call setMultiChoiceItems first</string>
     <string name="ex_msg_dialog_view_not_set">You must call method setView before calling configureView.</string>
     <string name="your_message">Message</string>
-    <string name="attach_location">Attach the current location</string>
+    <string name="attach_location">Attach current coordinates</string>
+    <string name="show_me">Show me</string>
+    <string name="send_a_message">Send a message</string>
+    <string name="make_a_call">Make a call</string>
 
     <string-array name="choose_message">
         <item>Please, help me!</item>

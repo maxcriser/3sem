@@ -11,7 +11,7 @@
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler"
-        android:paddingTop="@dimen/all_toolbar_height"
+        android:paddingTop="@dimen/all_toolbar_height_minus_4"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

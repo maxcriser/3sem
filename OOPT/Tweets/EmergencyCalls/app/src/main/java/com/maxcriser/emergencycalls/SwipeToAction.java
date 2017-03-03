@@ -20,6 +20,7 @@ package com.maxcriser.emergencycalls;
 import android.animation.Animator;
 import android.content.Context;
 import android.content.res.Resources;
+import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.RecyclerView;
 import android.util.TypedValue;
 import android.view.MotionEvent;
@@ -31,6 +32,7 @@ import android.view.animation.AccelerateInterpolator;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.Locale;
 import java.util.Queue;
 import java.util.Set;
 
@@ -69,8 +71,9 @@ public class SwipeToAction {
     private Set<View> runningAnimationsOn = new HashSet<>();
     private Queue<Integer> swipeQueue = new LinkedList<>();
 
-
-    /** Constructor **/
+    /**
+     * Constructor
+     **/
 
     public SwipeToAction(final Context pContext, RecyclerView recyclerView, SwipeListener swipeListener) {
         this.recyclerView = recyclerView;
@@ -80,11 +83,13 @@ public class SwipeToAction {
         init();
     }
 
-
-    /** Private methods **/
+    /**
+     * Private methods
+     **/
 
     private void init() {
         recyclerView.setOnTouchListener(new View.OnTouchListener() {
+
             @Override
             public boolean onTouch(View v, MotionEvent ev) {
                 switch (ev.getAction() & MotionEvent.ACTION_MASK) {
@@ -133,7 +138,9 @@ public class SwipeToAction {
                         final float x = ev.getX(pointerIndex);
                         final float dx = x - downX;
 
-                        if (!shouldMove(dx)) break;
+                        if (!shouldMove(dx)) {
+                            break;
+                        }
 
                         // current position. moving only over x-axis
                         frontViewLastX = frontViewX + dx + (dx > 0 ? -REVEAL_THRESHOLD : REVEAL_THRESHOLD);
@@ -207,7 +214,6 @@ public class SwipeToAction {
         Resources r = mContext.getResources();
         float px = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 0, r.getDisplayMetrics());
 
-
         frontViewX -= px;
         frontViewW = 0;
         frontViewLastX = 0;
@@ -242,6 +248,7 @@ public class SwipeToAction {
                 .setDuration(RESET_ANIMATION_DURATION)
                 .setInterpolator(new AccelerateDecelerateInterpolator())
                 .setListener(new Animator.AnimatorListener() {
+
                     @Override
                     public void onAnimationStart(Animator animation) {
                         runningAnimationsOn.add(animated);
@@ -281,7 +288,7 @@ public class SwipeToAction {
 
             if (diffX <= 5 && diffY <= 5) {
                 int pressTime = (int) (upTime - downTime);
-                if  (pressTime > LONG_PRESS_TIME) {
+                if (pressTime > LONG_PRESS_TIME) {
                     swipeListener.onLongClick(touchedViewHolder.getItemData());
                 } else {
                     swipeListener.onClick(touchedViewHolder.getItemData());
@@ -294,7 +301,21 @@ public class SwipeToAction {
         clear();
     }
 
+    public static boolean isRTL() {
+        return isRTL(Locale.getDefault());
+    }
+
+    public static boolean isRTL(Locale locale) {
+        final int directionality = Character.getDirectionality(locale.getDisplayName().charAt(0));
+        return directionality == Character.DIRECTIONALITY_RIGHT_TO_LEFT ||
+                directionality == Character.DIRECTIONALITY_RIGHT_TO_LEFT_ARABIC;
+    }
+
     private void swipeRight() {
+        if (isRTL()) {
+            swipeLeft();
+            return;
+        }
         if (frontView == null) {
             return;
         }
@@ -304,6 +325,7 @@ public class SwipeToAction {
                 .setDuration(SWIPE_ANIMATION_DURATION)
                 .setInterpolator(new AccelerateInterpolator())
                 .setListener(new Animator.AnimatorListener() {
+
                     @Override
                     public void onAnimationStart(Animator animation) {
                         runningAnimationsOn.add(animated);
@@ -332,6 +354,10 @@ public class SwipeToAction {
     }
 
     private void swipeLeft() {
+        if (isRTL()) {
+            swipeRight();
+            return;
+        }
         if (frontView == null) {
             return;
         }
@@ -341,6 +367,7 @@ public class SwipeToAction {
                 .setDuration(SWIPE_ANIMATION_DURATION)
                 .setInterpolator(new AccelerateInterpolator())
                 .setListener(new Animator.AnimatorListener() {
+
                     @Override
                     public void onAnimationStart(Animator animation) {
                         runningAnimationsOn.add(animated);
@@ -357,12 +384,12 @@ public class SwipeToAction {
                     }
 
                     @Override
-                    public void onAnimationCancel (Animator animation){
+                    public void onAnimationCancel(Animator animation) {
                         runningAnimationsOn.remove(animated);
                     }
 
                     @Override
-                    public void onAnimationRepeat (Animator animation){
+                    public void onAnimationRepeat(Animator animation) {
                         runningAnimationsOn.add(animated);
                     }
                 }).x(frontViewX - frontViewW);
@@ -389,8 +416,9 @@ public class SwipeToAction {
         }
     }
 
-
-    /** Exposed methods **/
+    /**
+     * Exposed methods
+     **/
 
     public void swipeLeft(int position) {
         // workaround in case a swipe call while dragging
@@ -414,20 +442,29 @@ public class SwipeToAction {
         swipeRight();
     }
 
-
-    /** Public interfaces & classes */
+    /**
+     * Public interfaces & classes
+     */
 
     public interface SwipeListener<T extends Object> {
+
         boolean swipeLeft(T itemData);
+
         boolean swipeRight(T itemData);
+
         void onClick(T itemData);
+
         void onLongClick(T itemData);
     }
 
     public interface IViewHolder<T extends Object> {
+
         View getFront();
+
         View getRevealLeft();
+
         View getRevealRight();
+
         <T extends Object> T getItemData();
     }
 
@@ -452,7 +489,7 @@ public class SwipeToAction {
                 if (childCount < 1) {
                     throw new RuntimeException("You must provide a view with tag='front'");
                 } else {
-                    front = vg.getChildAt(childCount-1);
+                    front = vg.getChildAt(childCount - 1);
                 }
             }
 
@@ -473,7 +510,6 @@ public class SwipeToAction {
                 }
             }
 
-
         }
 
         @Override
@@ -492,6 +528,8 @@ public class SwipeToAction {
         }
 
         @Override
-        public T getItemData() { return data; }
+        public T getItemData() {
+            return data;
+        }
     }
 }

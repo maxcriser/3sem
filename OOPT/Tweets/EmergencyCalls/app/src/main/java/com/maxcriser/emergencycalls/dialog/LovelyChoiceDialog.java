@@ -21,9 +21,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * Created by yarolegovich on 16.04.2016.
- */
 public class LovelyChoiceDialog extends AbsLovelyDialog<LovelyChoiceDialog> {
 
     private static final String KEY_ITEM_CHECKED_STATES = "key_item_checked_states";
