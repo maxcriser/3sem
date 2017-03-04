@@ -1,16 +1,14 @@
 package com.maxcriser.emergencycalls;
 
 import android.Manifest;
-import android.accounts.Account;
-import android.accounts.AccountManager;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
-import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
@@ -39,17 +37,18 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 import com.maxcriser.emergencycalls.adapter.EmAdapter;
-import com.maxcriser.emergencycalls.constants.LocationTable;
+import com.maxcriser.emergencycalls.constants.CountryTable;
 import com.maxcriser.emergencycalls.dialog.LovelyCustomDialog;
 import com.maxcriser.emergencycalls.dialog.LovelyCustomPickerDialog;
 import com.maxcriser.emergencycalls.manager.GPSManager;
+import com.maxcriser.emergencycalls.manager.PhoneManager;
+import com.maxcriser.emergencycalls.model.CountryEm;
 import com.maxcriser.emergencycalls.model.Em;
 import com.maxcriser.emergencycalls.view.labels.EditTextRobotoRegular;
 
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
 
@@ -59,6 +58,7 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private static final int zoom = 14;
+    private static final String TEXT_PLAIN = "text/plain";
     RecyclerView recyclerView;
     EmAdapter adapter;
     SwipeToAction swipeToAction;
@@ -73,8 +73,6 @@ public class MainActivity extends AppCompatActivity
     private GoogleMap googleMap;
     private LatLng currentLatLng;
     private Location mLocation;
-    private View.OnClickListener onCall;
-    private View.OnClickListener onSendMesge;
 
     @Override
     public void onBackPressed() {
@@ -105,19 +103,20 @@ public class MainActivity extends AppCompatActivity
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
-    public boolean onNavigationItemSelected(final MenuItem item) {
+    public boolean onNavigationItemSelected(@NonNull final MenuItem item) {
         final int id = item.getItemId();
 
-        if (id == R.id.nav_pin) {
-
-        } else if (id == R.id.send_feedback) {
-
+        if (id == R.id.send_feedback) {
+            startActivity(new Intent(this, FeedbackActivity.class));
         } else if (id == R.id.help) {
-
+            startActivity(new Intent(this, HelpActivity.class));
         } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_about) {
-
+            final Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+            sharingIntent.setType(TEXT_PLAIN);
+            sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, getString(R.string.e_android_application_share_title));
+            sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, getString(R.string.body_share));
+            final String SHARE_USING = "share_using";
+            startActivity(Intent.createChooser(sharingIntent, SHARE_USING));
         }
 
         final DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -158,15 +157,6 @@ public class MainActivity extends AppCompatActivity
     public void onSpaceClicked(final View view) {
     }
 
-    public void onShowMeClicked(final View view) {
-        try {
-            googleMap.addMarker(new MarkerOptions().position(currentLatLng).title("Show me").snippet("It's me"));
-            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, zoom));
-        } catch (final Exception e) {
-            Toast.makeText(this, "Cannot load", Toast.LENGTH_LONG).show();
-        }
-    }
-
     @Override
     protected void onResume() {
         super.onResume();
@@ -204,40 +194,9 @@ public class MainActivity extends AppCompatActivity
         initViews();
     }
 
-    public String getUsername() {
-        final AccountManager manager = AccountManager.get(this);
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.GET_ACCOUNTS) == PackageManager.PERMISSION_GRANTED) {
-            final Account[] accounts = manager.getAccountsByType("com.google");
-            final List<String> possibleEmails = new LinkedList<>();
-
-            for (final Account account : accounts) {
-                // TODO: Check possibleEmail against an email regex or treat
-                // account.name as an email address only for certain account.type values.
-                possibleEmails.add(account.name);
-            }
-
-            if (!possibleEmails.isEmpty() && possibleEmails.get(0) != null) {
-                return possibleEmails.get(0);
-            } else {
-                return "";
-            }
-        } else {
-            return "";
-        }
-    }
-
-    private void makeCallTo() {
-        final Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:+375298893673"));
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-            return;
-        }
-        startActivity(intent);
-        recyclerView.setAdapter(adapter);
-    }
-
-    private void sendMessageTo() {
+    private void sendMessageTo(final Em itemData) {
         final List<String> chooseMessage = Arrays.asList(getResources().getStringArray(R.array.choose_message));
-        final LovelyCustomDialog dialog = new LovelyCustomDialog(MainActivity.this);
+        final LovelyCustomDialog dialog = new LovelyCustomDialog(this);
         dialog.setView(R.layout.fragment_send_message)
                 .setTopColorRes(R.color.text_toolbar)
                 .setCancelable(true)
@@ -296,8 +255,6 @@ public class MainActivity extends AppCompatActivity
 
             @Override
             public void onClick(final View v) {
-                // TODO: 02.03.2017 send message to getSMSnumber
-                displaySnackbar("Sending messages in rescue service...", null, null);
                 String messageStr = message.getText().toString();
                 if (mLocation != null) {
                     if (checkbox.isChecked()) {
@@ -305,7 +262,12 @@ public class MainActivity extends AppCompatActivity
                                 + "Longitude: " + mLocation.getLongitude();
                     }
                 }
-                Toast.makeText(MainActivity.this, messageStr, Toast.LENGTH_LONG).show();
+                try {
+                    PhoneManager.sendSMS(itemData.getSmsNumber(), messageStr);
+                } catch (final Exception pE) {
+                    Toast.makeText(MainActivity.this, "Error sending a message", Toast.LENGTH_LONG).show();
+                }
+                displaySnackbar("Sending messages in rescue service...", null, null);
                 dialog.dismiss();
             }
         });
@@ -319,22 +281,6 @@ public class MainActivity extends AppCompatActivity
         } catch (final Exception e) {
             Log.d("LOC", "NULL");
         }
-
-        onCall = new View.OnClickListener() {
-
-            @Override
-            public void onClick(final View v) {
-                makeCallTo();
-            }
-        };
-
-        onSendMesge = new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                sendMessageTo();
-            }
-        };
 
         phoneContent = (FrameLayout) findViewById(R.id.content_main);
 //        locationContent = (FrameLayout) findViewById(R.id.content_location);
@@ -356,58 +302,63 @@ public class MainActivity extends AppCompatActivity
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
 
-        adapter = new EmAdapter(LocationTable.em);
+        List<Em> emList = new ArrayList<>();
+        emList = new CountryTable(this)
+
+        adapter = new EmAdapter(CountryTable.em);
         recyclerView.setAdapter(adapter);
 
         swipeToAction = new SwipeToAction(this, recyclerView, new SwipeToAction.SwipeListener<Em>() {
 
             @Override
             public boolean swipeLeft(final Em itemData) {
-                // TODO: 02.03.2017 calling to getPhoneNumber
                 displaySnackbar("Calling the " + itemData.getTitle(), null, null);
-                makeCallTo();
+                try {
+                    PhoneManager.makeCall(MainActivity.this, itemData.getPhoneNumber());
+                } catch (final Exception pE) {
+                    Toast.makeText(MainActivity.this, "Call error", Toast.LENGTH_LONG).show();
+                }
                 return true;
             }
 
             @Override
             public boolean swipeRight(final Em itemData) {
-                sendMessageTo();
+                sendMessageTo(itemData);
                 return true;
             }
 
             @Override
             public void onClick(final Em itemData) {
-                showPickerDialog();
+                showPickerDialog(itemData);
             }
 
             @Override
             public void onLongClick(final Em itemData) {
-                showPickerDialog();
+                showPickerDialog(itemData);
             }
         });
     }
 
-    private void showPickerDialog() {
-        final LovelyCustomPickerDialog dialogOnClick = new LovelyCustomPickerDialog(MainActivity.this);
+    private void showPickerDialog(final Em itemData) {
+        final LovelyCustomPickerDialog dialogOnClick = new LovelyCustomPickerDialog(this);
         dialogOnClick.setView(R.layout.fragment_choose_action)
                 .setCancelable(true)
                 .setListener(R.id.make_a_call, new View.OnClickListener() {
 
                     @Override
-                    public void onClick(View v) {
-                        final Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:+375298893673"));
-                        if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                            return;
+                    public void onClick(final View v) {
+                        try {
+                            PhoneManager.makeCall(MainActivity.this, itemData.getPhoneNumber());
+                        } catch (final Exception pE) {
+                            Toast.makeText(MainActivity.this, "Call error", Toast.LENGTH_LONG).show();
                         }
-                        startActivity(intent);
-                        recyclerView.setAdapter(adapter);
                         dialogOnClick.dismiss();
                     }
                 })
                 .setListener(R.id.send_a_mesge, new View.OnClickListener() {
 
                     @Override
-                    public void onClick(View v) {
+                    public void onClick(final View v) {
                         final List<String> chooseMessage = Arrays.asList(getResources().getStringArray(R.array.choose_message));
                         final LovelyCustomDialog dialog = new LovelyCustomDialog(MainActivity.this);
                         dialog.setView(R.layout.fragment_send_message)
@@ -468,8 +419,6 @@ public class MainActivity extends AppCompatActivity
 
                             @Override
                             public void onClick(final View v) {
-                                // TODO: 02.03.2017 send message to getSMSnumber
-                                displaySnackbar("Sending messages in rescue service...", null, null);
                                 String messageStr = message.getText().toString();
                                 if (mLocation != null) {
                                     if (checkbox.isChecked()) {
@@ -477,7 +426,12 @@ public class MainActivity extends AppCompatActivity
                                                 + "Longitude: " + mLocation.getLongitude();
                                     }
                                 }
-                                Toast.makeText(MainActivity.this, messageStr, Toast.LENGTH_LONG).show();
+                                try {
+                                    PhoneManager.sendSMS(itemData.getSmsNumber(), messageStr);
+                                } catch (final Exception pE) {
+                                    Toast.makeText(MainActivity.this, "Error sending a message", Toast.LENGTH_LONG).show();
+                                }
+                                displaySnackbar("Sending messages in rescue service...", null, null);
                                 dialog.dismiss();
                             }
                         });

@@ -8,23 +8,10 @@
     android:visibility="gone"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-
     <com.google.android.gms.maps.MapView
         android:id="@+id/map"
         android:paddingTop="@dimen/all_toolbar_height_minus_4"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
-
-    <TextView
-        android:layout_gravity="bottom|center"
-        android:gravity="center"
-        android:layout_marginBottom="48dp"
-        android:textColor="@android:color/white"
-        android:textSize="14sp"
-        android:text="@string/show_me"
-        android:onClick="onShowMeClicked"
-        android:background="@color/text_toolbar"
-        android:layout_width="112dp"
-        android:layout_height="48dp"/>
 
 </FrameLayout>

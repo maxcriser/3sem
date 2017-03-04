@@ -2,15 +2,25 @@ package com.maxcriser.emergencycalls.model;
 
 public class Em {
 
-    private String title;
-    private String description;
-    private String number;
+    private final String title;
+    private final String description;
+    private final String phoneNumber;
+    private final String smsNumber;
     private String imageUrl;
 
-    public Em(String pTitle, String pDescription, String pNumber) {
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public String getSmsNumber() {
+        return smsNumber;
+    }
+
+    public Em(final String pTitle, final String pDescription, final String pPhoneNumber, final String pSmsNumber) {
         title = pTitle;
         description = pDescription;
-        number = pNumber;
+        phoneNumber = pPhoneNumber;
+        smsNumber = pSmsNumber;
 //        imageUrl = pImageUrl;
     }
 
@@ -20,10 +30,6 @@ public class Em {
 
     public String getDescription() {
         return description;
-    }
-
-    public String getNumber() {
-        return number;
     }
 
     public String getImageUrl() {

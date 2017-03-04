@@ -1,11 +1,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-      xmlns:app="http://schemas.android.com/apk/res-auto">
+    >
 
     <group android:checkableBehavior="none">
-        <item
-            android:id="@+id/nav_pin"
-            android:icon="@drawable/ic_menu_pin"
-            android:title="Setup PING"/>
 
         <item
             android:id="@+id/send_feedback"
@@ -30,10 +26,7 @@
                     android:id="@+id/nav_share"
                     android:icon="@drawable/ic_menu_share"
                     android:title="Share"/>
-                <item
-                    android:id="@+id/nav_about"
-                    android:icon="@drawable/information_variant"
-                    android:title="About"/>
+
             </menu>
         </item>
     </group>
