@@ -32,6 +32,10 @@
     <string name="police">Police</string>
     <string name="a_single_number">A single emergency number</string>
     <string name="sos">SOS</string>
+    <string name="s911">SOS 911</string>
+    <string name="s112">SOS 112</string>
+    <string name="s111">SOS 111</string>
+    <string name="s100">SOS 100</string>
 
     <string-array name="choose_message">
         <item>Please, help me!</item>

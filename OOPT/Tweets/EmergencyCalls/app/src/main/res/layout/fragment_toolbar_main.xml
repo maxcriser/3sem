@@ -63,6 +63,7 @@
                         android:src="@drawable/blue_phone"/>
 
                     <ImageButton
+                        android:visibility="gone"
                         android:id="@+id/button_second"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"

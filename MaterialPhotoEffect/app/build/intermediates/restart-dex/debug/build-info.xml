@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    abi="armeabi-v7a,armeabi"
+    api-level="23"
+    density="xxhdpi"
+    format="8"
+    plugin-version="2.2.3"
+    timestamp="11326890884427"
+    token="6659793355682896268"
+    verifier="COLD_SWAP_REQUESTED" >
+
+    <task
+        name="javac"
+        duration="302" />
+    <task
+        name="instant-run-dex"
+        duration="0" />
+    <task
+        name="instant-run-transform"
+        duration="67" />
+    <task
+        name="verifier"
+        duration="8" />
+
+    <artifact
+        location="D:\GitHubProjects\3sem\MaterialPhotoEffect\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_3\classes.dex"
+        type="DEX" />
+
+    <build
+        timestamp="7926256945875"
+        verifier="FULL_BUILD_REQUESTED" >
+        <artifact
+            location="D:\GitHubProjects\3sem\MaterialPhotoEffect\app\build\outputs\apk\app-debug.apk"
+            type="MAIN" />
+    </build>
+    <build
+        timestamp="9395590971836"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="D:\GitHubProjects\3sem\MaterialPhotoEffect\app\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
+            type="RESOURCES" />
+    </build>
+    <build
+        timestamp="11326890884427"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="D:\GitHubProjects\3sem\MaterialPhotoEffect\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_3\classes.dex"
+            type="DEX" />
+    </build>
+
+</instant-run>

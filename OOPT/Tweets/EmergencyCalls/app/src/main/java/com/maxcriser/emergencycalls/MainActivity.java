@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -20,7 +21,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -47,7 +47,13 @@ import com.maxcriser.emergencycalls.model.CountryEm;
 import com.maxcriser.emergencycalls.model.Em;
 import com.maxcriser.emergencycalls.view.labels.EditTextRobotoRegular;
 
-import java.util.ArrayList;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
@@ -59,6 +65,9 @@ public class MainActivity extends AppCompatActivity
 
     private static final int zoom = 14;
     private static final String TEXT_PLAIN = "text/plain";
+    private static final String HTTP_IP_API_COM_JSON = "http://ip-api.com/json";
+    private static final String GET = "GET";
+    private static final String COUNTRY = "country";
     RecyclerView recyclerView;
     EmAdapter adapter;
     SwipeToAction swipeToAction;
@@ -73,6 +82,8 @@ public class MainActivity extends AppCompatActivity
     private GoogleMap googleMap;
     private LatLng currentLatLng;
     private Location mLocation;
+    private List<Em> currentEm;
+    private List<CountryEm> mCountryEmList;
 
     @Override
     public void onBackPressed() {
@@ -144,6 +155,28 @@ public class MainActivity extends AppCompatActivity
         third.setImageResource(R.drawable.blue_google_maps);
         phoneContent.setVisibility(GONE);
         mapContent.setVisibility(View.VISIBLE);
+
+        if (googleMap == null) {
+            mapView.onResume();
+            mapView.getMapAsync(new OnMapReadyCallback() {
+
+                @Override
+                public void onMapReady(final GoogleMap pGoogleMap) {
+                    googleMap = pGoogleMap;
+                    googleMap.getUiSettings().setAllGesturesEnabled(true);
+
+                    if (ActivityCompat.checkSelfPermission(MainActivity.this,
+                            Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
+                            && ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                        return;
+                    }
+                    googleMap.setMyLocationEnabled(true);
+                    if (currentLatLng != null) {
+                        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, zoom));
+                    }
+                }
+            });
+        }
     }
 
     public void onMenuClicked(final View view) {
@@ -170,28 +203,31 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mapView = (MapView) findViewById(R.id.map);
-        mapView.onCreate(savedInstanceState);
-        mapView.onResume();
-        mapView.getMapAsync(new OnMapReadyCallback() {
-
-            @Override
-            public void onMapReady(final GoogleMap pGoogleMap) {
-                googleMap = pGoogleMap;
-                googleMap.getUiSettings().setAllGesturesEnabled(true);
-
-                if (ActivityCompat.checkSelfPermission(MainActivity.this,
-                        Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
-                        && ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                    return;
-                }
-                googleMap.setMyLocationEnabled(true);
-                if (currentLatLng != null) {
-                    googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, zoom));
-                }
-            }
-        });
         initViews();
+        CountryTable countryTable = new CountryTable(this);
+        mCountryEmList = countryTable.getEm();
+        currentEm = mCountryEmList.get(mCountryEmList.size() - 1).getEmList();
+        mapView.onCreate(savedInstanceState);
+        initLocation();
+    }
+
+    private void initViews() {
+        recyclerView = (RecyclerView) findViewById(R.id.recycler);
+        mapView = (MapView) findViewById(R.id.map);
+        phoneContent = (FrameLayout) findViewById(R.id.content_main);
+        mapContent = (FrameLayout) findViewById(R.id.content_map);
+        first = (ImageButton) findViewById(R.id.button_first);
+        second = (ImageButton) findViewById(R.id.button_second);
+        third = (ImageButton) findViewById(R.id.button_third);
+        mDrawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        final NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        final ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, mDrawer, null,
+                R.string.navigation_drawer_open,
+                R.string.navigation_drawer_close);
+        mDrawer.addDrawerListener(toggle);
+        toggle.syncState();
+        navigationView.setNavigationItemSelectedListener(this);
+
     }
 
     private void sendMessageTo(final Em itemData) {
@@ -273,39 +309,11 @@ public class MainActivity extends AppCompatActivity
         });
     }
 
-    private void initViews() {
-        final Geocoder geocoder = new Geocoder(this, Locale.getDefault());
-        try {
-            final Address address = geocoder.getFromLocation(GPSManager.getGPS(this).getLatitude(), GPSManager.getGPS(this).getLongitude(), 1).get(0);
-            Log.d("LOC", address.getAddressLine(0));
-        } catch (final Exception e) {
-            Log.d("LOC", "NULL");
-        }
-
-        phoneContent = (FrameLayout) findViewById(R.id.content_main);
-//        locationContent = (FrameLayout) findViewById(R.id.content_location);
-        mapContent = (FrameLayout) findViewById(R.id.content_map);
-        first = (ImageButton) findViewById(R.id.button_first);
-        second = (ImageButton) findViewById(R.id.button_second);
-        third = (ImageButton) findViewById(R.id.button_third);
-        mDrawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        final NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        final ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, mDrawer, null,
-                R.string.navigation_drawer_open,
-                R.string.navigation_drawer_close);
-        mDrawer.addDrawerListener(toggle);
-        toggle.syncState();
-        navigationView.setNavigationItemSelectedListener(this);
-
-        recyclerView = (RecyclerView) findViewById(R.id.recycler);
+    private void setUpRecyclerView() {
         final LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
-
-        List<Em> emList = new ArrayList<>();
-        emList = new CountryTable(this)
-
-        adapter = new EmAdapter(CountryTable.em);
+        adapter = new EmAdapter(currentEm);
         recyclerView.setAdapter(adapter);
 
         swipeToAction = new SwipeToAction(this, recyclerView, new SwipeToAction.SwipeListener<Em>() {
@@ -439,6 +447,92 @@ public class MainActivity extends AppCompatActivity
                     }
                 })
                 .show();
+
+    }
+
+    private void setUpCurrentEm(final String country) {
+        for (int i = 0; i < mCountryEmList.size(); i++) {
+            if (mCountryEmList.get(i).getCountryName().equals(country)) {
+                currentEm = mCountryEmList.get(i).getEmList();
+                break;
+            }
+        }
+    }
+
+    private void loadFromAPI() {
+        new AsyncTask<String, Void, String>() {
+
+            @Override
+            protected void onPostExecute(final String pS) {
+                super.onPostExecute(pS);
+                if (pS != null) {
+                    setUpCurrentEm(pS);
+                } else {
+                    Toast.makeText(MainActivity.this, "Error loading from API", Toast.LENGTH_SHORT).show();
+                }
+                setUpRecyclerView();
+            }
+
+            @Override
+            protected String doInBackground(final String... params) {
+                try {
+                    final URL url = new URL(params[0]);
+
+                    final HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+                    urlConnection.setRequestMethod(GET);
+                    urlConnection.connect();
+
+                    final InputStream inputStream = urlConnection.getInputStream();
+                    final StringBuilder buffer = new StringBuilder();
+
+                    final BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+
+                    String line;
+                    while ((line = reader.readLine()) != null) {
+                        buffer.append(line);
+                    }
+
+                    final String resultJson = buffer.toString();
+                    inputStream.close();
+
+                    final JSONObject dataJsonObj;
+                    dataJsonObj = new JSONObject(resultJson);
+
+                    final String COUNTRY_ID = COUNTRY;
+                    return dataJsonObj.getString(COUNTRY_ID);
+                } catch (final Exception e) {
+                    return null;
+                }
+            }
+        }.execute(HTTP_IP_API_COM_JSON);
+    }
+
+    private void initLocation() {
+        new AsyncTask<Void, Void, String>() {
+
+            @Override
+            protected void onPostExecute(final String pS) {
+                super.onPostExecute(pS);
+                if (pS != null) {
+                    setUpCurrentEm(pS);
+                    setUpRecyclerView();
+                } else {
+                    Toast.makeText(MainActivity.this, "Error loading from GPS", Toast.LENGTH_SHORT).show();
+                    loadFromAPI();
+                }
+            }
+
+            @Override
+            protected String doInBackground(final Void... params) {
+                try {
+                    final Geocoder geocoder = new Geocoder(MainActivity.this, Locale.getDefault());
+                    final Address address = geocoder.getFromLocation(mLocation.getLatitude(), mLocation.getLongitude(), 1).get(0);
+                    return address.getCountryName();
+                } catch (final Exception e) {
+                    return null;
+                }
+            }
+        }.execute();
     }
 
     private void displaySnackbar(final CharSequence text, final CharSequence actionName, final View.OnClickListener action) {
