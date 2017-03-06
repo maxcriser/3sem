@@ -1,7 +1,0 @@
-#Mon Mar 06 23:41:55 MSK 2017
-base.0=D\:\\GitHubProjects\\3sem\\OOPT\\Tweets\\EmergencyCalls\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_4504bd207443eea46450b7456970a416aae58f32
-renamed.1=classes.dex
-renamed.0=classes2.dex
-file.1=D\:\\GitHubProjects\\3sem\\OOPT\\Tweets\\EmergencyCalls\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_958fa5244198015d74c0596fca833f9391b239a4\\classes.dex
-base.1=D\:\\GitHubProjects\\3sem\\OOPT\\Tweets\\EmergencyCalls\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_958fa5244198015d74c0596fca833f9391b239a4
-file.0=D\:\\GitHubProjects\\3sem\\OOPT\\Tweets\\EmergencyCalls\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_4504bd207443eea46450b7456970a416aae58f32\\classes.dex
