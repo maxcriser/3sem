@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MaterialPhotoEffect</string>
+    <string name="before">BEFORE</string>
+    <string name="after">AFTER</string>
+</resources>
