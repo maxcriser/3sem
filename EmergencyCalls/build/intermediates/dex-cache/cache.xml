@@ -1,0 +1,689 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics-impl\10.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ca82d5800780b1d53f0f9ab43678d8634a34cddc">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-analytics-impl-10.2.0_f0b941b815dc784eb696959a13d81a672f74864c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-awareness\10.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="45e0953544711e0b5a2d227732e88cccb82793bc">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-awareness-10.2.0_dcc35410ab64171a74a334c571efa86f3c7c77c7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.gordonwong\material-sheet-fab\1.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="34fc70f7f1d882154d876ea763f05977d9945699">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.gordonwong-material-sheet-fab-1.2.1_a03dfda120b6ab19d2b78845dc6c47cd4d22ee64\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appinvite\10.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="646b2c48e147b943f0a39842457fdc66d501e4b6">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-appinvite-10.2.0_8def29568f73f096ac4a00ba3d3096b08effc998\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast-framework\10.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8fd2e9eadc9d214966ee7f60d6c5a17a335d7533">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-cast-framework-10.2.0_845656f538863f4e7e6579dc2daa5d6640b6cd05\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-plus\10.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e7157a9577c983651d6c6ee313813424fe2d8ab6">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-plus-10.2.0_ec95bdd77af7cc1c78269323e9c39883e72c3714\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\10.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="bd75f9f0296fe220da6d0ad961831b04541c4452">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tasks-10.2.0_a5a0dd1918b4c393933f9c459b7bcf96c6470b52\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.google.firebase\firebase-appindexing\10.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1fbf3733f36fea63e70373212796e70f9079981f">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-appindexing-10.2.0_b6e68d86a12b4961c5bbd25395afdd67b6a56a32\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.google.firebase\firebase-storage-common\10.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1df6d719c4e264d66bb98baa5cb637495b8cca66">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-storage-common-10.2.0_de9d6b092f15fc219074d58c993031583870bf18\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-identity\10.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="db48dfabe8ecc46681ceca418d6bd61a5339f818">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-identity-10.2.0_4cd21b4740939f665d11be02441cff9e225498bf\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-clearcut\10.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3f4483afd050f3be12db7838422309446a45daa1">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-clearcut-10.2.0_70588347f46ad9eb57b7de6b9ab1e32a4c972e6f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2b15ef6deb6e0aaeab675636920d525171549ec3">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_4504bd207443eea46450b7456970a416aae58f32\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-instantapps\10.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="423fb69e69759d8b726fa4a4fb6a1ea9fc86d1cd">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-instantapps-10.2.0_702508bba952c9f661ed072f3c3ad81bb6b7fdfc\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-panorama\10.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="db4aca1c1ec60f2c098d3b6c91cedfb7838f83ed">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-panorama-10.2.0_4d25f70b8ac24e521b204950dff894ea7b97372b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="67eb33110dbacb46a48175b08ae0c96761d2c17d">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-25.2.0_08e6ebe63cf20b69014f6d8228d29a551fdb5e1b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-25.2.0_3c5147d08b4311d874651a6846cd85c40052b2d1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\IstiN\.gradle\caches\modules-2\files-2.1\com.nineoldandroids\library\2.4.0\e9b63380f3a242dbdbf103a2355ad7e43bad17cb\library-2.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\library-2.4.0_b0922934f5871817b85ff27aef300fe8508c6547\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics\10.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a61e7010aa7be5da53cd1bc5279630510c9a4912">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-analytics-10.2.0_a035693461ee0cf450d574521e62ba0f3790a78d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8fe8a8f77d651982ce5e18f6187dc4daf914ac57">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.2.0_340b898ff8d02ba0e7f652b1cb3b156a92bff045\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.google.firebase\firebase-common\10.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0d5cbbbfe040201c7569478b70a13b58fd11aab4">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-common-10.2.0_3a5622ab54071af2eeabc6b5314ef436d08d741d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.google.firebase\firebase-auth\10.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="48532a016bb0dfbe7970c147ce784598a515406b">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-auth-10.2.0_feb2b16c96dfb6b9a9adc66a02692c746cdead48\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-fitness\10.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ab0c7fe28f9506302eb39adf1ebf5858732e18ec">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-fitness-10.2.0_7c52397abbc1ac7f6a821c85800b99fe00aef926\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\IstiN\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit\retrofit\2.0.0-beta2\880d9e0997b2d1bfc98e0d121ced33ee5d04aac4\retrofit-2.0.0-beta2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="880d9e0997b2d1bfc98e0d121ced33ee5d04aac4">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\retrofit-2.0.0-beta2_4abd3d7d818bb5e2ac617a1f136836502d8740e7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.google.firebase\firebase-storage\10.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8e1d31656bc9f1889283836e025e6cb703acd38a">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-storage-10.2.0_be2f2400a2205a0f0e43d2f9676eb38fe372b6f5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\IstiN\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit\converter-gson\2.0.0-beta2\392c3d09e0f5e7087544093cc0cb23bb9c7af5fa\converter-gson-2.0.0-beta2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="392c3d09e0f5e7087544093cc0cb23bb9c7af5fa">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\converter-gson-2.0.0-beta2_123a82072da127ff1fda660d79d7dc1f8eb35535\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\IstiN\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp\okhttp\2.5.0\4de2b4ed3445c37ec1720a7d214712e845a24636\okhttp-2.5.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4de2b4ed3445c37ec1720a7d214712e845a24636">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\okhttp-2.5.0_2f5f6e222da18dcaa015c9f258db3abb4114c8a3\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\24.0.0\jars\libs\internal_impl-24.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b6763651ec29b4c95e7bbe63fc393ffcc8c4c2c5">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.0.0_85f153dda7064372f637c81bf2efa1cb41dc1c68\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\IstiN\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.2.0\support-annotations-25.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4a5a82a027706397fff621b22fd6fa796e91d7c5">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.2.0_e17e89409bfce93a6de4822d2e997ce3ea89fcba\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wearable\10.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="101393e975eaf36e3ff40b277ee9a019e077afef">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-wearable-10.2.0_d79bb10f6068920d44e3770e39bb0af0d30e87c9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics-impl\10.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ce9112e08a027c8620ae693983e38cdbb9f6371b">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-analytics-impl-10.2.0_5771382f9e93020aeab93a9b2dd876d9256d1abf\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\10.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6da05b7498da036b5b37c3beb861cd2060929dcd">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-maps-10.2.0_7633f0d23b714eabadf24b27f70e01dacd49ee6c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.mapbox.mapboxsdk\mapbox-android-geocoder\1.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d2acfbe514def423c230d346e79d7698bbdd02f1">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.mapbox.mapboxsdk-mapbox-android-geocoder-1.0.0_25aa13bcb4fb37905015d6c9ad449d54f31f4d23\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-safetynet\10.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3aaf1e7b5fe9f4d3ff22c4edc0ead631f7389d30">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-safetynet-10.2.0_60902781d25d6ad68a4a0f7b5c2a0016d6482f65\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\IstiN\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.3.1\ecb6e1f8e4b0e84c4b886c2f14a1500caf309757\gson-2.3.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ecb6e1f8e4b0e84c4b886c2f14a1500caf309757">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.3.1_a88b87a8093fc61dcf4ebd3c9f61da66ecff0130\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\10.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d08bb32b88df3dbcbe1d498c3c57f020b8c521ec">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-location-10.2.0_3969ddedbd2456319c1b504485e29b8be42cd3f1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.google.firebase\firebase-database-connection\10.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0e301f24b283f14b564f660c9abe863af6be5896">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-database-connection-10.2.0_20d4e046e8716f7e67e00ff4d7f2699c28eb2d4d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\10.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b831d3902674d096189451d46fce219e2c2904b7">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-auth-10.2.0_8f7c6b179e0953890b3e638567cf5450e7eeee7e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-drive\10.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="90270132a5f1a33584f453c571257dd35e728201">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-drive-10.2.0_2ce61e07516c0db34f6063707dd0f6ba388eaae5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.google.firebase\firebase-iid\10.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3d6951cb416ebf8c66a32b9480808ca247b68344">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-iid-10.2.0_458be96b266998516ccdcbf9ac0493229ad62668\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tagmanager-v4-impl\10.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8438c64f9eb581429dc592f7c9b3156a3d071653">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tagmanager-v4-impl-10.2.0_d0654b9c8f45dad3f74eae10a1a5c7cf7aec3e0b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="fa0446a14ed5dd3725047d6399ffea771a564b30">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-25.2.0_6650b1ae437b4f7887ca42d3df06b9fa731f75a9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="810f41e5b7fd99f196ebeabe865ba2c54e7e76dc">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-25.2.0_166befc841349fb970ac1a58cc60209e055eecee\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\10.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="aa23e4589287adb431ef59d6c78af79ab8885682">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-ads-10.2.0_ea2df25e1464aead03740ccb438c92e107d0fa45\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.google.firebase\firebase-database\10.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="94fca868854457ede6df15c902938468c71d579e">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-database-10.2.0_751978630d98f0bdd14c1a7be7c78bdaeecbe268\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast\10.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a3f7595ca32e614b454ceb7b7e241bb037a28e86">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-cast-10.2.0_8441c459465c1841dd4e146ae81b7f0401400204\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wallet\10.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1bab75be1918fc9871be4da7afe38d7e4d308303">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-wallet-10.2.0_81074187ac145ee490d1219657a8e45365deb00e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\24.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b327fbe2fad414bc38cf0ce8f7efe1a38f572837">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-mediarouter-v7-24.0.0_6e40978d467a99c763b1048b1af7f89af9484132\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.google.firebase\firebase-messaging\10.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="75575883f0348fc5d2be85f23bd10b050095cf17">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-messaging-10.2.0_e33ac9a0b51a738a9594d7133920d94da8463dfd\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-nearby\10.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="7d14fe9bd2283b2eb7fcab08458aa0357917e138">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-nearby-10.2.0_564646e3c02f1a0fa6beb681bbc4d08ca4c81cd7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-games\10.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ddb7fed808f4331174b59428ccfc46b3696c9812">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-games-10.2.0_7047e94fa265b872087598b744c4a2910c085e64\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\10.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="68485f21eeb5d6c9ed82c445d520b9fc81c87108">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-analytics-10.2.0_89e72ffa4e8cebe3c56b168689371124ad3f3fe8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.google.firebase\firebase-config\10.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="74c5a91d6510ad42410e8a047d90d2ea6721a0e0">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-config-10.2.0_70e66d6b39352946d4385af8bb4c421f5584b36b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tagmanager\10.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a9493f008850469ed3fab9b28658919562882aed">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tagmanager-10.2.0_d7aa013ca678280d69f8affa83b5e8f27da08191\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="cb454b52545859ed2f24a6c01366805b0fa04b22">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-25.2.0_be3d83dd35a4e73397e297d334d122a210ef3a97\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gass\10.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="857ce7350acf811749c8fd0254d3d39b02aa71f5">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-gass-10.2.0_27dc8a511933b83a40b49024d677bc6462a6b876\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\IstiN\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.6.0\98476622f10715998eacf9240d6b479f12c66143\okio-1.6.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\okio-1.6.0_4bd9ac36d80738c23991cff1f2fb04de3ac4e0e5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth-base\10.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4e01b82d664e1a8253b2b9658e74b5da35c8771d">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-auth-base-10.2.0_c1d32ea285cb964bd9b22c1aac9c64a1f79f8197\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\10.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1ac56e5801e986583cbe27f2cce57f626cc7ff93">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-basement-10.2.0_5652d6636a33423bf425e4244b0341203c3f1e21\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.github.asyl.animation\arcanimator\1.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="31dbe885ef6a9d6a88412750e85784f60b95cb90">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.github.asyl.animation-arcanimator-1.0.0_3ce2563592d3d76269c5ee4d32e2a1b531877d36\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.google.firebase\firebase-crash\10.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0f58195bee8a08f35e7d4ee7fd4b0479e570e172">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-crash-10.2.0_9d7eeffcdb99eabc8d5c19ad77f931e1c75eff2c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.android.support\design\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ea6a989b83d19b1b461281e0475a6cd6514897f8">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-25.2.0_039dfa7d3cec9e6e1806604a89619c2e8da4a49e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="152de8da301561dcb0946471697a420d8f7a68c5">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-25.2.0_9d101732c28b57c6b911dd5fdf3603511443d3c2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\10.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3d13e510077b35fe8e49930a627dd849ad5da0dc">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-base-10.2.0_7c815474442701d3fd4c7012938aa7c84e331ad2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tagmanager-api\10.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9d1d0e1270310e34e2d65afda2bc18605c14cd46">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tagmanager-api-10.2.0_6ff92c79278d6f1fcfdc81ffe27e750321d98c61\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads-lite\10.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4ef2d91da513c4d7e773ae438fe04d0e4c135957">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-ads-lite-10.2.0_6e1184190ade66a6e7392b168201a7d4d1e081a6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.android.support\transition\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e51c2f662bb72419632af5192553c37e33890a99">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-transition-25.2.0_7724d497be65771a771248c372585b01d3bebc22\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.android.support\palette-v7\24.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="734e80dffea7bd76c18ae256822a124c30d85850">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-palette-v7-24.0.0_aad037c05a1667e6d28e9393406865670356f7f8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="702d339bc0a81d21354cd7e2cf2b67225fa4a16c">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-25.2.0_1757f388b2993412b4a00c6be4e01465cb275b48\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ee394a892dd21c03a528139c1e8d4e0e1264ac84">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-25.2.0_8036f555fcc8e64bc3788a0bbc4be87ab8e742a0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="30a4938ea5235ccf532b3e9f04200e68547e36ad">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-cardview-v7-25.2.0_658c11d5e7860a28c8372a672f347e20078dc072\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-iid\10.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="421a5cebe9ff187c98075c59786e9464c5c67d36">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-iid-10.2.0_651ec1031365868a1acea8e8fd6307177ce81142\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-vision\10.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="444f9de23145e8caba7bf1c1772acad142ea6013">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-vision-10.2.0_0321fad726a53841cace966af4720cb6c3263e70\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e820b7be8c035dd522da4bc822e8a76c8e27921a">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-25.2.0_7385b3755cd5a75d0fe4e61631fe17509f9fad8b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="00309fc56c6b57af54e24c00e50927e58047d396">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_958fa5244198015d74c0596fca833f9391b239a4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\10.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ea03bbfaed89818f233ee9918fac493f2b63895a">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-gcm-10.2.0_be72f58f46f966007c35cf613de23c04daeff75e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-places\10.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="654b294d429b56fd18392f2b68ad79954f431f8e">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-places-10.2.0_077fb98339bb1b071b4d8b0ffa6ce5879175d091\classes.dex" />
+    </item>
+
+</items>
