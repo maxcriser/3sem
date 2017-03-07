@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity
     private LatLng currentLatLng;
     private Location mLocation;
     private List<Em> currentEm;
-    private List<CountryEm> mCountryEmList;
+    public List<CountryEm> mCountryEmList;
 
     @Override
     public void onBackPressed() {
@@ -204,11 +204,8 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initViews();
-        CountryTable countryTable = new CountryTable(this);
-        mCountryEmList = countryTable.getEm();
-        currentEm = mCountryEmList.get(mCountryEmList.size() - 1).getEmList();
-        mapView.onCreate(savedInstanceState);
         initLocation();
+        mapView.onCreate(savedInstanceState);
     }
 
     private void initViews() {
@@ -227,7 +224,6 @@ public class MainActivity extends AppCompatActivity
         mDrawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
-
     }
 
     private void sendMessageTo(final Em itemData) {
@@ -524,6 +520,9 @@ public class MainActivity extends AppCompatActivity
 
             @Override
             protected String doInBackground(final Void... params) {
+                final CountryTable countryTable = new CountryTable(MainActivity.this);
+                mCountryEmList = countryTable.getEm();
+                currentEm = mCountryEmList.get(mCountryEmList.size() - 1).getEmList();
                 try {
                     final Geocoder geocoder = new Geocoder(MainActivity.this, Locale.getDefault());
                     final Address address = geocoder.getFromLocation(mLocation.getLatitude(), mLocation.getLongitude(), 1).get(0);
