@@ -17,7 +17,7 @@ import static android.view.View.*;
  * If null is passed instead on click listener - dialog will be just closed on click.
  */
 @SuppressWarnings("WeakerAccess")
-public class LovelyStandardDialog extends AbsLovelyDialog<LovelyStandardDialog> {
+public class AlertStandardDialog extends AlertDialogHead<AlertStandardDialog> {
 
     public static final int POSITIVE_BUTTON = R.id.ld_btn_yes;
     public static final int NEGATIVE_BUTTON = R.id.ld_btn_no;
@@ -27,11 +27,11 @@ public class LovelyStandardDialog extends AbsLovelyDialog<LovelyStandardDialog> 
     private Button negativeButton;
     private Button neutralButton;
 
-    public LovelyStandardDialog(Context context) {
+    public AlertStandardDialog(Context context) {
         super(context);
     }
 
-    public LovelyStandardDialog(Context context, int theme) {
+    public AlertStandardDialog(Context context, int theme) {
         super(context, theme);
     }
 
@@ -41,110 +41,110 @@ public class LovelyStandardDialog extends AbsLovelyDialog<LovelyStandardDialog> 
         neutralButton = findView(R.id.ld_btn_neutral);
     }
 
-    public LovelyStandardDialog setPositiveButton(@StringRes int text, OnClickListener listener) {
+    public AlertStandardDialog setPositiveButton(@StringRes int text, OnClickListener listener) {
         return setPositiveButton(string(text), listener);
     }
 
-    public LovelyStandardDialog setPositiveButton(String text, @Nullable OnClickListener listener) {
+    public AlertStandardDialog setPositiveButton(String text, @Nullable OnClickListener listener) {
         positiveButton.setVisibility(VISIBLE);
         positiveButton.setText(text);
         positiveButton.setOnClickListener(new ClickListenerDecorator(listener, true));
         return this;
     }
 
-    public LovelyStandardDialog setNegativeButtonText(@StringRes int text) {
+    public AlertStandardDialog setNegativeButtonText(@StringRes int text) {
         return setNegativeButton(string(text), null);
     }
 
-    public LovelyStandardDialog setNegativeButtonText(String text) {
+    public AlertStandardDialog setNegativeButtonText(String text) {
         return setNegativeButton(text, null);
     }
 
-    public LovelyStandardDialog setNegativeButton(@StringRes int text, OnClickListener listener) {
+    public AlertStandardDialog setNegativeButton(@StringRes int text, OnClickListener listener) {
         return setNegativeButton(string(text), listener);
     }
 
-    public LovelyStandardDialog setNegativeButton(String text, @Nullable OnClickListener listener) {
+    public AlertStandardDialog setNegativeButton(String text, @Nullable OnClickListener listener) {
         negativeButton.setVisibility(VISIBLE);
         negativeButton.setText(text);
         negativeButton.setOnClickListener(new ClickListenerDecorator(listener, true));
         return this;
     }
 
-    public LovelyStandardDialog setNeutralButtonText(@StringRes int text) {
+    public AlertStandardDialog setNeutralButtonText(@StringRes int text) {
         return setNeutralButton(string(text), null);
     }
 
-    public LovelyStandardDialog setNeutralButtonText(String text) {
+    public AlertStandardDialog setNeutralButtonText(String text) {
         return setNeutralButton(text, null);
     }
 
-    public LovelyStandardDialog setNeutralButton(@StringRes int text, @Nullable OnClickListener listener) {
+    public AlertStandardDialog setNeutralButton(@StringRes int text, @Nullable OnClickListener listener) {
         return setNeutralButton(string(text), listener);
     }
 
-    public LovelyStandardDialog setNeutralButton(String text, @Nullable OnClickListener listener) {
+    public AlertStandardDialog setNeutralButton(String text, @Nullable OnClickListener listener) {
         neutralButton.setVisibility(VISIBLE);
         neutralButton.setText(text);
         neutralButton.setOnClickListener(new ClickListenerDecorator(listener, true));
         return this;
     }
 
-    public LovelyStandardDialog setButtonsColor(@ColorInt int color) {
+    public AlertStandardDialog setButtonsColor(@ColorInt int color) {
         positiveButton.setTextColor(color);
         negativeButton.setTextColor(color);
         neutralButton.setTextColor(color);
         return this;
     }
 
-    public LovelyStandardDialog setButtonsColorRes(@ColorRes int colorRes) {
+    public AlertStandardDialog setButtonsColorRes(@ColorRes int colorRes) {
         return setButtonsColor(color(colorRes));
     }
 
-    public LovelyStandardDialog setOnButtonClickListener(OnClickListener listener) {
+    public AlertStandardDialog setOnButtonClickListener(View.OnClickListener listener) {
         return setOnButtonClickListener(true, listener);
     }
 
-    public LovelyStandardDialog setOnButtonClickListener(boolean closeOnClick, OnClickListener listener) {
-        OnClickListener clickHandler = new ClickListenerDecorator(listener, closeOnClick);
+    public AlertStandardDialog setOnButtonClickListener(boolean closeOnClick, View.OnClickListener listener) {
+        View.OnClickListener clickHandler = new ClickListenerDecorator(listener, closeOnClick);
         positiveButton.setOnClickListener(clickHandler);
         neutralButton.setOnClickListener(clickHandler);
         negativeButton.setOnClickListener(clickHandler);
         return this;
     }
 
-    public LovelyStandardDialog setPositiveButtonText(@StringRes int text) {
+    public AlertStandardDialog setPositiveButtonText(@StringRes int text) {
         return setPositiveButton(string(text), null);
     }
 
-    public LovelyStandardDialog setPositiveButtonText(String text) {
+    public AlertStandardDialog setPositiveButtonText(String text) {
         return setPositiveButton(text, null);
     }
 
-    public LovelyStandardDialog setPositiveButtonColor(@ColorInt int color) {
+    public AlertStandardDialog setPositiveButtonColor(@ColorInt int color) {
         positiveButton.setTextColor(color);
         return this;
     }
 
-    public LovelyStandardDialog setNegativeButtonColor(@ColorInt int color) {
+    public AlertStandardDialog setNegativeButtonColor(@ColorInt int color) {
         negativeButton.setTextColor(color);
         return this;
     }
 
-    public LovelyStandardDialog setNeutralButtonColor(@ColorInt int color) {
+    public AlertStandardDialog setNeutralButtonColor(@ColorInt int color) {
         neutralButton.setTextColor(color);
         return this;
     }
 
-    public LovelyStandardDialog setPositiveButtonColorRes(@ColorRes int colorRes) {
+    public AlertStandardDialog setPositiveButtonColorRes(@ColorRes int colorRes) {
         return setPositiveButtonColor(color(colorRes));
     }
 
-    public LovelyStandardDialog setNegativeButtonColorRes(@ColorRes int colorRes) {
+    public AlertStandardDialog setNegativeButtonColorRes(@ColorRes int colorRes) {
         return setNegativeButtonColor(color(colorRes));
     }
 
-    public LovelyStandardDialog setNeutralButtonColorRes(@ColorRes int colorRes) {
+    public AlertStandardDialog setNeutralButtonColorRes(@ColorRes int colorRes) {
         return setNeutralButtonColor(color(colorRes));
     }
 

@@ -3,6 +3,7 @@ package com.maxcriser.emergencycalls;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.location.Address;
 import android.location.Geocoder;
@@ -40,10 +41,9 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.maxcriser.emergencycalls.adapter.EmAdapter;
 import com.maxcriser.emergencycalls.constants.CountryTable;
-import com.maxcriser.emergencycalls.dialog.LovelyCustomDialog;
-import com.maxcriser.emergencycalls.dialog.LovelyCustomPickerDialog;
+import com.maxcriser.emergencycalls.dialog.AlertCustomDialog;
+import com.maxcriser.emergencycalls.dialog.AlertCustomPickerDialog;
 import com.maxcriser.emergencycalls.manager.GPSManager;
-import com.maxcriser.emergencycalls.manager.GPSTracker;
 import com.maxcriser.emergencycalls.manager.PhoneManager;
 import com.maxcriser.emergencycalls.model.CountryEm;
 import com.maxcriser.emergencycalls.model.Em;
@@ -80,12 +80,10 @@ public class MainActivity extends AppCompatActivity
     private FrameLayout mapContent;
     private MapView mapView;
     private GoogleMap googleMap;
-    private LatLng currentLatLng;
-    //    private Location mLocation;
     private List<Em> currentEm;
     private Location currentLocation;
     public List<CountryEm> mCountryEmList;
-    private GPSTracker mGPSTracker;
+    private LatLng currentLatLng;
 
     @Override
     public void onBackPressed() {
@@ -196,18 +194,14 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onResume() {
         super.onResume();
-//        mLocation = GPSManager.getGPS(this);
-//        if (mLocation != null) {
-//            currentLatLng = new LatLng(mLocation.getLatitude(), mLocation.getLongitude());
-//        }
     }
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         initViews();
+
 
         new AsyncTask<Void, Void, Void>() {
 
@@ -244,7 +238,7 @@ public class MainActivity extends AppCompatActivity
 
     private void sendMessageTo(final Em itemData) {
         final List<String> chooseMessage = Arrays.asList(getResources().getStringArray(R.array.choose_message));
-        final LovelyCustomDialog dialog = new LovelyCustomDialog(this);
+        final AlertCustomDialog dialog = new AlertCustomDialog(this);
         dialog.setView(R.layout.fragment_send_message)
                 .setTopColorRes(R.color.text_toolbar)
                 .setCancelable(true)
@@ -259,7 +253,7 @@ public class MainActivity extends AppCompatActivity
             new AsyncTask<Void, Void, Boolean>() {
 
                 @Override
-                protected void onPostExecute(Boolean pBoolean) {
+                protected void onPostExecute(final Boolean pBoolean) {
                     super.onPostExecute(pBoolean);
                     if (pBoolean) {
                         checkbox.setVisibility(View.VISIBLE);
@@ -269,16 +263,18 @@ public class MainActivity extends AppCompatActivity
                 }
 
                 @Override
-                protected Boolean doInBackground(Void... params) {
+                protected Boolean doInBackground(final Void... params) {
                     currentLocation = GPSManager.getGPS(MainActivity.this);
                     if (currentLocation == null) {
                         return false;
                     } else {
+                        currentLatLng = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
                         return true;
                     }
                 }
             }.execute();
         } else {
+            checkbox.setVisibility(View.VISIBLE);
         }
 
         mSpinner = (Spinner) view.findViewById(R.id.spinner);
@@ -386,7 +382,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void showPickerDialog(final Em itemData) {
-        final LovelyCustomPickerDialog dialogOnClick = new LovelyCustomPickerDialog(this);
+        final AlertCustomPickerDialog dialogOnClick = new AlertCustomPickerDialog(this);
         dialogOnClick.setView(R.layout.fragment_choose_action)
                 .setCancelable(true)
                 .setListener(R.id.make_a_call, new View.OnClickListener() {
@@ -406,7 +402,7 @@ public class MainActivity extends AppCompatActivity
                     @Override
                     public void onClick(final View v) {
                         final List<String> chooseMessage = Arrays.asList(getResources().getStringArray(R.array.choose_message));
-                        final LovelyCustomDialog dialog = new LovelyCustomDialog(MainActivity.this);
+                        final AlertCustomDialog dialog = new AlertCustomDialog(MainActivity.this);
                         dialog.setView(R.layout.fragment_send_message)
                                 .setTopColorRes(R.color.text_toolbar)
                                 .setCancelable(true)
@@ -565,8 +561,9 @@ public class MainActivity extends AppCompatActivity
                 try {
                     final Geocoder geocoder = new Geocoder(MainActivity.this, Locale.getDefault());
                     currentLocation = GPSManager.getGPS(MainActivity.this);
+                    currentLatLng = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
                     final Address address = geocoder.getFromLocation(currentLocation.getLatitude(), currentLocation.getLongitude(), 1).get(0);
-                    String countryCur = address.getCountryName();
+                    final String countryCur = address.getCountryName();
                     return countryCur;
                 } catch (final Exception e) {
                     return null;

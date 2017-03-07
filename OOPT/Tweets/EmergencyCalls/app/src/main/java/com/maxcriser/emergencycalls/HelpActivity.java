@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.maxcriser.emergencycalls.dialog.LovelyStandardDialog;
+import com.maxcriser.emergencycalls.dialog.AlertStandardDialog;
 
 public class HelpActivity extends Activity {
 
@@ -47,7 +47,7 @@ public class HelpActivity extends Activity {
     }
 
     private void showAlert(final CharSequence title, final CharSequence body) {
-        new LovelyStandardDialog(this)
+        new AlertStandardDialog(this)
                 .setTopColorRes(R.color.text_toolbar)
                 .setButtonsColorRes(R.color.green_material)
                 .setTitle(title)

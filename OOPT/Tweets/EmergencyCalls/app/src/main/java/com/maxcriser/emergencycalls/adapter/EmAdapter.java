@@ -14,8 +14,8 @@ import java.util.List;
 
 public class EmAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    private List<Em> items;
-    private Context mContext;
+    private final List<Em> items;
+    private final Context mContext;
 
     public EmAdapter(final Context pContext, final List<Em> items) {
         this.items = items;
@@ -36,7 +36,6 @@ public class EmAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public RecyclerView.ViewHolder onCreateViewHolder(final ViewGroup parent, final int viewType) {
         final View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_view, parent, false);
-        view.setTag(view);
         return new EmViewHolder(view);
     }
 
@@ -45,7 +44,7 @@ public class EmAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         final Em item = items.get(position);
         final EmViewHolder vh = (EmViewHolder) holder;
         vh.titleView.setText(item.getTitle());
-        vh.descriptionView.setText(item.getDescription());
+        vh.descriptionView.setText(item.getPhoneNumber() + "\n" + item.getDescription());
         if (item.getTitle().startsWith(mContext.getString(R.string.fire_department))) {
             vh.image.setBackgroundResource(R.drawable.fire);
         } else if (item.getTitle().startsWith(mContext.getString(R.string.ambulance))) {

@@ -2,7 +2,6 @@ package com.maxcriser.emergencycalls.dialog;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -24,7 +23,7 @@ import com.maxcriser.emergencycalls.R;
  * Created by yarolegovich on 16.04.2016.
  */
 @SuppressWarnings({"unchecked", "WeakerAccess"})
-public abstract class AbsLovelyDialog<T extends AbsLovelyDialog> {
+public abstract class AlertDialogHead<T extends AlertDialogHead> {
 
     private static final String KEY_SAVED_STATE_TOKEN = "key_saved_state_token";
 
@@ -36,11 +35,11 @@ public abstract class AbsLovelyDialog<T extends AbsLovelyDialog> {
     private TextView titleView;
     private TextView messageView;
 
-    public AbsLovelyDialog(Context context) {
+    public AlertDialogHead(Context context) {
         init(new AlertDialog.Builder(context));
     }
 
-    public AbsLovelyDialog(Context context, int theme) {
+    public AlertDialogHead(Context context, int theme) {
         init(new AlertDialog.Builder(context, theme));
     }
 
@@ -139,7 +138,7 @@ public abstract class AbsLovelyDialog<T extends AbsLovelyDialog> {
      * your dialog in onRestoreInstanceState. Static methods wasDialogOnScreen and getDialogId will
      * help you in this.
      */
-    public T setInstanceStateHandler(int id, LovelySaveStateHandler handler) {
+    public T setInstanceStateHandler(int id, AlertHandler handler) {
         handler.handleDialogStateSave(id, this);
         return (T) this;
     }
@@ -214,9 +213,9 @@ public abstract class AbsLovelyDialog<T extends AbsLovelyDialog> {
         @Override
         public void onClick(View v) {
             if (clickListener != null) {
-                if (clickListener instanceof LovelyDialogCompat.DialogOnClickListenerAdapter) {
-                    LovelyDialogCompat.DialogOnClickListenerAdapter listener =
-                            (LovelyDialogCompat.DialogOnClickListenerAdapter) clickListener;
+                if (clickListener instanceof AlertDialogGap.DialogOnClickListenerAdapter) {
+                    AlertDialogGap.DialogOnClickListenerAdapter listener =
+                            (AlertDialogGap.DialogOnClickListenerAdapter) clickListener;
                     listener.onClick(dialog, v.getId());
                 } else {
                     clickListener.onClick(v);

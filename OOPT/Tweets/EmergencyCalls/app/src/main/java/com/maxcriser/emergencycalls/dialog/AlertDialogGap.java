@@ -8,7 +8,7 @@ import android.view.View;
  * Created by yarolegovich on 23.02.2017.
  */
 
-public class LovelyDialogCompat {
+public class AlertDialogGap {
 
     /**
      * If you don't want to change implemented interfaces when migrating from standard dialogs

@@ -4,31 +4,28 @@ import android.os.Bundle;
 import android.util.SparseArray;
 
 import java.lang.ref.WeakReference;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 
 /**
  * Created by yarolegovich on 17.04.2016.
  */
-public class LovelySaveStateHandler {
+public class AlertHandler {
 
     private static final String KEY_DIALOG_ID = "id";
 
-    private SparseArray<WeakReference<AbsLovelyDialog<?>>> handledDialogs;
+    private SparseArray<WeakReference<AlertDialogHead<?>>> handledDialogs;
 
-    public LovelySaveStateHandler() {
+    public AlertHandler() {
         handledDialogs = new SparseArray<>();
     }
 
     public void saveInstanceState(Bundle outState) {
         for (int index = handledDialogs.size() - 1; index >= 0; index--) {
-            WeakReference<AbsLovelyDialog<?>> dialogRef = handledDialogs.valueAt(index);
+            WeakReference<AlertDialogHead<?>> dialogRef = handledDialogs.valueAt(index);
             if (dialogRef.get() == null) {
                 handledDialogs.remove(index);
                 continue;
             }
-            AbsLovelyDialog<?> dialog = dialogRef.get();
+            AlertDialogHead<?> dialog = dialogRef.get();
             if (dialog.isShowing()) {
                 dialog.onSaveInstanceState(outState);
                 outState.putInt(KEY_DIALOG_ID, handledDialogs.keyAt(index));
@@ -37,8 +34,8 @@ public class LovelySaveStateHandler {
         }
     }
 
-    void handleDialogStateSave(int id, AbsLovelyDialog<?> dialog) {
-        handledDialogs.put(id, new WeakReference<AbsLovelyDialog<?>>(dialog));
+    void handleDialogStateSave(int id, AlertDialogHead<?> dialog) {
+        handledDialogs.put(id, new WeakReference<AlertDialogHead<?>>(dialog));
     }
 
     public static boolean wasDialogOnScreen(Bundle savedInstanceState) {

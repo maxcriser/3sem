@@ -12,20 +12,20 @@ import com.maxcriser.emergencycalls.R;
 /**
  * Created by yarolegovich on 16.04.2016.
  */
-public class LovelyCustomDialog extends AbsLovelyDialog<LovelyCustomDialog> {
+public class AlertCustomDialog extends AlertDialogHead<AlertCustomDialog> {
 
     private View addedView;
     private InstanceStateManager instanceStateManager;
 
-    public LovelyCustomDialog(final Context context) {
+    public AlertCustomDialog(final Context context) {
         super(context);
     }
 
-    public LovelyCustomDialog(final Context context, final int theme) {
+    public AlertCustomDialog(final Context context, final int theme) {
         super(context, theme);
     }
 
-    public LovelyCustomDialog setView(@LayoutRes final int layout) {
+    public AlertCustomDialog setView(@LayoutRes final int layout) {
         final LayoutInflater inflater = LayoutInflater.from(getContext());
         final ViewGroup parent = findView(R.id.ld_custom_view_container);
         addedView = inflater.inflate(layout, parent, true);
@@ -36,14 +36,14 @@ public class LovelyCustomDialog extends AbsLovelyDialog<LovelyCustomDialog> {
         return addedView;
     }
 
-    public LovelyCustomDialog setView(final View customView) {
+    public AlertCustomDialog setView(final View customView) {
         final ViewGroup container = findView(R.id.ld_custom_view_container);
         container.addView(customView);
         addedView = customView;
         return this;
     }
 
-    public LovelyCustomDialog configureView(final ViewConfigurator configurator) {
+    public AlertCustomDialog configureView(final ViewConfigurator configurator) {
         if (addedView == null) {
             throw new IllegalStateException(string(R.string.ex_msg_dialog_view_not_set));
         }
@@ -51,11 +51,11 @@ public class LovelyCustomDialog extends AbsLovelyDialog<LovelyCustomDialog> {
         return this;
     }
 
-    public LovelyCustomDialog setListener(final int viewId, final View.OnClickListener listener) {
+    public AlertCustomDialog setListener(final int viewId, final View.OnClickListener listener) {
         return setListener(viewId, false, listener);
     }
 
-    public LovelyCustomDialog setListener(final int viewId, final boolean dismissOnClick, final View.OnClickListener listener) {
+    public AlertCustomDialog setListener(final int viewId, final boolean dismissOnClick, final View.OnClickListener listener) {
         if (addedView == null) {
             throw new IllegalStateException(string(R.string.ex_msg_dialog_view_not_set));
         }
@@ -64,7 +64,7 @@ public class LovelyCustomDialog extends AbsLovelyDialog<LovelyCustomDialog> {
         return this;
     }
 
-    public LovelyCustomDialog setInstanceStateManager(final InstanceStateManager instanceStateManager) {
+    public AlertCustomDialog setInstanceStateManager(final InstanceStateManager instanceStateManager) {
         this.instanceStateManager = instanceStateManager;
         return this;
     }

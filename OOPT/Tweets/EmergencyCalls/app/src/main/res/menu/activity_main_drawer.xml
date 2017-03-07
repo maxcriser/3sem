@@ -1,4 +1,5 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
     >
 
     <group android:checkableBehavior="none">
@@ -6,12 +7,28 @@
         <item
             android:id="@+id/send_feedback"
             android:icon="@drawable/send_feedback"
-            android:title="Send feedback"/>
+            android:title="@string/send_feedback"/>
 
         <item
             android:id="@+id/help"
             android:icon="@drawable/help"
-            android:title="Help"/>
+            android:title="@string/help"/>
+
+        <item
+            android:id="@+id/group"
+            android:icon="@drawable/help"
+            android:title="Join group"/>
+
+        <item
+            android:id="@+id/rate"
+            android:icon="@drawable/help"
+            android:title="Rate app"/>
+
+        <item
+            android:id="@+id/night_mode"
+            android:icon="@drawable/help"
+            android:title="Night mode"/>
+
         <!--<item-->
         <!--android:id="@+id/mi_drawer_item_live_traffic"-->
         <!--android:icon="@drawable/ic_nav_night_mode"-->

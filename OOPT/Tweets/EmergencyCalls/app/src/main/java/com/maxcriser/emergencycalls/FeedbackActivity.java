@@ -2,14 +2,23 @@ package com.maxcriser.emergencycalls;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.maxcriser.emergencycalls.manager.ProfileManager;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 public class FeedbackActivity extends Activity {
 
@@ -20,6 +29,7 @@ public class FeedbackActivity extends Activity {
     private EditText feedback;
     private EditText email;
     private CheckBox includeScreenshot;
+    private ImageView screenshot;
 
     public void onBackPressed(final View view) {
         onBackPressed();
@@ -48,6 +58,8 @@ public class FeedbackActivity extends Activity {
     }
 
     private void initViews() {
+        screenshot = (ImageView) findViewById(R.id.screenshot);
+        screenshot.setDrawingCacheEnabled(false);
         email = (EditText) findViewById(R.id.email_profile);
         email.setText(ProfileManager.getUserMail(this));
         feedback = (EditText) findViewById(R.id.text_feedback);

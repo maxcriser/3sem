@@ -9,20 +9,20 @@ import android.view.ViewGroup;
 
 import com.maxcriser.emergencycalls.R;
 
-public class LovelyCustomPickerDialog extends AbsLovelyDialog<LovelyCustomPickerDialog> {
+public class AlertCustomPickerDialog extends AlertDialogHead<AlertCustomPickerDialog> {
 
     private View addedView;
     private InstanceStateManager instanceStateManager;
 
-    public LovelyCustomPickerDialog(final Context context) {
+    public AlertCustomPickerDialog(final Context context) {
         super(context);
     }
 
-    public LovelyCustomPickerDialog(final Context context, final int theme) {
+    public AlertCustomPickerDialog(final Context context, final int theme) {
         super(context, theme);
     }
 
-    public LovelyCustomPickerDialog setView(@LayoutRes final int layout) {
+    public AlertCustomPickerDialog setView(@LayoutRes final int layout) {
         final LayoutInflater inflater = LayoutInflater.from(getContext());
         final ViewGroup parent = findView(R.id.ld_custom_view_container);
         addedView = inflater.inflate(layout, parent, true);
@@ -33,14 +33,14 @@ public class LovelyCustomPickerDialog extends AbsLovelyDialog<LovelyCustomPicker
         return addedView;
     }
 
-    public LovelyCustomPickerDialog setView(final View customView) {
+    public AlertCustomPickerDialog setView(final View customView) {
         final ViewGroup container = findView(R.id.ld_custom_view_container);
         container.addView(customView);
         addedView = customView;
         return this;
     }
 
-    public LovelyCustomPickerDialog configureView(final ViewConfigurator configurator) {
+    public AlertCustomPickerDialog configureView(final ViewConfigurator configurator) {
         if (addedView == null) {
             throw new IllegalStateException(string(R.string.ex_msg_dialog_view_not_set));
         }
@@ -48,11 +48,11 @@ public class LovelyCustomPickerDialog extends AbsLovelyDialog<LovelyCustomPicker
         return this;
     }
 
-    public LovelyCustomPickerDialog setListener(final int viewId, final View.OnClickListener listener) {
+    public AlertCustomPickerDialog setListener(final int viewId, final View.OnClickListener listener) {
         return setListener(viewId, false, listener);
     }
 
-    public LovelyCustomPickerDialog setListener(final int viewId, final boolean dismissOnClick, final View.OnClickListener listener) {
+    public AlertCustomPickerDialog setListener(final int viewId, final boolean dismissOnClick, final View.OnClickListener listener) {
         if (addedView == null) {
             throw new IllegalStateException(string(R.string.ex_msg_dialog_view_not_set));
         }
@@ -61,7 +61,7 @@ public class LovelyCustomPickerDialog extends AbsLovelyDialog<LovelyCustomPicker
         return this;
     }
 
-    public LovelyCustomPickerDialog setInstanceStateManager(final InstanceStateManager instanceStateManager) {
+    public AlertCustomPickerDialog setInstanceStateManager(final InstanceStateManager instanceStateManager) {
         this.instanceStateManager = instanceStateManager;
         return this;
     }
