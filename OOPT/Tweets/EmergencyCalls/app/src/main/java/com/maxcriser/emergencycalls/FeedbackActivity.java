@@ -15,6 +15,8 @@ public class FeedbackActivity extends Activity {
 
     private static final String FEEDBACK_FROM_EMERGALLS = "Feedback from Emergalls";
     private static final String MV_MAXCRISER_GMAIL_COM = "mv.maxcriser@gmail.com";
+    private static final String MESSAGE_RFC822 = "message/rfc822";
+    private static final String MAILTO = "mailto:";
     private EditText feedback;
     private EditText email;
     private CheckBox includeScreenshot;
@@ -24,16 +26,16 @@ public class FeedbackActivity extends Activity {
     }
 
     public void onSendClicked(final View view) {
-        final Intent i = new Intent(Intent.ACTION_SEND);
-        i.setType("message/rfc822");
+        final Intent i = new Intent(Intent.ACTION_SENDTO);
+        i.setType(MESSAGE_RFC822);
         i.putExtra(Intent.EXTRA_EMAIL, email.getText());
         i.putExtra(Intent.EXTRA_SUBJECT, FEEDBACK_FROM_EMERGALLS);
         i.putExtra(Intent.EXTRA_TEXT, feedback.getText());
-        i.setData(Uri.parse("mailto:" + MV_MAXCRISER_GMAIL_COM));
+        i.setData(Uri.parse(MAILTO + MV_MAXCRISER_GMAIL_COM));
         try {
-            startActivity(Intent.createChooser(i, "Choose an Email client :"));
+            startActivity(i);
         } catch (final android.content.ActivityNotFoundException ex) {
-            Toast.makeText(this, "No email clients installed.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.no_email_clients_installed, Toast.LENGTH_SHORT).show();
         }
         onBackPressed();
     }

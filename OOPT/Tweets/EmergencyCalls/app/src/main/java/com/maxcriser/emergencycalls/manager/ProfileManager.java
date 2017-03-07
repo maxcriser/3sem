@@ -12,15 +12,15 @@ import java.util.List;
 
 public final class ProfileManager {
 
+    private static final String COM_GOOGLE = "com.google";
+
     public static String getUserMail(final Context pContext) {
         final AccountManager manager = AccountManager.get(pContext);
         if (ActivityCompat.checkSelfPermission(pContext, Manifest.permission.GET_ACCOUNTS) == PackageManager.PERMISSION_GRANTED) {
-            final Account[] accounts = manager.getAccountsByType("com.google");
+            final Account[] accounts = manager.getAccountsByType(COM_GOOGLE);
             final List<String> possibleEmails = new LinkedList<>();
 
             for (final Account account : accounts) {
-                // TODO: Check possibleEmail against an email regex or treat
-                // account.name as an email address only for certain account.type values.
                 possibleEmails.add(account.name);
             }
 

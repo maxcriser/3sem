@@ -1,5 +1,6 @@
 package com.maxcriser.emergencycalls.adapter;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,9 +15,11 @@ import java.util.List;
 public class EmAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private List<Em> items;
+    private Context mContext;
 
-    public EmAdapter(final List<Em> items) {
+    public EmAdapter(final Context pContext, final List<Em> items) {
         this.items = items;
+        this.mContext = pContext;
     }
 
     @Override
@@ -43,16 +46,17 @@ public class EmAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         final EmViewHolder vh = (EmViewHolder) holder;
         vh.titleView.setText(item.getTitle());
         vh.descriptionView.setText(item.getDescription());
-        if(item.getTitle().equals("Fire Department")){
+        if (item.getTitle().startsWith(mContext.getString(R.string.fire_department))) {
             vh.image.setBackgroundResource(R.drawable.fire);
-        } else if(item.getTitle().equals("Ambulance")){
+        } else if (item.getTitle().startsWith(mContext.getString(R.string.ambulance))) {
             vh.image.setBackgroundResource(R.drawable.ambulance);
-        } else if(item.getTitle().equals("Police")){
+        } else if (item.getTitle().startsWith(mContext.getString(R.string.police))) {
             vh.image.setBackgroundResource(R.drawable.police);
-        } else {
+        } else if (item.getTitle().startsWith(mContext.getString(R.string.sos))) {
             vh.image.setBackgroundResource(R.drawable.sos);
+        } else {
+            vh.image.setBackgroundResource(R.drawable.account_circle);
         }
         vh.data = item;
-
     }
 }

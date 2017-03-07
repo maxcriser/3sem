@@ -21,6 +21,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -42,6 +43,7 @@ import com.maxcriser.emergencycalls.constants.CountryTable;
 import com.maxcriser.emergencycalls.dialog.LovelyCustomDialog;
 import com.maxcriser.emergencycalls.dialog.LovelyCustomPickerDialog;
 import com.maxcriser.emergencycalls.manager.GPSManager;
+import com.maxcriser.emergencycalls.manager.GPSTracker;
 import com.maxcriser.emergencycalls.manager.PhoneManager;
 import com.maxcriser.emergencycalls.model.CountryEm;
 import com.maxcriser.emergencycalls.model.Em;
@@ -68,22 +70,22 @@ public class MainActivity extends AppCompatActivity
     private static final String HTTP_IP_API_COM_JSON = "http://ip-api.com/json";
     private static final String GET = "GET";
     private static final String COUNTRY = "country";
-    RecyclerView recyclerView;
-    EmAdapter adapter;
-    SwipeToAction swipeToAction;
-    ImageButton first;
-    ImageButton second;
-    ImageButton third;
-    private DrawerLayout mDrawer;
+    private RecyclerView recyclerView;
+    private SwipeToAction swipeToAction;
+    private ImageButton first;
+    private ImageButton second;
+    private ImageButton third;
     private Spinner mSpinner;
     private FrameLayout phoneContent;
     private FrameLayout mapContent;
     private MapView mapView;
     private GoogleMap googleMap;
     private LatLng currentLatLng;
-    private Location mLocation;
+    //    private Location mLocation;
     private List<Em> currentEm;
+    private Location currentLocation;
     public List<CountryEm> mCountryEmList;
+    private GPSTracker mGPSTracker;
 
     @Override
     public void onBackPressed() {
@@ -129,7 +131,6 @@ public class MainActivity extends AppCompatActivity
             final String SHARE_USING = "share_using";
             startActivity(Intent.createChooser(sharingIntent, SHARE_USING));
         }
-
         final DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
@@ -180,7 +181,8 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void onMenuClicked(final View view) {
-        mDrawer.openDrawer(GravityCompat.START);
+        final DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.openDrawer(GravityCompat.START);
     }
 
     public void onDownClicked(final View view) {
@@ -188,27 +190,42 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void onSpaceClicked(final View view) {
+        // empty body
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        mLocation = GPSManager.getGPS(this);
-        if (mLocation != null) {
-            currentLatLng = new LatLng(mLocation.getLatitude(), mLocation.getLongitude());
-        }
+//        mLocation = GPSManager.getGPS(this);
+//        if (mLocation != null) {
+//            currentLatLng = new LatLng(mLocation.getLatitude(), mLocation.getLongitude());
+//        }
     }
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         initViews();
-        initLocation();
+
+        new AsyncTask<Void, Void, Void>() {
+
+            @Override
+            protected Void doInBackground(final Void... params) {
+                final CountryTable countryTable = new CountryTable(MainActivity.this);
+                mCountryEmList = countryTable.getEm();
+                currentEm = mCountryEmList.get(mCountryEmList.size() - 1).getEmList();
+                return null;
+            }
+        }.execute();
+
         mapView.onCreate(savedInstanceState);
+        initLocation();
     }
 
     private void initViews() {
+        final DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         recyclerView = (RecyclerView) findViewById(R.id.recycler);
         mapView = (MapView) findViewById(R.id.map);
         phoneContent = (FrameLayout) findViewById(R.id.content_main);
@@ -216,12 +233,11 @@ public class MainActivity extends AppCompatActivity
         first = (ImageButton) findViewById(R.id.button_first);
         second = (ImageButton) findViewById(R.id.button_second);
         third = (ImageButton) findViewById(R.id.button_third);
-        mDrawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         final NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        final ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, mDrawer, null,
+        final ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, null,
                 R.string.navigation_drawer_open,
                 R.string.navigation_drawer_close);
-        mDrawer.addDrawerListener(toggle);
+        drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
     }
@@ -239,10 +255,30 @@ public class MainActivity extends AppCompatActivity
         final ImageButton sendButton = (ImageButton) view.findViewById(R.id.send_button);
         final EditTextRobotoRegular message = (EditTextRobotoRegular) view.findViewById(R.id.message);
         final CheckBox checkbox = (CheckBox) view.findViewById(R.id.checkbox);
-        if (mLocation == null) {
-            checkbox.setVisibility(GONE);
+        if (currentLocation == null) {
+            new AsyncTask<Void, Void, Boolean>() {
+
+                @Override
+                protected void onPostExecute(Boolean pBoolean) {
+                    super.onPostExecute(pBoolean);
+                    if (pBoolean) {
+                        checkbox.setVisibility(View.VISIBLE);
+                    } else {
+                        checkbox.setVisibility(GONE);
+                    }
+                }
+
+                @Override
+                protected Boolean doInBackground(Void... params) {
+                    currentLocation = GPSManager.getGPS(MainActivity.this);
+                    if (currentLocation == null) {
+                        return false;
+                    } else {
+                        return true;
+                    }
+                }
+            }.execute();
         } else {
-            checkbox.setVisibility(View.VISIBLE);
         }
 
         mSpinner = (Spinner) view.findViewById(R.id.spinner);
@@ -288,10 +324,11 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(final View v) {
                 String messageStr = message.getText().toString();
-                if (mLocation != null) {
+                if (currentLocation != null) {
                     if (checkbox.isChecked()) {
-                        messageStr += "\n_____\nLatitude: " + mLocation.getLatitude() + "\n"
-                                + "Longitude: " + mLocation.getLongitude();
+                        messageStr += "\n_____\nLatitude: " + currentLocation.getLatitude() + "\n"
+                                + "Longitude: " + currentLocation.getLongitude();
+                        Log.d("Send location", currentLocation.getLatitude() + " : " + currentLocation.getLongitude());
                     }
                 }
                 try {
@@ -309,18 +346,23 @@ public class MainActivity extends AppCompatActivity
         final LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
-        adapter = new EmAdapter(currentEm);
+        final EmAdapter adapter = new EmAdapter(this, currentEm);
         recyclerView.setAdapter(adapter);
 
         swipeToAction = new SwipeToAction(this, recyclerView, new SwipeToAction.SwipeListener<Em>() {
 
             @Override
             public boolean swipeLeft(final Em itemData) {
-                displaySnackbar("Calling the " + itemData.getTitle(), null, null);
+                final String title = itemData.getTitle();
+                if (title.startsWith(getString(R.string.ambulance))) {
+                    displaySnackbar(getString(R.string.calling_an) + itemData.getTitle(), null, null);
+                } else {
+                    displaySnackbar(getString(R.string.calling_the) + itemData.getTitle(), null, null);
+                }
                 try {
                     PhoneManager.makeCall(MainActivity.this, itemData.getPhoneNumber());
                 } catch (final Exception pE) {
-                    Toast.makeText(MainActivity.this, "Call error", Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainActivity.this, R.string.call_error, Toast.LENGTH_LONG).show();
                 }
                 return true;
             }
@@ -354,7 +396,7 @@ public class MainActivity extends AppCompatActivity
                         try {
                             PhoneManager.makeCall(MainActivity.this, itemData.getPhoneNumber());
                         } catch (final Exception pE) {
-                            Toast.makeText(MainActivity.this, "Call error", Toast.LENGTH_LONG).show();
+                            Toast.makeText(MainActivity.this, getString(R.string.call_error), Toast.LENGTH_LONG).show();
                         }
                         dialogOnClick.dismiss();
                     }
@@ -375,7 +417,7 @@ public class MainActivity extends AppCompatActivity
                         final ImageButton sendButton = (ImageButton) view.findViewById(R.id.send_button);
                         final EditTextRobotoRegular message = (EditTextRobotoRegular) view.findViewById(R.id.message);
                         final CheckBox checkbox = (CheckBox) view.findViewById(R.id.checkbox);
-                        if (mLocation == null) {
+                        if (currentLocation == null) {
                             checkbox.setVisibility(GONE);
                         } else {
                             checkbox.setVisibility(View.VISIBLE);
@@ -424,18 +466,18 @@ public class MainActivity extends AppCompatActivity
                             @Override
                             public void onClick(final View v) {
                                 String messageStr = message.getText().toString();
-                                if (mLocation != null) {
+                                if (currentLocation != null) {
                                     if (checkbox.isChecked()) {
-                                        messageStr += "\n_____\nLatitude: " + mLocation.getLatitude() + "\n"
-                                                + "Longitude: " + mLocation.getLongitude();
+                                        messageStr += getString(R.string.latitude) + currentLocation.getLatitude() + "\n"
+                                                + getString(R.string.longitude) + currentLocation.getLongitude();
                                     }
                                 }
                                 try {
                                     PhoneManager.sendSMS(itemData.getSmsNumber(), messageStr);
                                 } catch (final Exception pE) {
-                                    Toast.makeText(MainActivity.this, "Error sending a message", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(MainActivity.this, R.string.error_sending_a_message, Toast.LENGTH_LONG).show();
                                 }
-                                displaySnackbar("Sending messages in rescue service...", null, null);
+                                displaySnackbar(getString(R.string.sending_RS), null, null);
                                 dialog.dismiss();
                             }
                         });
@@ -464,7 +506,7 @@ public class MainActivity extends AppCompatActivity
                 if (pS != null) {
                     setUpCurrentEm(pS);
                 } else {
-                    Toast.makeText(MainActivity.this, "Error loading from API", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, R.string.error_API, Toast.LENGTH_SHORT).show();
                 }
                 setUpRecyclerView();
             }
@@ -513,20 +555,19 @@ public class MainActivity extends AppCompatActivity
                     setUpCurrentEm(pS);
                     setUpRecyclerView();
                 } else {
-                    Toast.makeText(MainActivity.this, "Error loading from GPS", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, R.string.error_gps, Toast.LENGTH_SHORT).show();
                     loadFromAPI();
                 }
             }
 
             @Override
             protected String doInBackground(final Void... params) {
-                final CountryTable countryTable = new CountryTable(MainActivity.this);
-                mCountryEmList = countryTable.getEm();
-                currentEm = mCountryEmList.get(mCountryEmList.size() - 1).getEmList();
                 try {
                     final Geocoder geocoder = new Geocoder(MainActivity.this, Locale.getDefault());
-                    final Address address = geocoder.getFromLocation(mLocation.getLatitude(), mLocation.getLongitude(), 1).get(0);
-                    return address.getCountryName();
+                    currentLocation = GPSManager.getGPS(MainActivity.this);
+                    final Address address = geocoder.getFromLocation(currentLocation.getLatitude(), currentLocation.getLongitude(), 1).get(0);
+                    String countryCur = address.getCountryName();
+                    return countryCur;
                 } catch (final Exception e) {
                     return null;
                 }

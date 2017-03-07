@@ -14,7 +14,7 @@ final class Solutions {
             }
         }
         return answer;
-    }
+    } // n
 
     static String BetterLinearSearch(final List<Integer> pList, final int x, final int n) {
         for (int i = 0; i < n; i++) {
@@ -23,7 +23,7 @@ final class Solutions {
             }
         }
         return NOT_FOUNT;
-    }
+    } // 1 - > n
 
     static String SentineLinearSearch(final List<Integer> pList, final int x, final int n) {
         final int last = pList.get(n - 1);
@@ -38,7 +38,7 @@ final class Solutions {
         } else {
             return NOT_FOUNT;
         }
-    }
+    } // 1 - n
 
     static String RecursiveLinearSearch(final List<Integer> pList, final int x, final int n, final int i) {
         if (i > n - 1) {
@@ -48,5 +48,5 @@ final class Solutions {
         } else {
             return RecursiveLinearSearch(pList, x, n, i + 1);
         }
-    }
+    } // 1 - n
 }

@@ -47,14 +47,14 @@ public class SwipeToAction {
     private static final int INVALID_POINTER_ID = -1;
     private int activePointerId = INVALID_POINTER_ID;
 
-    private RecyclerView recyclerView;
-    private SwipeListener swipeListener;
+    private final RecyclerView recyclerView;
+    private final SwipeListener swipeListener;
     private View touchedView;
     private ViewHolder touchedViewHolder;
     private View frontView;
     private View revealLeftView;
     private View revealRightView;
-    Context mContext;
+    private Context mContext;
 
     private float frontViewX;
     private float frontViewW;
@@ -68,8 +68,8 @@ public class SwipeToAction {
     private long downTime;
     private long upTime;
 
-    private Set<View> runningAnimationsOn = new HashSet<>();
-    private Queue<Integer> swipeQueue = new LinkedList<>();
+    private final Set<View> runningAnimationsOn = new HashSet<>();
+    private final Queue<Integer> swipeQueue = new LinkedList<>();
 
     /**
      * Constructor

@@ -36,6 +36,24 @@
     <string name="s112">SOS 112</string>
     <string name="s111">SOS 111</string>
     <string name="s100">SOS 100</string>
+    <string name="how_to_make_a_call_to_the_rescue_service">How to make a call to the rescue service</string>
+    <string name="how_to_make_a_call_to_the_rescue_service_body">To make a call to one of the rescue services, you need to hold your fingers to the left or touch the rescue service and select "make a call". After the performed actions the application will call in the necessary service of rescue.</string>
+    <string name="sending_a_message">Sending a message</string>
+    <string name="sending_a_message_body">To send a message to one of the rescue services, you need to hold your fingers to the right or touch the rescue service and select "send a message". After the performed actions, a dialog with a field for entering a message with possible message templates will appear. In addition to the message templates, you can add your own application to the desired rescue service.\nAttention! Some services do not support sending a message.</string>
+    <string name="attaching_coordinates_to_a_message">Attaching Coordinates to a message</string>
+    <string name="attaching_coordinates_to_a_message_body">While sending a text message, if successful recognition of the current location, the user is given the opportunity to attach the current longitude and latitude. Attention! Latitude and longitude does not include the current address.</string>
+    <string name="possible_problems_with_determining_your_current_location">Possible problems with determining your current location</string>
+    <string name="possible_problems_with_determining_your_current_location_body">When determining the current location, I can have problems. This may be due to disconnected GPS or lack of internet connection. In the case of an undefined location, the application will provide a list of all possible emergency rescue numbers (SOS).</string>
+    <string name="calling_an">"Calling an "</string>
+    <string name="calling_the">"Calling the "</string>
+    <string name="call_error">Call error</string>
+    <string name="no_email_clients_installed">No email clients installed.</string>
+    <string name="error_gps">Error loading the location through the GPS</string>
+    <string name="latitude">"\n_____\nLatitude: "</string>
+    <string name="longitude">"Longitude: "</string>
+    <string name="error_sending_a_message">Error sending a message</string>
+    <string name="sending_RS">Sending messages in rescue service...</string>
+    <string name="error_API">Error loading the location through the API</string>
 
     <string-array name="choose_message">
         <item>Please, help me!</item>

@@ -11,9 +11,9 @@
         android:orientation="vertical">
 
         <android.support.v7.widget.CardView
-            android:layout_marginBottom="16dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
@@ -25,18 +25,18 @@
                 android:layout_height="wrap_content">
 
                 <Spinner
-                    android:clickable="false"
                     android:id="@+id/spinner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@android:color/transparent"
+                    android:clickable="false"
                     android:entries="@array/choose_message"/>
 
                 <TextView
-                    android:onClick="onSpaceClicked"
                     android:layout_width="match_parent"
+                    android:layout_height="48dp"
                     android:background="@android:color/white"
-                    android:layout_height="48dp"/>
+                    android:onClick="onSpaceClicked"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -83,14 +83,15 @@
         </android.support.v7.widget.CardView>
 
         <CheckBox
-            android:layout_marginTop="-16dp"
             android:id="@+id/checkbox"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:layout_marginStart="16dp"
+            android:layout_marginTop="-16dp"
             android:text="@string/attach_location"
             android:textColor="#252525"
-            android:textSize="16sp"/>
+            android:textSize="16sp"
+            android:visibility="gone"/>
 
     </LinearLayout>
 

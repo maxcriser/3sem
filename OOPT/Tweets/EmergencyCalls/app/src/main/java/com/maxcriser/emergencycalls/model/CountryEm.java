@@ -4,8 +4,8 @@ import java.util.List;
 
 public class CountryEm {
 
-    private String countryName;
-    private List<Em> mEmList;
+    private final String countryName;
+    private final List<Em> mEmList;
 
     public String getCountryName() {
         return countryName;
