@@ -3,11 +3,11 @@ package com.maxcriser.emergencycalls;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -30,6 +30,7 @@ import android.widget.AdapterView;
 import android.widget.CheckBox;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.RatingBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -41,10 +42,12 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.maxcriser.emergencycalls.adapter.EmAdapter;
 import com.maxcriser.emergencycalls.constants.CountryTable;
+import com.maxcriser.emergencycalls.constants.urls;
 import com.maxcriser.emergencycalls.dialog.AlertCustomDialog;
 import com.maxcriser.emergencycalls.dialog.AlertCustomPickerDialog;
 import com.maxcriser.emergencycalls.manager.GPSManager;
 import com.maxcriser.emergencycalls.manager.PhoneManager;
+import com.maxcriser.emergencycalls.manager.ProfileManager;
 import com.maxcriser.emergencycalls.model.CountryEm;
 import com.maxcriser.emergencycalls.model.Em;
 import com.maxcriser.emergencycalls.view.labels.EditTextRobotoRegular;
@@ -68,8 +71,14 @@ public class MainActivity extends AppCompatActivity
     private static final int zoom = 14;
     private static final String TEXT_PLAIN = "text/plain";
     private static final String HTTP_IP_API_COM_JSON = "http://ip-api.com/json";
+    private static final String MV_MAXCRISER_GMAIL_COM = "mv.maxcriser@gmail.com";
+    private static final String MESSAGE_RFC822 = "message/rfc822";
+    private static final String MAILTO = "mailto:";
     private static final String GET = "GET";
     private static final String COUNTRY = "country";
+    private static final String EMERGALS_RATE = "Emergals: Rate ";
+    private static final String SUPPORT = ": Support";
+    private static final String playMarketUrl = "https://vk.com/";
     private RecyclerView recyclerView;
     private SwipeToAction swipeToAction;
     private ImageButton first;
@@ -112,6 +121,11 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
+    private void openUrl(final String url) {
+        final Intent intent = new Intent(Intent.ACTION_VIEW).setData(Uri.parse(url));
+        startActivity(intent);
+    }
+
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(@NonNull final MenuItem item) {
@@ -125,13 +139,87 @@ public class MainActivity extends AppCompatActivity
             final Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
             sharingIntent.setType(TEXT_PLAIN);
             sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, getString(R.string.e_android_application_share_title));
-            sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, getString(R.string.body_share));
-            final String SHARE_USING = "share_using";
-            startActivity(Intent.createChooser(sharingIntent, SHARE_USING));
+            sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, getString(R.string.body_share) + playMarketUrl);
+            startActivity(sharingIntent);
+        } else if (id == R.id.rate) {
+            showRate();
+        } else if (id == R.id.group) {
+            showJoinGroup();
         }
         final DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void showJoinGroup() {
+        final AlertCustomDialog dialog = new AlertCustomDialog(this);
+        dialog.setView(R.layout.fragment_join_group)
+                .setTopColorRes(R.color.text_toolbar)
+                .setCancelable(true)
+                .setListener(R.id.facebook_id, new View.OnClickListener() {
+
+                    @Override
+                    public void onClick(View v) {
+                        openUrl(urls.facebookGroupUrl);
+                        dialog.dismiss();
+                    }
+                })
+                .setListener(R.id.vk_com_id, new View.OnClickListener() {
+
+                    @Override
+                    public void onClick(View v) {
+                        openUrl(urls.vkGroupUrl);
+                        dialog.dismiss();
+                    }
+                })
+                .setListener(R.id.google_plus_id, new View.OnClickListener() {
+
+                    @Override
+                    public void onClick(View v) {
+                        openUrl(urls.googlePlusGroupUrl);
+                        dialog.dismiss();
+                    }
+                })
+                .setIcon(R.drawable.account_multiple_white)
+                .show();
+    }
+
+    private void sendEmail(final String title, final String body, final String emailFrom) {
+        final Intent i = new Intent(Intent.ACTION_SENDTO);
+        i.setType(MESSAGE_RFC822);
+        i.putExtra(Intent.EXTRA_EMAIL, emailFrom);
+        i.putExtra(Intent.EXTRA_SUBJECT, title);
+        i.putExtra(Intent.EXTRA_TEXT, body);
+        i.setData(Uri.parse(MAILTO + MV_MAXCRISER_GMAIL_COM));
+        try {
+            startActivity(i);
+        } catch (final android.content.ActivityNotFoundException ex) {
+            Toast.makeText(this, R.string.no_email_clients_installed, Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void showRate() {
+        final AlertCustomDialog dialog = new AlertCustomDialog(this);
+        dialog.setView(R.layout.fragment_rate_app)
+                .setTopColorRes(R.color.text_toolbar)
+                .setCancelable(true)
+                .setIcon(R.drawable.ic_pulse)
+                .show();
+
+        final View view = dialog.getAddedView();
+        final RatingBar ratingBar = (RatingBar) view.findViewById(R.id.rating);
+        ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+
+            @Override
+            public void onRatingChanged(final RatingBar ratingBar, final float rating, final boolean fromUser) {
+                if (rating <= 3) {
+                    sendEmail(EMERGALS_RATE + rating + SUPPORT, "", ProfileManager.getUserMail(MainActivity.this));
+                } else {
+                    openUrl(playMarketUrl);
+                }
+                dialog.dismiss();
+            }
+        });
     }
 
     public void onPhoneClicked(final View view) {
@@ -201,7 +289,6 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initViews();
-
 
         new AsyncTask<Void, Void, Void>() {
 
@@ -393,6 +480,12 @@ public class MainActivity extends AppCompatActivity
                             PhoneManager.makeCall(MainActivity.this, itemData.getPhoneNumber());
                         } catch (final Exception pE) {
                             Toast.makeText(MainActivity.this, getString(R.string.call_error), Toast.LENGTH_LONG).show();
+                        }
+                        final String title = itemData.getTitle();
+                        if (title.startsWith(getString(R.string.ambulance))) {
+                            displaySnackbar(getString(R.string.calling_an) + itemData.getTitle(), null, null);
+                        } else {
+                            displaySnackbar(getString(R.string.calling_the) + itemData.getTitle(), null, null);
                         }
                         dialogOnClick.dismiss();
                     }

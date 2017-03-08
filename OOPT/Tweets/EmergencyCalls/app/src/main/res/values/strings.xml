@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">EmergencyCalls</string>
-
+    <string name="app_name">Emergalls</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_settings">Settings</string>
@@ -23,7 +22,7 @@
     <string name="send_feedback">Send feedback</string>
     <string name="help">Help</string>
     <string name="e_android_application_share_title">Emergalls Android application</string>
-    <string name="body_share">Make emergency calls, as well as send messages to the rescue services using the application Emergalls.</string>
+    <string name="body_share">Make calls and send messages to emergency rescue services faster through the application emergalls.\nDownload app from PlayMarket: </string>
     <string name="fire_department">Fire Department</string>
     <string name="prev_of_emergencies">Prevention of emergencies</string>
     <string name="ambulance">Ambulance</string>
@@ -54,6 +53,14 @@
     <string name="error_sending_a_message">Error sending a message</string>
     <string name="sending_RS">Sending messages in rescue service...</string>
     <string name="error_API">Error loading the location through the API</string>
+    <string name="share">Share</string>
+    <string name="join_group">Join group</string>
+    <string name="communication">Communication</string>
+    <string name="rate_app">Rate app</string>
+    <string name="night_mode">Night mode</string>
+    <string name="facebook">Facebook</string>
+    <string name="vk_com">VK.com</string>
+    <string name="google">Google+</string>
 
     <string-array name="choose_message">
         <item>Please, help me!</item>
@@ -62,5 +69,8 @@
         <item>Here fire</item>
         <item>SOS</item>
     </string-array>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+    <string name="configure">Configure</string>
 
 </resources>

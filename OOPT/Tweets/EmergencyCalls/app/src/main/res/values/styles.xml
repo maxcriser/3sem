@@ -1,9 +1,9 @@
 <resources>
 
     <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
-        <item name="colorPrimary">#ffffff</item>
+        <item name="colorPrimary">@color/text_toolbar</item>
         <item name="colorPrimaryDark">@color/text_toolbar</item>
-        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:windowBackground">@color/text_toolbar</item>
     </style>
 
     <!--<style name="SplashTheme" parent="@android:style/Theme.NoTitleBar.Fullscreen">-->

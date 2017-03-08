@@ -1,8 +1,44 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-      xmlns:app="http://schemas.android.com/apk/res-auto"
-    >
+      xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <group android:checkableBehavior="none">
+
+        <item
+            android:id="@+id/night_mode"
+            android:icon="@drawable/ic_nav_night_mode"
+            android:title="@string/night_mode"
+            app:actionLayout="@layout/fragment_nav_switch"/>
+
+        <item
+            android:id="@+id/rate"
+            android:icon="@drawable/star"
+            android:title="@string/rate_app"/>
+    </group>
+
+    <group>
+
+        <item android:title="@string/communication">
+            <menu>
+
+                <item
+                    android:id="@+id/group"
+                    android:icon="@drawable/account_multiple"
+                    android:title="@string/join_group"/>
+
+                <item
+                    android:id="@+id/nav_share"
+                    android:icon="@drawable/ic_menu_share"
+                    android:title="@string/share"/>
+
+
+            </menu>
+        </item>
+
+    </group>
+
+    <group
+        android:id="@+id/menu_bottom"
+        android:checkableBehavior="none">
 
         <item
             android:id="@+id/send_feedback"
@@ -14,38 +50,6 @@
             android:icon="@drawable/help"
             android:title="@string/help"/>
 
-        <item
-            android:id="@+id/group"
-            android:icon="@drawable/help"
-            android:title="Join group"/>
-
-        <item
-            android:id="@+id/rate"
-            android:icon="@drawable/help"
-            android:title="Rate app"/>
-
-        <item
-            android:id="@+id/night_mode"
-            android:icon="@drawable/help"
-            android:title="Night mode"/>
-
-        <!--<item-->
-        <!--android:id="@+id/mi_drawer_item_live_traffic"-->
-        <!--android:icon="@drawable/ic_nav_night_mode"-->
-        <!--android:title="@string/use_fingerprint"-->
-        <!--app:actionLayout="@layout/fragment_nav_switch"/>-->
-    </group>
-
-    <group>
-        <item android:title="Communication">
-            <menu>
-                <item
-                    android:id="@+id/nav_share"
-                    android:icon="@drawable/ic_menu_share"
-                    android:title="Share"/>
-
-            </menu>
-        </item>
     </group>
 
 </menu>
