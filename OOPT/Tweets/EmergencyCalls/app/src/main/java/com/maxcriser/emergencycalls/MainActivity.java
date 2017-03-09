@@ -20,6 +20,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SwitchCompat;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -28,6 +29,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.RatingBar;
@@ -50,6 +52,7 @@ import com.maxcriser.emergencycalls.manager.PhoneManager;
 import com.maxcriser.emergencycalls.manager.ProfileManager;
 import com.maxcriser.emergencycalls.model.CountryEm;
 import com.maxcriser.emergencycalls.model.Em;
+import com.maxcriser.emergencycalls.util.CustomStringPicker;
 import com.maxcriser.emergencycalls.view.labels.EditTextRobotoRegular;
 
 import org.json.JSONObject;
@@ -59,6 +62,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
@@ -93,6 +97,7 @@ public class MainActivity extends AppCompatActivity
     private Location currentLocation;
     public List<CountryEm> mCountryEmList;
     private LatLng currentLatLng;
+    private List<String> countries;
 
     @Override
     public void onBackPressed() {
@@ -145,6 +150,8 @@ public class MainActivity extends AppCompatActivity
             showRate();
         } else if (id == R.id.group) {
             showJoinGroup();
+        } else if (id == R.id.manual_location) {
+            showContryPickerDialog();
         }
         final DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -159,7 +166,7 @@ public class MainActivity extends AppCompatActivity
                 .setListener(R.id.facebook_id, new View.OnClickListener() {
 
                     @Override
-                    public void onClick(View v) {
+                    public void onClick(final View v) {
                         openUrl(urls.facebookGroupUrl);
                         dialog.dismiss();
                     }
@@ -167,7 +174,7 @@ public class MainActivity extends AppCompatActivity
                 .setListener(R.id.vk_com_id, new View.OnClickListener() {
 
                     @Override
-                    public void onClick(View v) {
+                    public void onClick(final View v) {
                         openUrl(urls.vkGroupUrl);
                         dialog.dismiss();
                     }
@@ -175,7 +182,7 @@ public class MainActivity extends AppCompatActivity
                 .setListener(R.id.google_plus_id, new View.OnClickListener() {
 
                     @Override
-                    public void onClick(View v) {
+                    public void onClick(final View v) {
                         openUrl(urls.googlePlusGroupUrl);
                         dialog.dismiss();
                     }
@@ -289,7 +296,6 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initViews();
-
         new AsyncTask<Void, Void, Void>() {
 
             @Override
@@ -297,6 +303,9 @@ public class MainActivity extends AppCompatActivity
                 final CountryTable countryTable = new CountryTable(MainActivity.this);
                 mCountryEmList = countryTable.getEm();
                 currentEm = mCountryEmList.get(mCountryEmList.size() - 1).getEmList();
+                for (int i = 0; i < mCountryEmList.size(); i++) {
+                    countries.add(mCountryEmList.get(i).getCountryName());
+                }
                 return null;
             }
         }.execute();
@@ -306,6 +315,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void initViews() {
+        countries = new ArrayList<>();
         final DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         recyclerView = (RecyclerView) findViewById(R.id.recycler);
         mapView = (MapView) findViewById(R.id.map);
@@ -321,6 +331,43 @@ public class MainActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+
+        final Menu menu = navigationView.getMenu();
+        final SwitchCompat actionView = (SwitchCompat) menu.findItem(R.id.manual_location).getActionView().findViewById(R.id.drawer_switch);
+
+        actionView.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(final CompoundButton buttonView, final boolean isChecked) {
+                if (isChecked) {
+                    Toast.makeText(MainActivity.this, "ON", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(MainActivity.this, "OFF", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+
+    private void showContryPickerDialog() {
+        final AlertCustomDialog dialog = new AlertCustomDialog(this);
+        dialog.setView(R.layout.fragment_picker_country)
+                .setTopColorRes(R.color.text_toolbar)
+                .setCancelable(true)
+                .setIcon(R.drawable.map_marker_radius_white)
+                .setButtonsColorRes(R.color.green_material)
+                .setPositiveButton(android.R.string.ok, new View.OnClickListener() {
+
+                    @Override
+                    public void onClick(final View v) {
+                        // TODO: 10.03.2017 save to settings
+                        dialog.dismiss();
+                    }
+                })
+                .show();
+
+        final View view = dialog.getAddedView();
+        final CustomStringPicker customStringPicker = (CustomStringPicker) view.findViewById(R.id.custom_picker_country);
+        customStringPicker.setValues(countries);
     }
 
     private void sendMessageTo(final Em itemData) {
