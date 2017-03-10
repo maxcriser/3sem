@@ -73,5 +73,6 @@
     <string name="add_widget">Add widget</string>
     <string name="configure">Configure</string>
     <string name="manual_location">Manual location</string>
+    <string name="ok">ok</string>
 
 </resources>

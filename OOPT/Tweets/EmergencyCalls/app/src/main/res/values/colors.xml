@@ -9,5 +9,6 @@
     <color name="blue">#00BCD4</color>
     <color name="green_material">#FF009688</color>
     <color name="ld_textInputError">#F44336</color>
+    <color name="gray_text">#c9c9c9</color>
 
 </resources>

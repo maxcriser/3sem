@@ -5,8 +5,14 @@
         android:drawable="@android:color/white"/>
 
     <item
-        android:gravity="center"
-        android:drawable="@drawable/emergalls_svg_logo">
+        android:drawable="@drawable/emergalls_svg_logo"
+        android:gravity="center">
+    </item>
+
+    <item
+        android:bottom="48dp"
+        android:drawable="@drawable/emergalls_text"
+        android:gravity="bottom|center_horizontal">
     </item>
 
 </layer-list>

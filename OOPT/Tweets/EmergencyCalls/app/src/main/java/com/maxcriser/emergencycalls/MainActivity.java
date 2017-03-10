@@ -2,6 +2,7 @@ package com.maxcriser.emergencycalls;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.location.Address;
@@ -28,6 +29,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.FrameLayout;
@@ -68,6 +70,9 @@ import java.util.List;
 import java.util.Locale;
 
 import static android.view.View.GONE;
+import static com.maxcriser.emergencycalls.constants.Shared.countryManualLocation;
+import static com.maxcriser.emergencycalls.constants.Shared.keyManualLocation;
+import static com.maxcriser.emergencycalls.constants.Shared.statusManualLocation;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -84,7 +89,6 @@ public class MainActivity extends AppCompatActivity
     private static final String SUPPORT = ": Support";
     private static final String playMarketUrl = "https://vk.com/";
     private RecyclerView recyclerView;
-    private SwipeToAction swipeToAction;
     private ImageButton first;
     private ImageButton second;
     private ImageButton third;
@@ -98,6 +102,10 @@ public class MainActivity extends AppCompatActivity
     public List<CountryEm> mCountryEmList;
     private LatLng currentLatLng;
     private List<String> countries;
+    private SwipeToAction swipeToAction;
+    public SharedPreferences mSharedPreferences;
+    private boolean statusML;
+    private Integer countryID;
 
     @Override
     public void onBackPressed() {
@@ -151,7 +159,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.group) {
             showJoinGroup();
         } else if (id == R.id.manual_location) {
-            showContryPickerDialog();
+            showCountryPickerDialog();
         }
         final DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -296,6 +304,7 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initViews();
+
         new AsyncTask<Void, Void, Void>() {
 
             @Override
@@ -311,10 +320,19 @@ public class MainActivity extends AppCompatActivity
         }.execute();
 
         mapView.onCreate(savedInstanceState);
-        initLocation();
+        if (countryID == -1 || !statusML) {
+            initLocation();
+        } else {
+            currentEm = mCountryEmList.get(countryID).getEmList();
+            setUpRecyclerView();
+        }
     }
 
     private void initViews() {
+        mSharedPreferences = getSharedPreferences(keyManualLocation, MODE_PRIVATE);
+        statusML = mSharedPreferences.getBoolean(statusManualLocation, false);
+        countryID = mSharedPreferences.getInt(countryManualLocation, -1);
+
         countries = new ArrayList<>();
         final DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         recyclerView = (RecyclerView) findViewById(R.id.recycler);
@@ -333,41 +351,62 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         final Menu menu = navigationView.getMenu();
-        final SwitchCompat actionView = (SwitchCompat) menu.findItem(R.id.manual_location).getActionView().findViewById(R.id.drawer_switch);
+        final SwitchCompat switchStatus = (SwitchCompat) menu.findItem(R.id.manual_location).getActionView().findViewById(R.id.drawer_switch);
+        switchStatus.setChecked(statusML);
 
-        actionView.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        switchStatus.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
             @Override
             public void onCheckedChanged(final CompoundButton buttonView, final boolean isChecked) {
-                if (isChecked) {
-                    Toast.makeText(MainActivity.this, "ON", Toast.LENGTH_SHORT).show();
+                final SharedPreferences sharedPreferences =
+                        getSharedPreferences(keyManualLocation, MODE_PRIVATE);
+                final SharedPreferences.Editor editSharedPassword = sharedPreferences.edit();
+                editSharedPassword.putBoolean(statusManualLocation, isChecked).apply();
+                statusML = isChecked;
+                if (countryID == -1) {
+                    showCountryPickerDialog();
+                    drawer.closeDrawer(GravityCompat.START);
                 } else {
-                    Toast.makeText(MainActivity.this, "OFF", Toast.LENGTH_SHORT).show();
+                    if(isChecked) {
+                        currentEm = mCountryEmList.get(countryID).getEmList();
+                        setUpRecyclerView();
+                    } else {
+                        initLocation();
+                    }
                 }
             }
         });
     }
 
-    private void showContryPickerDialog() {
+    private void showCountryPickerDialog() {
+        countryID = mSharedPreferences.getInt(countryManualLocation, -1);
         final AlertCustomDialog dialog = new AlertCustomDialog(this);
         dialog.setView(R.layout.fragment_picker_country)
                 .setTopColorRes(R.color.text_toolbar)
-                .setCancelable(true)
+                .setCancelable(false)
                 .setIcon(R.drawable.map_marker_radius_white)
-                .setButtonsColorRes(R.color.green_material)
-                .setPositiveButton(android.R.string.ok, new View.OnClickListener() {
-
-                    @Override
-                    public void onClick(final View v) {
-                        // TODO: 10.03.2017 save to settings
-                        dialog.dismiss();
-                    }
-                })
+//                .setButtonsColorRes(R.color.green_material)
+//                .setPositiveButton(android.R.string.ok, null)
                 .show();
-
         final View view = dialog.getAddedView();
         final CustomStringPicker customStringPicker = (CustomStringPicker) view.findViewById(R.id.custom_picker_country);
         customStringPicker.setValues(countries);
+        if (countryID != -1) {
+            customStringPicker.setCurrent(countryID);
+        }
+        final Button positiveButton = (Button) view.findViewById(R.id.ld_btn_yes);
+        positiveButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(final View v) {
+                final SharedPreferences sharedPreferences =
+                        getSharedPreferences(keyManualLocation, MODE_PRIVATE);
+                final SharedPreferences.Editor editSharedPassword = sharedPreferences.edit();
+                editSharedPassword.putInt(countryManualLocation, customStringPicker.getCurrent()).apply();
+                countryID = customStringPicker.getCurrent();
+                dialog.dismiss();
+            }
+        });
     }
 
     private void sendMessageTo(final Em itemData) {
