@@ -59,10 +59,10 @@ public final class CountryTable {
                 add(new CountryEm("Belarus", new ArrayList<Em>() {
 
                     {
-                        add(new Em(mContext.getString(R.string.sos), mContext.getString(R.string.a_single_number), "+Belarus", "+Belarus")); // 911
-                        add(new Em(mContext.getString(R.string.fire_department), mContext.getString(R.string.prev_of_emergencies), "+375298893673", "+375298893673")); // 101
-                        add(new Em(mContext.getString(R.string.police), mContext.getString(R.string.protection_of_public_order), "+375298893673", "+375298893673")); // 102
-                        add(new Em(mContext.getString(R.string.ambulance), mContext.getString(R.string.prov_emergency_medical_care), "+375298893673", "+375298893673")); // 103
+                        add(new Em(mContext.getString(R.string.sos), mContext.getString(R.string.a_single_number), "+375297878944", "+375297878944")); // 911
+                        add(new Em(mContext.getString(R.string.fire_department), mContext.getString(R.string.prev_of_emergencies), "+375297878944", "+375297878944")); // 101
+                        add(new Em(mContext.getString(R.string.police), mContext.getString(R.string.protection_of_public_order), "+375297878944", "+375297878944")); // 102
+                        add(new Em(mContext.getString(R.string.ambulance), mContext.getString(R.string.prov_emergency_medical_care), "+375297878944", "+375297878944")); // 103
                     }
                 }));
 

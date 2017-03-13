@@ -1,6 +1,6 @@
 package com.maxcriser.emergencycalls;
 
-import android.Manifest;
+import android.annotation.TargetApi;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -15,6 +15,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -46,7 +47,8 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.maxcriser.emergencycalls.adapter.EmAdapter;
 import com.maxcriser.emergencycalls.constants.CountryTable;
-import com.maxcriser.emergencycalls.constants.urls;
+import com.maxcriser.emergencycalls.constants.Permissions;
+import com.maxcriser.emergencycalls.constants.SocialLinks;
 import com.maxcriser.emergencycalls.dialog.AlertCustomDialog;
 import com.maxcriser.emergencycalls.dialog.AlertCustomPickerDialog;
 import com.maxcriser.emergencycalls.manager.GPSManager;
@@ -152,7 +154,7 @@ public class MainActivity extends AppCompatActivity
             final Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
             sharingIntent.setType(TEXT_PLAIN);
             sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, getString(R.string.e_android_application_share_title));
-            sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, getString(R.string.body_share) + playMarketUrl);
+            sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, getString(R.string.body_share) + " " + playMarketUrl);
             startActivity(sharingIntent);
         } else if (id == R.id.rate) {
             showRate();
@@ -175,7 +177,7 @@ public class MainActivity extends AppCompatActivity
 
                     @Override
                     public void onClick(final View v) {
-                        openUrl(urls.facebookGroupUrl);
+                        openUrl(SocialLinks.facebookGroupUrl);
                         dialog.dismiss();
                     }
                 })
@@ -183,7 +185,7 @@ public class MainActivity extends AppCompatActivity
 
                     @Override
                     public void onClick(final View v) {
-                        openUrl(urls.vkGroupUrl);
+                        openUrl(SocialLinks.vkGroupUrl);
                         dialog.dismiss();
                     }
                 })
@@ -191,7 +193,7 @@ public class MainActivity extends AppCompatActivity
 
                     @Override
                     public void onClick(final View v) {
-                        openUrl(urls.googlePlusGroupUrl);
+                        openUrl(SocialLinks.googlePlusGroupUrl);
                         dialog.dismiss();
                     }
                 })
@@ -266,10 +268,8 @@ public class MainActivity extends AppCompatActivity
                 public void onMapReady(final GoogleMap pGoogleMap) {
                     googleMap = pGoogleMap;
                     googleMap.getUiSettings().setAllGesturesEnabled(true);
-
-                    if (ActivityCompat.checkSelfPermission(MainActivity.this,
-                            Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
-                            && ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                    if (ActivityCompat.checkSelfPermission(MainActivity.this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
+                            && ActivityCompat.checkSelfPermission(MainActivity.this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                         return;
                     }
                     googleMap.setMyLocationEnabled(true);
@@ -294,6 +294,44 @@ public class MainActivity extends AppCompatActivity
         // empty body
     }
 
+    @TargetApi(23)
+    private void getPermission(final int CODE, final String PERMISSION) {
+        if (ContextCompat.checkSelfPermission(this, PERMISSION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{PERMISSION}, CODE);
+        } else {
+            preSettings();
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(final int requestCode, @NonNull final String[] permissions, @NonNull final int[] grantResults) {
+        if (grantResults.length == 0) {
+            preSettings();
+            return;
+        } else if (grantResults[0] != PackageManager.PERMISSION_GRANTED) {
+            // permission not adopted // todo can be finish
+            if (requestCode == 0) {
+                Toast.makeText(this, R.string.location_will_not_be_used, Toast.LENGTH_SHORT).show();
+            } else {
+                finish();
+            }
+        }
+        if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            preSettings();
+        }
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
+
+    private void preSettings() {
+        if (countryID == -1 || !statusML) {
+            initLocation();
+        } else {
+            currentEm = mCountryEmList.get(countryID).getEmList();
+            showToastCountry(mCountryEmList.get(countryID).getCountryName());
+            setUpRecyclerView();
+        }
+    }
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -304,6 +342,10 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initViews();
+
+//        for (int i = 0; i < Permissions.permissions.size(); i++) {
+//            getPermission(i, Permissions.permissions.get(i));
+//        }
 
         new AsyncTask<Void, Void, Void>() {
 
@@ -320,12 +362,14 @@ public class MainActivity extends AppCompatActivity
         }.execute();
 
         mapView.onCreate(savedInstanceState);
-        if (countryID == -1 || !statusML) {
-            initLocation();
-        } else {
-            currentEm = mCountryEmList.get(countryID).getEmList();
-            setUpRecyclerView();
+
+        for (int i = 0; i < Permissions.permissions.size(); i++) {
+            getPermission(i, Permissions.permissions.get(i));
         }
+    }
+
+    private void showToastCountry(final String country) {
+        Toast.makeText(this, country, Toast.LENGTH_LONG).show();
     }
 
     private void initViews() {
@@ -367,8 +411,9 @@ public class MainActivity extends AppCompatActivity
                     showCountryPickerDialog();
                     drawer.closeDrawer(GravityCompat.START);
                 } else {
-                    if(isChecked) {
+                    if (isChecked) {
                         currentEm = mCountryEmList.get(countryID).getEmList();
+                        showToastCountry(mCountryEmList.get(countryID).getCountryName());
                         setUpRecyclerView();
                     } else {
                         initLocation();
@@ -404,6 +449,11 @@ public class MainActivity extends AppCompatActivity
                 final SharedPreferences.Editor editSharedPassword = sharedPreferences.edit();
                 editSharedPassword.putInt(countryManualLocation, customStringPicker.getCurrent()).apply();
                 countryID = customStringPicker.getCurrent();
+                if (statusML) {
+                    currentEm = mCountryEmList.get(countryID).getEmList();
+                    showToastCountry(mCountryEmList.get(countryID).getCountryName());
+                    setUpRecyclerView();
+                }
                 dialog.dismiss();
             }
         });
@@ -679,9 +729,10 @@ public class MainActivity extends AppCompatActivity
             protected void onPostExecute(final String pS) {
                 super.onPostExecute(pS);
                 if (pS != null) {
+                    showToastCountry(pS);
                     setUpCurrentEm(pS);
                 } else {
-                    Toast.makeText(MainActivity.this, R.string.error_API, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, R.string.location_not_found, Toast.LENGTH_SHORT).show();
                 }
                 setUpRecyclerView();
             }
@@ -727,6 +778,7 @@ public class MainActivity extends AppCompatActivity
             protected void onPostExecute(final String pS) {
                 super.onPostExecute(pS);
                 if (pS != null) {
+                    showToastCountry(pS);
                     setUpCurrentEm(pS);
                     setUpRecyclerView();
                 } else {

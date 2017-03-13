@@ -22,7 +22,7 @@
     <string name="send_feedback">Send feedback</string>
     <string name="help">Help</string>
     <string name="e_android_application_share_title">Emergalls Android application</string>
-    <string name="body_share">Make calls and send messages to emergency rescue services faster through the application emergalls.\nDownload app from PlayMarket: </string>
+    <string name="body_share">Make calls and send messages to emergency rescue services faster through the application emergalls.\nDownload app from PlayMarket:</string>
     <string name="fire_department">Fire Department</string>
     <string name="prev_of_emergencies">Prevention of emergencies</string>
     <string name="ambulance">Ambulance</string>
@@ -51,7 +51,7 @@
     <string name="latitude">"\n_____\nLatitude: "</string>
     <string name="longitude">"Longitude: "</string>
     <string name="error_sending_a_message">Error sending a message</string>
-    <string name="sending_RS">Sending messages in rescue service...</string>
+    <string name="sending_RS">Sending messages ifn rescue service...</string>
     <string name="error_API">Error loading the location through the API</string>
     <string name="share">Share</string>
     <string name="join_group">Join group</string>
@@ -74,5 +74,7 @@
     <string name="configure">Configure</string>
     <string name="manual_location">Manual location</string>
     <string name="ok">ok</string>
+    <string name="location_not_found">Location not found</string>
+    <string name="location_will_not_be_used">Location will not be used</string>
 
 </resources>
