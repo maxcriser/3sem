@@ -21,6 +21,7 @@
                 android:orientation="vertical">
 
                 <LinearLayout
+                    android:background="@android:color/white"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/top_toolbar_height">
 
@@ -32,7 +33,8 @@
                         android:layout_marginStart="6dp"
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:onClick="onMenuClicked"
-                        android:src="@drawable/ic_menu_black_24dp"/>
+                        android:src="@drawable/ic_menu_black_24dp"
+                        android:layout_marginLeft="6dp"/>
 
                     <com.maxcriser.emergencycalls.view.labels.TextViewRobotoMedium
                         android:id="@+id/title_toolbar"
@@ -44,11 +46,13 @@
                         android:text="@string/emergalls"
                         android:textColor="@color/text_toolbar"
                         android:textSize="20sp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold"
+                        android:layout_marginLeft="24dp"/>
 
                 </LinearLayout>
 
                 <LinearLayout
+                    android:background="@android:color/white"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">

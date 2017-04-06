@@ -104,7 +104,6 @@ public class MainActivity extends AppCompatActivity
     public List<CountryEm> mCountryEmList;
     private LatLng currentLatLng;
     private List<String> countries;
-    private SwipeToAction swipeToAction;
     public SharedPreferences mSharedPreferences;
     private boolean statusML;
     private Integer countryID;
@@ -369,7 +368,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void showToastCountry(final String country) {
-        Toast.makeText(this, country, Toast.LENGTH_LONG).show();
+        Toast.makeText(this, country, Toast.LENGTH_SHORT).show();
     }
 
     private void initViews() {
@@ -545,17 +544,17 @@ public class MainActivity extends AppCompatActivity
                 String messageStr = message.getText().toString();
                 if (currentLocation != null) {
                     if (checkbox.isChecked()) {
-                        messageStr += "\n_____\nLatitude: " + currentLocation.getLatitude() + "\n"
-                                + "Longitude: " + currentLocation.getLongitude();
-                        Log.d("Send location", currentLocation.getLatitude() + " : " + currentLocation.getLongitude());
+                        messageStr += getString(R.string._latitude) +
+                                ": " + currentLocation.getLatitude() + "\n"
+                                + getString(R.string.longitude_) + currentLocation.getLongitude();
                     }
                 }
                 try {
                     PhoneManager.sendSMS(itemData.getSmsNumber(), messageStr);
                 } catch (final Exception pE) {
-                    Toast.makeText(MainActivity.this, "Error sending a message", Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainActivity.this, R.string.error_sending, Toast.LENGTH_SHORT).show();
                 }
-                displaySnackbar("Sending messages in rescue service...", null, null);
+                displaySnackbar(getString(R.string.sending), null, null);
                 dialog.dismiss();
             }
         });
@@ -568,20 +567,16 @@ public class MainActivity extends AppCompatActivity
         final EmAdapter adapter = new EmAdapter(this, currentEm);
         recyclerView.setAdapter(adapter);
 
-        swipeToAction = new SwipeToAction(this, recyclerView, new SwipeToAction.SwipeListener<Em>() {
+        final SwipeToAction swipeToAction = new SwipeToAction(this, recyclerView, new SwipeToAction.SwipeListener<Em>() {
 
             @Override
             public boolean swipeLeft(final Em itemData) {
                 final String title = itemData.getTitle();
-                if (title.startsWith(getString(R.string.ambulance))) {
-                    displaySnackbar(getString(R.string.calling_an) + itemData.getTitle(), null, null);
-                } else {
-                    displaySnackbar(getString(R.string.calling_the) + itemData.getTitle(), null, null);
-                }
+                displaySnackbar(getString(R.string.calling_an), null, null);
                 try {
                     PhoneManager.makeCall(MainActivity.this, itemData.getPhoneNumber());
                 } catch (final Exception pE) {
-                    Toast.makeText(MainActivity.this, R.string.call_error, Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainActivity.this, R.string.call_error, Toast.LENGTH_SHORT).show();
                 }
                 return true;
             }
@@ -615,14 +610,10 @@ public class MainActivity extends AppCompatActivity
                         try {
                             PhoneManager.makeCall(MainActivity.this, itemData.getPhoneNumber());
                         } catch (final Exception pE) {
-                            Toast.makeText(MainActivity.this, getString(R.string.call_error), Toast.LENGTH_LONG).show();
+                            Toast.makeText(MainActivity.this, getString(R.string.call_error), Toast.LENGTH_SHORT).show();
                         }
                         final String title = itemData.getTitle();
-                        if (title.startsWith(getString(R.string.ambulance))) {
-                            displaySnackbar(getString(R.string.calling_an) + itemData.getTitle(), null, null);
-                        } else {
-                            displaySnackbar(getString(R.string.calling_the) + itemData.getTitle(), null, null);
-                        }
+                            displaySnackbar(getString(R.string.calling_an), null, null);
                         dialogOnClick.dismiss();
                     }
                 })
@@ -700,7 +691,7 @@ public class MainActivity extends AppCompatActivity
                                 try {
                                     PhoneManager.sendSMS(itemData.getSmsNumber(), messageStr);
                                 } catch (final Exception pE) {
-                                    Toast.makeText(MainActivity.this, R.string.error_sending_a_message, Toast.LENGTH_LONG).show();
+                                    Toast.makeText(MainActivity.this, R.string.error_sending_a_message, Toast.LENGTH_SHORT).show();
                                 }
                                 displaySnackbar(getString(R.string.sending_RS), null, null);
                                 dialog.dismiss();
@@ -790,11 +781,12 @@ public class MainActivity extends AppCompatActivity
             @Override
             protected String doInBackground(final Void... params) {
                 try {
-                    final Geocoder geocoder = new Geocoder(MainActivity.this, Locale.getDefault());
+                    final Geocoder geocoder = new Geocoder(MainActivity.this, Locale.ENGLISH);
                     currentLocation = GPSManager.getGPS(MainActivity.this);
                     currentLatLng = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
                     final Address address = geocoder.getFromLocation(currentLocation.getLatitude(), currentLocation.getLongitude(), 1).get(0);
                     final String countryCur = address.getCountryName();
+                    Log.d("COUNTRYYYYY", address.getCountryCode() + " " + address.getCountryName() + " " + address.toString());
                     return countryCur;
                 } catch (final Exception e) {
                     return null;

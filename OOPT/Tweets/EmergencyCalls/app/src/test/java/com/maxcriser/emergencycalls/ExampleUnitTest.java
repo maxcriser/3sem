@@ -1,6 +1,16 @@
 package com.maxcriser.emergencycalls;
 
+import android.location.Address;
+import android.location.Geocoder;
+import android.provider.Settings;
+import android.util.Log;
+
+import com.google.android.gms.maps.model.LatLng;
+import com.maxcriser.emergencycalls.manager.GPSManager;
+
 import org.junit.Test;
+
+import java.util.Locale;
 
 import static org.junit.Assert.*;
 

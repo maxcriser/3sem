@@ -91,7 +91,8 @@
             android:text="@string/attach_location"
             android:textColor="#252525"
             android:textSize="16sp"
-            android:visibility="gone"/>
+            android:visibility="gone"
+            android:layout_marginLeft="16dp"/>
 
     </LinearLayout>
 

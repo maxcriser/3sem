@@ -173,7 +173,7 @@ public class AlertCustomDialog extends AlertDialogHead<AlertCustomDialog> {
 
     public AlertCustomDialog configureView(final ViewConfigurator configurator) {
         if (addedView == null) {
-            throw new IllegalStateException(string(R.string.ex_msg_dialog_view_not_set));
+            throw new IllegalStateException();
         }
         configurator.configureView(addedView);
         return this;
@@ -185,7 +185,7 @@ public class AlertCustomDialog extends AlertDialogHead<AlertCustomDialog> {
 
     public AlertCustomDialog setListener(final int viewId, final boolean dismissOnClick, final View.OnClickListener listener) {
         if (addedView == null) {
-            throw new IllegalStateException(string(R.string.ex_msg_dialog_view_not_set));
+            throw new IllegalStateException();
         }
         final View.OnClickListener clickListener = new ClickListenerDecorator(listener, dismissOnClick);
         findView(viewId).setOnClickListener(clickListener);
