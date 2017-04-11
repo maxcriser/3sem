@@ -35,6 +35,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.ProgressBar;
 import android.widget.RatingBar;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -107,6 +108,7 @@ public class MainActivity extends AppCompatActivity
     public SharedPreferences mSharedPreferences;
     private boolean statusML;
     private Integer countryID;
+    private ProgressBar mProgressBar;
 
     @Override
     public void onBackPressed() {
@@ -372,6 +374,8 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void initViews() {
+        mProgressBar = (ProgressBar) findViewById(R.id.progressbar_main);
+        mProgressBar.setVisibility(View.VISIBLE);
         mSharedPreferences = getSharedPreferences(keyManualLocation, MODE_PRIVATE);
         statusML = mSharedPreferences.getBoolean(statusManualLocation, false);
         countryID = mSharedPreferences.getInt(countryManualLocation, -1);
@@ -561,6 +565,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void setUpRecyclerView() {
+        mProgressBar.setVisibility(GONE);
         final LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);

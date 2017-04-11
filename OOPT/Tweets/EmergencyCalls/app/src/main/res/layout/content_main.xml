@@ -10,6 +10,7 @@
     tools:context="com.maxcriser.emergencycalls.MainActivity">
 
     <ProgressBar
+        android:id="@+id/progressbar_main"
         android:layout_gravity="center"
         android:layout_marginTop="@dimen/toolbar_settings_height_minus_4"
         android:layout_width="48dp"
