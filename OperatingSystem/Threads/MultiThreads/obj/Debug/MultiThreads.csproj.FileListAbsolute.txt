@@ -1,0 +1,5 @@
+D:\GitHubProjects\3sem\OperatingSystem\Threads\MultiThreads\bin\Debug\MultiThreads.exe.config
+D:\GitHubProjects\3sem\OperatingSystem\Threads\MultiThreads\bin\Debug\MultiThreads.exe
+D:\GitHubProjects\3sem\OperatingSystem\Threads\MultiThreads\bin\Debug\MultiThreads.pdb
+D:\GitHubProjects\3sem\OperatingSystem\Threads\MultiThreads\obj\Debug\MultiThreads.exe
+D:\GitHubProjects\3sem\OperatingSystem\Threads\MultiThreads\obj\Debug\MultiThreads.pdb
