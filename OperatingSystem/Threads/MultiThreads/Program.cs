@@ -17,7 +17,7 @@ namespace MultiThreads
 
         static void Main(string[] args)
         {
-            int N = 10000;
+            int N = 100000;
             int K = 10000;
             int countThreads = 4;
 
@@ -29,7 +29,16 @@ namespace MultiThreads
             for (int c = 0; c < countThreads; c++)
             {
                 int start = c * N / countThreads;
-                int end = (c + 1) * N / countThreads;
+                int end = 0;
+
+                if (c == countThreads - 1)
+                {
+                    end = N;
+                }
+                else
+                {
+                    end = (c + 1) * N / countThreads;
+                }
 
                 Thread thr2 = new Thread(() =>
                 {
