@@ -1,0 +1,9 @@
+D:\GitHubProjects\3sem\OperatingSystem\Threads\MThreadsWF\bin\Debug\MThreadsWF.exe.config
+D:\GitHubProjects\3sem\OperatingSystem\Threads\MThreadsWF\obj\Debug\MThreadsWF.csprojResolveAssemblyReference.cache
+D:\GitHubProjects\3sem\OperatingSystem\Threads\MThreadsWF\obj\Debug\MThreadsWF.Form1.resources
+D:\GitHubProjects\3sem\OperatingSystem\Threads\MThreadsWF\obj\Debug\MThreadsWF.Properties.Resources.resources
+D:\GitHubProjects\3sem\OperatingSystem\Threads\MThreadsWF\obj\Debug\MThreadsWF.csproj.GenerateResource.Cache
+D:\GitHubProjects\3sem\OperatingSystem\Threads\MThreadsWF\bin\Debug\MThreadsWF.exe
+D:\GitHubProjects\3sem\OperatingSystem\Threads\MThreadsWF\bin\Debug\MThreadsWF.pdb
+D:\GitHubProjects\3sem\OperatingSystem\Threads\MThreadsWF\obj\Debug\MThreadsWF.exe
+D:\GitHubProjects\3sem\OperatingSystem\Threads\MThreadsWF\obj\Debug\MThreadsWF.pdb

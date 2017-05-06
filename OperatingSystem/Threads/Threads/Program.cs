@@ -12,7 +12,7 @@ namespace Threads
     {
         static void Main(string[] args)
         {
-            int N = 10000;
+            int N = 1000;
             int K = 1000;
             double[] a = new double[N];
             double[] b = new double[N];
