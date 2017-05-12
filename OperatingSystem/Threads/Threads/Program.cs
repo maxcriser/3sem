@@ -12,20 +12,34 @@ namespace Threads
     {
         static void Main(string[] args)
         {
-            int N = 1000;
-            int K = 1000;
-            double[] a = new double[N];
-            double[] b = new double[N];
-           
-            Console.WriteLine("Start: " + DateTime.Now.Millisecond.ToString());
-            for (int i = 0; i < a.Length; i++)
+            int turn = 1;
+            int x = 0;
+            Console.WriteLine(x);
+
+            Thread thr1 = new Thread(() =>
             {
-                for (int j = 0; j < K; j++)
+                while (true)
                 {
-                    b[i] += Math.Pow(a[i], 1.789);
+                    while (turn != 0) ;
+                    x += 1;
+                    Console.WriteLine(x);
+
+                    //critical_region();
+                    turn = 1;
+                    //noncritical_region();
                 }
+            });
+
+            while (true)
+            {
+                while (turn != 1) ;
+                x += 1;
+                Console.WriteLine(x);
+
+                //critical_region();
+                turn = 0;
+                //noncritical_region();
             }
-            Console.WriteLine("Stop: " + DateTime.Now.Millisecond.ToString());
             Console.ReadKey();
         }
     }

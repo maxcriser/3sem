@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiThreads", "MultiThread
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MThreadsWF", "MThreadsWF\MThreadsWF.csproj", "{5509089F-1586-410D-A3C4-B04336A11DF3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgoritmStrictAlternation", "AlgoritmStrictAlternation\AlgoritmStrictAlternation.csproj", "{E130B361-7DFD-440D-9EAF-6104992427FE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{5509089F-1586-410D-A3C4-B04336A11DF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5509089F-1586-410D-A3C4-B04336A11DF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5509089F-1586-410D-A3C4-B04336A11DF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E130B361-7DFD-440D-9EAF-6104992427FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E130B361-7DFD-440D-9EAF-6104992427FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E130B361-7DFD-440D-9EAF-6104992427FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E130B361-7DFD-440D-9EAF-6104992427FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
