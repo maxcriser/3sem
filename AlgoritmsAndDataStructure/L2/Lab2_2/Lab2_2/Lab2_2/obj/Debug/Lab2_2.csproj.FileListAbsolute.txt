@@ -1,0 +1,6 @@
+D:\GitHubProjects\3sem\AlgoritmsAndDataStructure\L2\Lab2_2\Lab2_2\Lab2_2\bin\Debug\Lab2_2.exe.config
+D:\GitHubProjects\3sem\AlgoritmsAndDataStructure\L2\Lab2_2\Lab2_2\Lab2_2\bin\Debug\Lab2_2.exe
+D:\GitHubProjects\3sem\AlgoritmsAndDataStructure\L2\Lab2_2\Lab2_2\Lab2_2\bin\Debug\Lab2_2.pdb
+D:\GitHubProjects\3sem\AlgoritmsAndDataStructure\L2\Lab2_2\Lab2_2\Lab2_2\obj\Debug\Lab2_2.csprojResolveAssemblyReference.cache
+D:\GitHubProjects\3sem\AlgoritmsAndDataStructure\L2\Lab2_2\Lab2_2\Lab2_2\obj\Debug\Lab2_2.exe
+D:\GitHubProjects\3sem\AlgoritmsAndDataStructure\L2\Lab2_2\Lab2_2\Lab2_2\obj\Debug\Lab2_2.pdb

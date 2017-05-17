@@ -1,0 +1,12 @@
+D:\GitHubProjects\3sem\AlgoritmsAndDataStructure\Lab3_1\Lab3_1\bin\Debug\Lab3_1.exe.config
+D:\GitHubProjects\3sem\AlgoritmsAndDataStructure\Lab3_1\Lab3_1\bin\Debug\Lab3_1.exe
+D:\GitHubProjects\3sem\AlgoritmsAndDataStructure\Lab3_1\Lab3_1\bin\Debug\Lab3_1.pdb
+D:\GitHubProjects\3sem\AlgoritmsAndDataStructure\Lab3_1\Lab3_1\obj\Debug\Lab3_1.csprojResolveAssemblyReference.cache
+D:\GitHubProjects\3sem\AlgoritmsAndDataStructure\Lab3_1\Lab3_1\obj\Debug\Lab3_1.exe
+D:\GitHubProjects\3sem\AlgoritmsAndDataStructure\Lab3_1\Lab3_1\obj\Debug\Lab3_1.pdb
+D:\GitHubProjects\3sem\AlgoritmsAndDataStructure\L3\Lab3_1\Lab3_1\bin\Debug\Lab3_1.exe.config
+D:\GitHubProjects\3sem\AlgoritmsAndDataStructure\L3\Lab3_1\Lab3_1\obj\Debug\Lab3_1.exe
+D:\GitHubProjects\3sem\AlgoritmsAndDataStructure\L3\Lab3_1\Lab3_1\obj\Debug\Lab3_1.pdb
+D:\GitHubProjects\3sem\AlgoritmsAndDataStructure\L3\Lab3_1\Lab3_1\obj\Debug\Lab3_1.csprojResolveAssemblyReference.cache
+D:\GitHubProjects\3sem\AlgoritmsAndDataStructure\L3\Lab3_1\Lab3_1\bin\Debug\Lab3_1.exe
+D:\GitHubProjects\3sem\AlgoritmsAndDataStructure\L3\Lab3_1\Lab3_1\bin\Debug\Lab3_1.pdb

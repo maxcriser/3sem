@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="66f6d64e1bfd41aff9ca8521bc4c6d31cba54330">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_958fa5244198015d74c0596fca833f9391b239a4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
+        <dex dex="D:\GitHubProjects\3sem\OOPT\Tweets\EmergencyCalls\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_4504bd207443eea46450b7456970a416aae58f32\classes.dex" />
+    </item>
+
+</items>

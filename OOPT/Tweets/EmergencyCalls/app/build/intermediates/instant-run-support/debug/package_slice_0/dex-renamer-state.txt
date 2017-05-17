@@ -1,0 +1,4 @@
+#Fri Apr 07 10:40:39 MSK 2017
+base.0=D\:\\GitHubProjects\\3sem\\OOPT\\Tweets\\EmergencyCalls\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_0
+renamed.0=classes.dex
+file.0=D\:\\GitHubProjects\\3sem\\OOPT\\Tweets\\EmergencyCalls\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_0\\classes.dex

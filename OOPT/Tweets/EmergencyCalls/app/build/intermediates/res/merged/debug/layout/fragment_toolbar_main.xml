@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/all_toolbar_height">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/all_toolbar_height_minus_4"
+            card_view:cardCornerRadius="0dp"
+            card_view:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:background="@android:color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/top_toolbar_height">
+
+                    <ImageButton
+                        android:id="@+id/imageButton"
+                        android:layout_width="@dimen/top_toolbar_height"
+                        android:layout_height="@dimen/top_toolbar_height"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="6dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:onClick="onMenuClicked"
+                        android:src="@drawable/ic_menu_black_24dp"
+                        android:layout_marginLeft="6dp"/>
+
+                    <com.maxcriser.emergencycalls.view.labels.TextViewRobotoMedium
+                        android:id="@+id/title_toolbar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="24dp"
+                        android:gravity="center"
+                        android:text="@string/emergalls"
+                        android:textColor="@color/text_toolbar"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="24dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:background="@android:color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/button_first"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="?attr/selectableItemBackground"
+                        android:onClick="onPhoneClicked"
+                        android:src="@drawable/blue_phone"/>
+
+                    <ImageButton
+                        android:visibility="gone"
+                        android:id="@+id/button_second"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="?attr/selectableItemBackground"
+                        android:onClick="onSecondClicked"
+                        android:src="@drawable/map_marker"/>
+
+                    <ImageButton
+                        android:id="@+id/button_third"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="?attr/selectableItemBackground"
+                        android:onClick="onMapClicked"
+                        android:src="@drawable/google_maps"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </FrameLayout>
+</FrameLayout>

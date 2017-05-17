@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:cardCornerRadius="2dp"
+            app:cardElevation="2dp">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:clickable="false"
+                    android:entries="@array/choose_message"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@android:color/white"
+                    android:onClick="onSpaceClicked"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageButton
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@android:color/white"
+                        android:onClick="onDownClicked"
+                        android:src="@drawable/ic_down"/>
+
+                    <com.maxcriser.emergencycalls.view.labels.EditTextRobotoRegular
+                        android:id="@+id/message"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:cursorVisible="true"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:hint="@string/your_message"
+                        android:imeOptions="actionSend"
+                        android:maxLines="8"
+                        android:textColor="@android:color/black"
+                        android:textSize="17sp"/>
+
+                    <ImageButton
+                        android:id="@+id/send_button"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_gravity="end|bottom"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="false"
+                        android:src="@drawable/send_gray"/>
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <CheckBox
+            android:id="@+id/checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="-16dp"
+            android:text="@string/attach_location"
+            android:textColor="#252525"
+            android:textSize="16sp"
+            android:visibility="gone"
+            android:layout_marginLeft="16dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

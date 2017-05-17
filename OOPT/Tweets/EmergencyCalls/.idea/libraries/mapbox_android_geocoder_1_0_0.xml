@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="mapbox-android-geocoder-1.0.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.android/build-cache/8dd16404348c67d3a18c4d72726cf457815fb8ce/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/8dd16404348c67d3a18c4d72726cf457815fb8ce/output/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.mapbox.mapboxsdk/mapbox-android-geocoder/1.0.0/9cb32153831462019b67d8865a4c96dcd98cb8b4/mapbox-android-geocoder-1.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

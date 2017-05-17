@@ -1,0 +1,199 @@
+[
+    {
+        "outputFile": "D:\\GitHubProjects\\3sem\\OOPT\\Tweets\\EmergencyCalls\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-land\\values-land.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 69,
+                    "endOffset": 120
+                },
+                "from": {
+                    "file": "C:\\Users\\IstiN\\.android\\build-cache\\cb88dcfd0df79dea27238d0bf0ed1e8ae71532a3\\output\\res\\values-land\\values-land.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 69,
+                        "endOffset": 120
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 125,
+                    "endColumn": 63,
+                    "endOffset": 184
+                },
+                "from": {
+                    "file": "C:\\Users\\IstiN\\.android\\build-cache\\cb88dcfd0df79dea27238d0bf0ed1e8ae71532a3\\output\\res\\values-land\\values-land.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 125,
+                        "endColumn": 63,
+                        "endOffset": 184
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 189,
+                    "endColumn": 70,
+                    "endOffset": 255
+                },
+                "from": {
+                    "file": "C:\\Users\\IstiN\\.android\\build-cache\\cb88dcfd0df79dea27238d0bf0ed1e8ae71532a3\\output\\res\\values-land\\values-land.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 189,
+                        "endColumn": 70,
+                        "endOffset": 255
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 260,
+                    "endColumn": 67,
+                    "endOffset": 323
+                },
+                "from": {
+                    "file": "C:\\Users\\IstiN\\.android\\build-cache\\cb88dcfd0df79dea27238d0bf0ed1e8ae71532a3\\output\\res\\values-land\\values-land.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 260,
+                        "endColumn": 67,
+                        "endOffset": 323
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 328,
+                    "endColumn": 50,
+                    "endOffset": 374
+                },
+                "from": {
+                    "file": "D:\\GitHubProjects\\3sem\\OOPT\\Tweets\\EmergencyCalls\\app\\src\\main\\res\\values-land\\dimens.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 110,
+                        "endColumn": 50,
+                        "endOffset": 156
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 379,
+                    "endColumn": 57,
+                    "endOffset": 432
+                },
+                "from": {
+                    "file": "D:\\GitHubProjects\\3sem\\OOPT\\Tweets\\EmergencyCalls\\app\\src\\main\\res\\values-land\\dimens.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 162,
+                        "endColumn": 57,
+                        "endOffset": 215
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 437,
+                    "endColumn": 54,
+                    "endOffset": 487
+                },
+                "from": {
+                    "file": "D:\\GitHubProjects\\3sem\\OOPT\\Tweets\\EmergencyCalls\\app\\src\\main\\res\\values-land\\dimens.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 221,
+                        "endColumn": 54,
+                        "endOffset": 271
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 492,
+                    "endColumn": 62,
+                    "endOffset": 550
+                },
+                "from": {
+                    "file": "D:\\GitHubProjects\\3sem\\OOPT\\Tweets\\EmergencyCalls\\app\\src\\main\\res\\values-land\\dimens.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 277,
+                        "endColumn": 62,
+                        "endOffset": 335
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 555,
+                    "endColumn": 49,
+                    "endOffset": 600
+                },
+                "from": {
+                    "file": "D:\\GitHubProjects\\3sem\\OOPT\\Tweets\\EmergencyCalls\\app\\src\\main\\res\\values-land\\dimens.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 59,
+                        "endColumn": 49,
+                        "endOffset": 104
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 605,
+                    "endLine": 14,
+                    "endColumn": 12,
+                    "endOffset": 782
+                },
+                "from": {
+                    "file": "C:\\Users\\IstiN\\.android\\build-cache\\8f2b02f33f9c06f7b1430db97f48f90599722136\\output\\res\\values-land\\values-land.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endLine": 5,
+                        "endColumn": 12,
+                        "endOffset": 232
+                    }
+                }
+            }
+        ]
+    }
+]
