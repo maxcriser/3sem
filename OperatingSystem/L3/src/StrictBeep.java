@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public class Beep {
+public class StrictBeep {
 
     volatile private static boolean flag = false;
     volatile private static int countBeeps = 2;
