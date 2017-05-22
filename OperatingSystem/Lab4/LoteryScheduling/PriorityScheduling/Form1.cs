@@ -18,6 +18,8 @@ namespace PriorityScheduling
         public System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
         public Boolean allow = true;
         public Thread thr2;
+        public List<int> allTickets;
+        Random random = new Random();
 
         [DllImport("kernel32.dll", SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]
@@ -26,27 +28,6 @@ namespace PriorityScheduling
         public void firstFillingGrid()
         {
             grid.Rows.Add("", "", "", "", "", "", "", "", "", "");
-            grid.Rows.Add("", "", "", "", "", "", "", "", "", "");
-        }
-
-        public List<Process> sortListByPriority(List<Process> listProcess)
-        {
-            List<Process> pr = listProcess;
-
-            for (int write = 0; write < pr.Count(); write++)
-            {
-                for (int sort = 0; sort < pr.Count() - 1; sort++)
-                {
-                    if (pr[sort].getPriority() < pr[sort + 1].getPriority())
-                    {
-                        Process temp = pr[sort + 1];
-                        pr[sort + 1] = pr[sort];
-                        pr[sort] = temp;
-                    }
-                }
-            }
-
-            return pr;
         }
 
         public Form1()
@@ -63,23 +44,35 @@ namespace PriorityScheduling
             stopButton.Enabled = true;
 
             List<Process> processes = new List<Process>();
+            allTickets = new List<int>();
+            allTickets.Clear();
             processes.Clear();
 
             for (int i = 0; i < 10; i++)
             {
                 String runtime = grid.Rows[0].Cells[i].FormattedValue.ToString();
-                String priority = grid.Rows[1].Cells[i].FormattedValue.ToString();
-
-                if (!runtime.Equals("") && !priority.Equals(""))
+                if (!runtime.Equals(""))
                 {
-                    Process prc = new Process(Int32.Parse(runtime), Int32.Parse(priority), i + 1);
+                    List<int> tickets = new List<int>();
+
+                    for (int j = 1; j < grid.Rows.Count; j++)
+                    {
+                        String number = grid.Rows[j].Cells[i].FormattedValue.ToString();
+                        if (!number.Equals(""))
+                        {
+                            int x = Int32.Parse(number);
+                            tickets.Add(x);
+                            allTickets.Add(x);
+                        }
+                    }
+
+                    Process prc = new Process(Int32.Parse(runtime), tickets, i + 1);
                     processes.Add(prc);
                 }
             }
 
             if (processes.Count != 0)
             {
-                processes = sortListByPriority(processes);
                 Run(processes);
             }
         }
@@ -90,12 +83,28 @@ namespace PriorityScheduling
             {
                 Console.Clear();
 
-                for (int i = 0; i < list.Count(); i++)
+                while (allTickets.Count != 0 && allow)
                 {
-                    if (allow)
+                    int winIndex = random.Next(0, allTickets.Count);
+                    Console.WriteLine(winIndex + " winIndex...");
+                    int winNumber = allTickets[winIndex];
+                    Console.WriteLine(winNumber + " winNumber...");
+                    allTickets.RemoveAt(winIndex);
+
+                    for (int i = 0; i < list.Count; i++)
                     {
-                        Thread.Sleep(list[i].getRuntime());
-                        Console.WriteLine(list[i].getId() + " execute...");
+                        if (list[i].canPlay & list[i].isWinner(winNumber) && allow)
+                        {
+                            Thread.Sleep(list[i].getRuntime());
+                            Console.WriteLine(list[i].getId() + " EXECUTED...");
+                            list[i].setAlreadyRun();
+                            break;
+                        }
+
+                        if(list[i].isWinner(winNumber) && !list[i].canPlay)
+                        {
+                            Console.WriteLine(list[i].getId() + " already run...");
+                        }
                     }
                 }
             });
@@ -105,9 +114,13 @@ namespace PriorityScheduling
 
         private void stopButton_Click(object sender, EventArgs e)
         {
-            thr2.Abort();
-            thr2.Join();
-            thr2 = null;
+            if (thr2 != null)
+            {
+                thr2.Abort();
+                thr2.Join();
+                thr2 = null;
+            }
+
             allow = false;
             runButton.Enabled = true;
             stopButton.Enabled = false;

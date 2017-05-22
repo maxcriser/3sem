@@ -49,7 +49,6 @@
             // 
             // grid
             // 
-            this.grid.AllowUserToAddRows = false;
             this.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.A,
@@ -64,7 +63,7 @@
             this.Column9});
             this.grid.Location = new System.Drawing.Point(87, 12);
             this.grid.Name = "grid";
-            this.grid.Size = new System.Drawing.Size(547, 73);
+            this.grid.Size = new System.Drawing.Size(547, 197);
             this.grid.TabIndex = 0;
             // 
             // A
@@ -139,7 +138,7 @@
             // runButton
             // 
             this.runButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            this.runButton.Location = new System.Drawing.Point(12, 142);
+            this.runButton.Location = new System.Drawing.Point(12, 215);
             this.runButton.Name = "runButton";
             this.runButton.Size = new System.Drawing.Size(294, 64);
             this.runButton.TabIndex = 2;
@@ -161,17 +160,17 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label3.Location = new System.Drawing.Point(24, 54);
+            this.label3.Location = new System.Drawing.Point(22, 54);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 20);
+            this.label3.Size = new System.Drawing.Size(63, 20);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Priority:";
+            this.label3.Text = "Tickets:";
             // 
             // stopButton
             // 
             this.stopButton.Enabled = false;
             this.stopButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            this.stopButton.Location = new System.Drawing.Point(340, 142);
+            this.stopButton.Location = new System.Drawing.Point(340, 215);
             this.stopButton.Name = "stopButton";
             this.stopButton.Size = new System.Drawing.Size(294, 64);
             this.stopButton.TabIndex = 5;
@@ -183,7 +182,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(646, 218);
+            this.ClientSize = new System.Drawing.Size(646, 291);
             this.Controls.Add(this.stopButton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
