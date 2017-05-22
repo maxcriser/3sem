@@ -1,0 +1,6 @@
+D:\Programming\Sources\C#\ConsoleApplication1\ConsoleApplication1\obj\Debug\Swapping.csprojResolveAssemblyReference.cache
+D:\Programming\Sources\C#\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+D:\Programming\Sources\C#\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+D:\Programming\Sources\C#\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+D:\Programming\Sources\C#\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+D:\Programming\Sources\C#\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb

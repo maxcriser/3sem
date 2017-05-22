@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\AlgoritmsAndDataStructure\Laba1_android\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6fb6ac3e8d3b9013819920d9ea11f3803c4c0033">
+        <dex dex="D:\GitHubProjects\3sem\AlgoritmsAndDataStructure\Laba1_android\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-25.1.0_13cf4cd2b471c689893bad5cf8557c7da9e2fbe7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\AlgoritmsAndDataStructure\Laba1_android\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0a0ef86b7fa568a52bf6214a0326ca1f1d618da7">
+        <dex dex="D:\GitHubProjects\3sem\AlgoritmsAndDataStructure\Laba1_android\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-25.1.0_4c52a8127867de67958dc28dc9a9292b9b92c6a6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\AlgoritmsAndDataStructure\Laba1_android\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="aee64634871d88a419d59eb743c1258a60f19700">
+        <dex dex="D:\GitHubProjects\3sem\AlgoritmsAndDataStructure\Laba1_android\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-25.1.0_ca32a5060174140a6db9c03f4f70602dab0847ce\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\AlgoritmsAndDataStructure\Laba1_android\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="26a34735e0ccd5aa8aed3a62a16c920923e56fb5">
+        <dex dex="D:\GitHubProjects\3sem\AlgoritmsAndDataStructure\Laba1_android\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_fee0a4baf262d41f7c27d7f8bf0515f3fecaf956\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\IstiN\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.1.0\support-annotations-25.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="64cb6b229a8bdfd907bc8dd46839a0053e4c018d">
+        <dex dex="D:\GitHubProjects\3sem\AlgoritmsAndDataStructure\Laba1_android\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.1.0_1279d4d57131c4726db825dfc0b8ea9af226b7c6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\AlgoritmsAndDataStructure\Laba1_android\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e79aa3d9a16f8c9f16377c0608de70a8f31e5d80">
+        <dex dex="D:\GitHubProjects\3sem\AlgoritmsAndDataStructure\Laba1_android\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-25.1.0_fb66189bc1514e4e98c3eb79f020e2dbdfba7531\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\AlgoritmsAndDataStructure\Laba1_android\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="61cf8cd4a9d7ff64342617aead6c2347b8889d14">
+        <dex dex="D:\GitHubProjects\3sem\AlgoritmsAndDataStructure\Laba1_android\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_7dfca90ac15a0b0d22ffc16bdb136e01f72e681c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\AlgoritmsAndDataStructure\Laba1_android\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2a53c4f3518116b8c6aee0e477233f0f7da8616f">
+        <dex dex="D:\GitHubProjects\3sem\AlgoritmsAndDataStructure\Laba1_android\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.1.0_59132bfe4eed38099bd3fa305805ca352be5a5b6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\AlgoritmsAndDataStructure\Laba1_android\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1630658fbc2d222b988603c27b4a4249586fbfe7">
+        <dex dex="D:\GitHubProjects\3sem\AlgoritmsAndDataStructure\Laba1_android\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-25.1.0_3189b87b0a443275f9007947a51d74787f4050f6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\AlgoritmsAndDataStructure\Laba1_android\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="D:\GitHubProjects\3sem\AlgoritmsAndDataStructure\Laba1_android\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-25.1.0_8ceeff2301cd6f3e8033f0725b117a27945c726e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\AlgoritmsAndDataStructure\Laba1_android\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ca3c7aa31e2726a400a6e552b93cb9f63c9a1e6d">
+        <dex dex="D:\GitHubProjects\3sem\AlgoritmsAndDataStructure\Laba1_android\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-25.1.0_973eb276d04edfd277f582afe903eab099e67de7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\GitHubProjects\3sem\AlgoritmsAndDataStructure\Laba1_android\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f02263e35e52668dd17b73bf961437e3d562b35f">
+        <dex dex="D:\GitHubProjects\3sem\AlgoritmsAndDataStructure\Laba1_android\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-25.1.0_5971a4e5eed4b77e6df3caf5b69f2e955e034a53\classes.dex" />
+    </item>
+
+</items>
