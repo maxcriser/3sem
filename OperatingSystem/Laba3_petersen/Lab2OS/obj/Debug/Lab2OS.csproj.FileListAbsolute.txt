@@ -46,3 +46,9 @@ D:\GitHubProjects\3sem\OperatingSystem\L3_2\Lab2OS\obj\Debug\Lab2OS.csproj.Gener
 D:\GitHubProjects\3sem\OperatingSystem\Laba3_petersen\Lab2OS\bin\Debug\Lab2OS.exe.config
 D:\GitHubProjects\3sem\OperatingSystem\Laba3_petersen\Lab2OS\obj\Debug\Lab2OS.exe
 D:\GitHubProjects\3sem\OperatingSystem\Laba3_petersen\Lab2OS\obj\Debug\Lab2OS.pdb
+D:\GitHubProjects\3sem\OperatingSystem\Laba3_petersen\Lab2OS\bin\Debug\Lab2OS.exe
+D:\GitHubProjects\3sem\OperatingSystem\Laba3_petersen\Lab2OS\bin\Debug\Lab2OS.pdb
+D:\GitHubProjects\3sem\OperatingSystem\Laba3_petersen\Lab2OS\obj\Debug\Lab2OS.csprojResolveAssemblyReference.cache
+D:\GitHubProjects\3sem\OperatingSystem\Laba3_petersen\Lab2OS\obj\Debug\Lab2OS.Form1.resources
+D:\GitHubProjects\3sem\OperatingSystem\Laba3_petersen\Lab2OS\obj\Debug\Lab2OS.Properties.Resources.resources
+D:\GitHubProjects\3sem\OperatingSystem\Laba3_petersen\Lab2OS\obj\Debug\Lab2OS.csproj.GenerateResource.Cache

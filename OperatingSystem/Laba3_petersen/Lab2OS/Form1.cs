@@ -15,7 +15,6 @@ namespace Lab2OS
 {
     public partial class Form1 : Form
     {
-        public bool turn;
         [DllImport("kernel32.dll", SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]
         static extern bool AllocConsole();
@@ -41,7 +40,6 @@ namespace Lab2OS
                 }
                 Thread.Sleep(500);
                 //Console.WriteLine("#1 leave from critical section");
-                turn = true;
                 Petersen.LeaveRegion(0);
             }
         }

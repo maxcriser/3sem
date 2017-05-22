@@ -17,7 +17,7 @@ namespace Lab2OS
             other = 1 - thread;
             interested[thread] = true;
             turn = thread;
-            while (turn == thread && interested[other]) ; // активное ожидание
+            while (turn == thread && interested[other]) ;
         }
 
         public static void LeaveRegion(int thread)
