@@ -1,0 +1,7 @@
+#Sun Mar 05 18:35:55 MSK 2017
+base.0=D\:\\GitHubProjects\\3sem\\MaterialPhotoEffect\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_cd7811174925815c84ec58dbfeef801655d114a9
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=D\:\\GitHubProjects\\3sem\\MaterialPhotoEffect\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_7734fafc63583da0ab02bd25e563b1b094122515\\classes.dex
+base.1=D\:\\GitHubProjects\\3sem\\MaterialPhotoEffect\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_7734fafc63583da0ab02bd25e563b1b094122515
+file.0=D\:\\GitHubProjects\\3sem\\MaterialPhotoEffect\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_cd7811174925815c84ec58dbfeef801655d114a9\\classes.dex

@@ -1,0 +1,79 @@
+<resources>
+    <string name="app_name">Emergalls</string>
+    <string name="emergalls">Emergalls</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_settings">Настройки</string>
+    <string name="dont_show_again">Больше не показывать</string>
+    <string name="your_message">Сообщение</string>
+    <string name="attach_location">Прикрепить координаты</string>
+    <string name="send_a_message">Отправить сообщение</string>
+    <string name="make_a_call">Совершить звонок</string>
+    <string name="from">От:</string>
+    <string name="write_your_feedback">Напишите свой отзыв</string>
+    <string name="include_screenshot_and_logs">Прикрепить снимки экрана и логи</string>
+    <string name="feedback_text">Перейдите на страницу «Правовая помощь», чтобы запросить изменения содержимого по юридическим причинам.\nВаша системная информация будет отправлена разработчику. Ознакомьтесь с политикой конфиденциальности и условиями обслуживания.</string>
+    <string name="feedback">Отзыв</string>
+    <string name="popular">Популярное</string>
+    <string name="browse_all_articles">ПОСМОТРЕТЬ ВСЕ СТАТЬИ</string>
+    <string name="send_feedback">Отправить отзыв</string>
+    <string name="help">Помощь</string>
+    <string name="e_android_application_share_title">Emergalls Android приложение</string>
+    <string name="body_share">Совершайте звонки и отправляйте сообщения в службы спасении быстрее через приложение Emergalls.\nСкачать приложение с PlayMarket:</string>
+    <string name="fire_department">Пожарная служба</string>
+    <string name="prev_of_emergencies">Предотвращение чрезвычайных ситуаций</string>
+    <string name="ambulance">Скорая помощь</string>
+    <string name="prov_emergency_medical_care">Оказание первой медицинской помощи</string>
+    <string name="protection_of_public_order">Охрана общественного порядка</string>
+    <string name="police">Полиция</string>
+    <string name="a_single_number">Единый номер службы спасения</string>
+    <string name="sos">SOS</string>
+    <string name="s911">SOS 911</string>
+    <string name="s112">SOS 112</string>
+    <string name="s111">SOS 111</string>
+    <string name="s100">SOS 100</string>
+    <string name="how_to_make_a_call_to_the_rescue_service">Как совершать звонки в службы спасения</string>
+    <string name="how_to_make_a_call_to_the_rescue_service_body">Для совершения звонка в одну из служб спасения необходимо провести пальцев влево или касанием нажать на службу спасения и выбрать пункт "совершить звонок". После выполненных действий приложение позвонит в нужную службу спасения.</string>
+    <string name="sending_a_message">Отправка сообщения</string>
+    <string name="sending_a_message_body">Для отправки сообщения в одну из служб спасения необходимо провести пальцев вправо или касанием нажать на службу спасения и выбрать пункт "отправить сообщение". После выполненных действий появится диалог с полем для ввода сообщения с возможными шаблонами сообщения. Кроме шаблонов сообщения можно добавлять свои предложения. При удачном определении местоположения появится возможность прекрипить текущие координаты широты и долготы к сообщения.\nВнимание! Некоторые службы не поддерживают отправку сообщения.</string>
+    <string name="attaching_coordinates_to_a_message">Прикрепление координат к сообщению</string>
+    <string name="attaching_coordinates_to_a_message_body">Во время отправки текстового сообщения при удачном распознавании текущего местоположения пользолвателю предоставляется возможность прикрепить текущую долготу и широту.\nВнимание! Широта и долгота не включает текущий адрес.</string>
+    <string name="possible_problems_with_determining_your_current_location">Возможные проблемы с определением местоположения</string>
+    <string name="possible_problems_with_determining_your_current_location_body">При определении текущего местоположения могу возникнуть проблемы. Это может быть связано с отключенным GPS или отсутсвтием подключения к интернету. В случае неопределения местоположения приложения предоставит список всевозможных номеров экстренных служб спасения (SOS).</string>
+    <string name="calling_an">"Совершается звонок в службу спасения…"</string>
+    <string name="call_error">Ошибка вызова</string>
+    <string name="no_email_clients_installed">На устройстве не найдено ни одного почтового клиента.</string>
+    <string name="error_gps">Ошибка определения локации через GPS</string>
+    <string name="latitude">"\n_____\nШирота: "</string>
+    <string name="longitude">"Долгота: "</string>
+    <string name="error_sending_a_message">Ошибка отправки сообщения</string>
+    <string name="sending_RS">Отправка сообщения в службу спасения…</string>
+    <string name="error_API">Ошибка определения локации через API</string>
+    <string name="share">Поделиться</string>
+    <string name="join_group">Группы</string>
+    <string name="communication">Связь</string>
+    <string name="rate_app">Оценка приложения</string>
+    <string name="facebook">Facebook</string>
+    <string name="vk_com">VK.com</string>
+    <string name="google">Google+</string>
+
+    <string-array name="choose_message">
+        <item>Пожалуйста, помогите мне!</item>
+        <item>Моя жизнь в опасности</item>
+        <item>Здесь преступники</item>
+        <item>Здесь огонь</item>
+        <item>SOS</item>
+    </string-array>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+    <string name="configure">Конфигурация</string>
+    <string name="manual_location">Ручная локация</string>
+    <string name="ok">OK</string>
+    <string name="location_not_found">Локация не определена</string>
+    <string name="location_will_not_be_used">Локация не будет использована</string>
+    <string name="sending">Отправка сообщения в службу спасения…</string>
+    <string name="_latitude">_____ Широта</string>
+    <string name="longitude_">Долгота:</string>
+    <string name="error_sending">Ошибка отправки сообщения</string>
+
+</resources>

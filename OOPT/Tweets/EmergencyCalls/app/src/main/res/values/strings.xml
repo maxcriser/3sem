@@ -1,0 +1,83 @@
+<resources>
+    <string name="app_name">Emergalls</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_settings">Settings</string>
+    <string name="emergalls">Emergalls</string>
+    <string name="dont_show_again">Don\'t show again</string>
+    <string name="ex_msg_dialog_choice_confirm">Confirm button is only for multi choice lists. You must call setMultiChoiceItems first</string>
+    <string name="ex_msg_dialog_view_not_set">You must call method setView before calling configureView.</string>
+    <string name="your_message">Message</string>
+    <string name="attach_location">Attach current coordinates</string>
+    <string name="show_me">Show me</string>
+    <string name="send_a_message">Send a message</string>
+    <string name="make_a_call">Make a call</string>
+    <string name="from">From:</string>
+    <string name="write_your_feedback">Write your feedback</string>
+    <string name="include_screenshot_and_logs">Include screenshot and logs</string>
+    <string name="feedback_text">Go to the Legal Help page to request content changes for legal reasons.\nYour System info will be sent to developer. See privacy policy and terms of service.</string>
+    <string name="feedback">Feedback</string>
+    <string name="popular">Popular</string>
+    <string name="browse_all_articles">BROWSE ALL ARTICLES</string>
+    <string name="send_feedback">Send feedback</string>
+    <string name="help">Help</string>
+    <string name="e_android_application_share_title">Emergalls Android application</string>
+    <string name="body_share">Make calls and send messages to emergency rescue services faster through the application Emergalls.\nDownload app from PlayMarket:</string>
+    <string name="fire_department">Fire Department</string>
+    <string name="prev_of_emergencies">Prevention of emergencies</string>
+    <string name="ambulance">Ambulance</string>
+    <string name="prov_emergency_medical_care">Providing emergency medical care</string>
+    <string name="protection_of_public_order">Protection of public order</string>
+    <string name="police">Police</string>
+    <string name="a_single_number">A single emergency number</string>
+    <string name="sos">SOS</string>
+    <string name="s911">SOS 911</string>
+    <string name="s112">SOS 112</string>
+    <string name="s111">SOS 111</string>
+    <string name="s100">SOS 100</string>
+    <string name="how_to_make_a_call_to_the_rescue_service">How to make a call to the rescue service</string>
+    <string name="how_to_make_a_call_to_the_rescue_service_body">To make a call to one of the rescue services, you need to hold your fingers to the left or touch the rescue service and select "make a call". After the performed actions the application will call in the necessary service of rescue.</string>
+    <string name="sending_a_message">Sending a message</string>
+    <string name="sending_a_message_body">To send a message to one of the rescue services, you need to hold your fingers to the right or touch the rescue service and select "send a message". After the performed actions, a dialog with a field for entering a message with possible message templates will appear. In addition to the message templates, you can add your own application to the desired rescue service.\nAttention! Some services do not support sending a message.</string>
+    <string name="attaching_coordinates_to_a_message">Attaching Coordinates to a message</string>
+    <string name="attaching_coordinates_to_a_message_body">While sending a text message, if successful recognition of the current location, the user is given the opportunity to attach the current longitude and latitude. Attention! Latitude and longitude does not include the current address.</string>
+    <string name="possible_problems_with_determining_your_current_location">Possible problems with determining your current location</string>
+    <string name="possible_problems_with_determining_your_current_location_body">When determining the current location, I can have problems. This may be due to disconnected GPS or lack of internet connection. In the case of an undefined location, the application will provide a list of all possible emergency rescue numbers (SOS).</string>
+    <string name="calling_an">Call the rescue service</string>
+    <string name="call_error">Call error</string>
+    <string name="no_email_clients_installed">No email clients installed.</string>
+    <string name="error_gps">Error loading the location through the GPS</string>
+    <string name="latitude">"\n_____\nLatitude: "</string>
+    <string name="longitude">"Longitude: "</string>
+    <string name="error_sending_a_message">Error sending a message</string>
+    <string name="sending_RS">Sending messages in rescue service…</string>
+    <string name="error_API">Error loading the location through the API</string>
+    <string name="share">Share</string>
+    <string name="join_group">Join group</string>
+    <string name="communication">Communication</string>
+    <string name="rate_app">Rate app</string>
+    <string name="night_mode">Night mode</string>
+    <string name="facebook">Facebook</string>
+    <string name="vk_com">VK.com</string>
+    <string name="google">Google+</string>
+
+    <string-array name="choose_message">
+        <item>Please, help me!</item>
+        <item>My life is in danger</item>
+        <item>Here criminals</item>
+        <item>Here fire</item>
+        <item>SOS</item>
+    </string-array>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+    <string name="configure">Configure</string>
+    <string name="manual_location">Manual location</string>
+    <string name="ok">OK</string>
+    <string name="location_not_found">Location not found</string>
+    <string name="location_will_not_be_used">Location will not be used</string>
+    <string name="sending">Sending message in rescue service…</string>
+    <string name="_latitude">_____ Latitude</string>
+    <string name="longitude_">Longitude:</string>
+    <string name="error_sending">Error sending a message</string>
+
+</resources>

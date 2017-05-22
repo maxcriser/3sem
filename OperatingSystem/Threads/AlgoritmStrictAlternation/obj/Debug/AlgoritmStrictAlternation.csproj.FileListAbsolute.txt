@@ -1,0 +1,9 @@
+D:\GitHubProjects\3sem\OperatingSystem\Threads\AlgoritmStrictAlternation\bin\Debug\AlgoritmStrictAlternation.exe.config
+D:\GitHubProjects\3sem\OperatingSystem\Threads\AlgoritmStrictAlternation\bin\Debug\AlgoritmStrictAlternation.exe
+D:\GitHubProjects\3sem\OperatingSystem\Threads\AlgoritmStrictAlternation\bin\Debug\AlgoritmStrictAlternation.pdb
+D:\GitHubProjects\3sem\OperatingSystem\Threads\AlgoritmStrictAlternation\obj\Debug\AlgoritmStrictAlternation.csprojResolveAssemblyReference.cache
+D:\GitHubProjects\3sem\OperatingSystem\Threads\AlgoritmStrictAlternation\obj\Debug\AlgoritmStrictAlternation.Form1.resources
+D:\GitHubProjects\3sem\OperatingSystem\Threads\AlgoritmStrictAlternation\obj\Debug\AlgoritmStrictAlternation.Properties.Resources.resources
+D:\GitHubProjects\3sem\OperatingSystem\Threads\AlgoritmStrictAlternation\obj\Debug\AlgoritmStrictAlternation.csproj.GenerateResource.Cache
+D:\GitHubProjects\3sem\OperatingSystem\Threads\AlgoritmStrictAlternation\obj\Debug\AlgoritmStrictAlternation.exe
+D:\GitHubProjects\3sem\OperatingSystem\Threads\AlgoritmStrictAlternation\obj\Debug\AlgoritmStrictAlternation.pdb

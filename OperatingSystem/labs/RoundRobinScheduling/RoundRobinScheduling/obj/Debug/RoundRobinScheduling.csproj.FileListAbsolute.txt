@@ -1,0 +1,10 @@
+D:\Programming\Sources\C#\RoundRobinScheduling\RoundRobinScheduling\bin\Debug\RoundRobinScheduling.exe.config
+D:\Programming\Sources\C#\RoundRobinScheduling\RoundRobinScheduling\obj\Debug\RoundRobinScheduling.csprojResolveAssemblyReference.cache
+D:\Programming\Sources\C#\RoundRobinScheduling\RoundRobinScheduling\obj\Debug\RoundRobinScheduling.MainForm.resources
+D:\Programming\Sources\C#\RoundRobinScheduling\RoundRobinScheduling\obj\Debug\Scheduling.FormAddJob.resources
+D:\Programming\Sources\C#\RoundRobinScheduling\RoundRobinScheduling\obj\Debug\RoundRobinScheduling.Properties.Resources.resources
+D:\Programming\Sources\C#\RoundRobinScheduling\RoundRobinScheduling\obj\Debug\RoundRobinScheduling.csproj.GenerateResource.Cache
+D:\Programming\Sources\C#\RoundRobinScheduling\RoundRobinScheduling\bin\Debug\RoundRobinScheduling.exe
+D:\Programming\Sources\C#\RoundRobinScheduling\RoundRobinScheduling\bin\Debug\RoundRobinScheduling.pdb
+D:\Programming\Sources\C#\RoundRobinScheduling\RoundRobinScheduling\obj\Debug\RoundRobinScheduling.exe
+D:\Programming\Sources\C#\RoundRobinScheduling\RoundRobinScheduling\obj\Debug\RoundRobinScheduling.pdb

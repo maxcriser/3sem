@@ -1,0 +1,7 @@
+#Tue Feb 21 14:45:05 MSK 2017
+base.0=D\:\\GitHubProjects\\3sem\\AlgoritmsAndDataStructure\\Laba1_android\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_7dfca90ac15a0b0d22ffc16bdb136e01f72e681c
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=D\:\\GitHubProjects\\3sem\\AlgoritmsAndDataStructure\\Laba1_android\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_fee0a4baf262d41f7c27d7f8bf0515f3fecaf956\\classes.dex
+base.1=D\:\\GitHubProjects\\3sem\\AlgoritmsAndDataStructure\\Laba1_android\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_fee0a4baf262d41f7c27d7f8bf0515f3fecaf956
+file.0=D\:\\GitHubProjects\\3sem\\AlgoritmsAndDataStructure\\Laba1_android\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_7dfca90ac15a0b0d22ffc16bdb136e01f72e681c\\classes.dex
