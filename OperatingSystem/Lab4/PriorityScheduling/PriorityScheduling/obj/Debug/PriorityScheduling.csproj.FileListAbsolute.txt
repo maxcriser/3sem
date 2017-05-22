@@ -7,3 +7,12 @@ D:\GitHubProjects\3sem\AlgoritmsAndDataStructure\L4\Lab4_1\PriorityScheduling\Pr
 D:\GitHubProjects\3sem\AlgoritmsAndDataStructure\L4\Lab4_1\PriorityScheduling\PriorityScheduling\obj\Debug\PriorityScheduling.csproj.GenerateResource.Cache
 D:\GitHubProjects\3sem\AlgoritmsAndDataStructure\L4\Lab4_1\PriorityScheduling\PriorityScheduling\obj\Debug\PriorityScheduling.exe
 D:\GitHubProjects\3sem\AlgoritmsAndDataStructure\L4\Lab4_1\PriorityScheduling\PriorityScheduling\obj\Debug\PriorityScheduling.pdb
+D:\GitHubProjects\3sem\OperatingSystem\Lab4\PriorityScheduling\PriorityScheduling\bin\Debug\PriorityScheduling.exe.config
+D:\GitHubProjects\3sem\OperatingSystem\Lab4\PriorityScheduling\PriorityScheduling\obj\Debug\PriorityScheduling.exe
+D:\GitHubProjects\3sem\OperatingSystem\Lab4\PriorityScheduling\PriorityScheduling\obj\Debug\PriorityScheduling.pdb
+D:\GitHubProjects\3sem\OperatingSystem\Lab4\PriorityScheduling\PriorityScheduling\bin\Debug\PriorityScheduling.exe
+D:\GitHubProjects\3sem\OperatingSystem\Lab4\PriorityScheduling\PriorityScheduling\bin\Debug\PriorityScheduling.pdb
+D:\GitHubProjects\3sem\OperatingSystem\Lab4\PriorityScheduling\PriorityScheduling\obj\Debug\PriorityScheduling.csprojResolveAssemblyReference.cache
+D:\GitHubProjects\3sem\OperatingSystem\Lab4\PriorityScheduling\PriorityScheduling\obj\Debug\PriorityScheduling.Form1.resources
+D:\GitHubProjects\3sem\OperatingSystem\Lab4\PriorityScheduling\PriorityScheduling\obj\Debug\PriorityScheduling.Properties.Resources.resources
+D:\GitHubProjects\3sem\OperatingSystem\Lab4\PriorityScheduling\PriorityScheduling\obj\Debug\PriorityScheduling.csproj.GenerateResource.Cache
