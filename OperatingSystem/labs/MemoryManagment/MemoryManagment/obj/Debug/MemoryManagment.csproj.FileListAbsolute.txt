@@ -8,3 +8,13 @@ D:\Programming\Sources\C#\MemoryManagment\MemoryManagment\bin\Debug\MemoryManagm
 D:\Programming\Sources\C#\MemoryManagment\MemoryManagment\bin\Debug\MemoryManagment.pdb
 D:\Programming\Sources\C#\MemoryManagment\MemoryManagment\obj\Debug\MemoryManagment.exe
 D:\Programming\Sources\C#\MemoryManagment\MemoryManagment\obj\Debug\MemoryManagment.pdb
+D:\GitHubProjects\3sem\OperatingSystem\labs\MemoryManagment\MemoryManagment\bin\Debug\MemoryManagment.exe.config
+D:\GitHubProjects\3sem\OperatingSystem\labs\MemoryManagment\MemoryManagment\obj\Debug\MemoryManagment.exe
+D:\GitHubProjects\3sem\OperatingSystem\labs\MemoryManagment\MemoryManagment\obj\Debug\MemoryManagment.pdb
+D:\GitHubProjects\3sem\OperatingSystem\labs\MemoryManagment\MemoryManagment\bin\Debug\MemoryManagment.exe
+D:\GitHubProjects\3sem\OperatingSystem\labs\MemoryManagment\MemoryManagment\bin\Debug\MemoryManagment.pdb
+D:\GitHubProjects\3sem\OperatingSystem\labs\MemoryManagment\MemoryManagment\obj\Debug\MemoryManagment.csprojResolveAssemblyReference.cache
+D:\GitHubProjects\3sem\OperatingSystem\labs\MemoryManagment\MemoryManagment\obj\Debug\MemoryManagment.AddProcessForm.resources
+D:\GitHubProjects\3sem\OperatingSystem\labs\MemoryManagment\MemoryManagment\obj\Debug\MemoryManagment.MainForm.resources
+D:\GitHubProjects\3sem\OperatingSystem\labs\MemoryManagment\MemoryManagment\obj\Debug\MemoryManagment.Properties.Resources.resources
+D:\GitHubProjects\3sem\OperatingSystem\labs\MemoryManagment\MemoryManagment\obj\Debug\MemoryManagment.csproj.GenerateResource.Cache

@@ -20,6 +20,7 @@ namespace PriorityScheduling
         public Thread thr2;
         public List<int> allTickets;
         Random random = new Random();
+        double startTimeThread = 0;
 
         [DllImport("kernel32.dll", SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]
@@ -39,6 +40,8 @@ namespace PriorityScheduling
 
         private void runButton_Click(object sender, EventArgs e)
         {
+            startTimeThread = DateTime.Now.Millisecond + (DateTime.Now.Second * 1000);
+
             allow = true;
             runButton.Enabled = false;
             stopButton.Enabled = true;
@@ -107,6 +110,8 @@ namespace PriorityScheduling
                         }
                     }
                 }
+                double endTime = (DateTime.Now.Millisecond + (DateTime.Now.Second * 1000)) - startTimeThread;
+                Console.WriteLine("End Time:" + endTime);
             });
 
             thr2.Start();

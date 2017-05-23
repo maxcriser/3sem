@@ -4,3 +4,9 @@ D:\Programming\Sources\C#\ConsoleApplication1\ConsoleApplication1\bin\Debug\Cons
 D:\Programming\Sources\C#\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
 D:\Programming\Sources\C#\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
 D:\Programming\Sources\C#\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
+D:\GitHubProjects\3sem\OperatingSystem\labs\Swapping\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+D:\GitHubProjects\3sem\OperatingSystem\labs\Swapping\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+D:\GitHubProjects\3sem\OperatingSystem\labs\Swapping\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
+D:\GitHubProjects\3sem\OperatingSystem\labs\Swapping\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+D:\GitHubProjects\3sem\OperatingSystem\labs\Swapping\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+D:\GitHubProjects\3sem\OperatingSystem\labs\Swapping\ConsoleApplication1\obj\Debug\Swapping.csprojResolveAssemblyReference.cache
